@@ -1,0 +1,91 @@
+body {
+  font-family: arial;
+}
+
+img.unicamp-logo {
+  width: 100%;
+  margin: auto;
+}
+
+img.atc-cert-dev {
+  width: 100%;
+  margin: auto;
+}
+
+a:link {
+  color: grey;
+  text-decoration: none;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: grey;
+  text-decoration: none;
+}
+
+.LI-profile-badge {
+  grid-area: LI-profile-badge;
+}
+
+.Education {
+  grid-area: Education;
+  display: grid;
+  grid-template-areas:
+  'UNICAMP-logo degree';
+  width: 330px;
+  line-height: 0.8;
+  border: 1px solid #EFEFEF;
+}
+
+.UNICAMP-logo {
+  grid-area: UNICAMP-logo;
+  width: 60px;
+  margin: 25px 0px 25px 25px;
+}
+
+.degree {
+  grid-area: degree;
+  float: top;
+  font-family: arial;
+  font-size: 20px;
+  margin-top: 25px;
+}
+
+.ATC-certified-developer {
+  grid-area: ATC-certified-developer;
+  display: block;
+  width: 330px;
+  border: 1px solid #EFEFEF;
+  justify-content: center;
+}
+
+.ATC-logo {
+  margin: 20px 25px 0px 25px;
+}
+
+.ATC-id {
+  float: left;
+  font-size: 12px;
+  margin: 0px 0px 20px 27px;
+}
+
+.GH-languages-graph {
+  grid-area: GH-languages-graph;
+  height: 600px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+  'LI-profile-badge GH-languages-graph'
+  'Education GH-languages-graph'
+  'ATC-certified-developer GH-languages-graph';
+  grid-gap: 40px;
+  justify-content: center;
+  background-color: #FFFFFF;
+  margin: 80px;
+}
