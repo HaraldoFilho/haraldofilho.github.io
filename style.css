@@ -1,6 +1,6 @@
 body {
   font-family: arial;
-  background-color: #FDFDFD;
+  background-color: #fbfbfb;
 }
 
 img.unicamp-logo {
@@ -11,6 +11,10 @@ img.unicamp-logo {
 img.atc-cert-dev {
   width: 100%;
   margin: auto;
+}
+
+img.github-icon {
+  height: 35px;
 }
 
 a:link {
@@ -30,7 +34,7 @@ a:visited {
 
 .LI-profile-badge {
   grid-area: LI-profile-badge;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   width: 329px;
   height: 261px;
 }
@@ -42,8 +46,8 @@ a:visited {
   'UNICAMP-logo degree';
   width: 330px;
   line-height: 0.8;
-  background-color: #FFFFFF;
-  border: 1px solid #E7E7E7;
+  background-color: #ffffff;
+  border: 1px solid #e7e7e7;
 }
 
 .UNICAMP-logo {
@@ -65,8 +69,8 @@ a:visited {
   display: block;
   width: 330px;
   justify-content: center;
-  background-color: #FFFFFF;
-  border: 1px solid #E7E7E7;
+  background-color: #ffffff;
+  border: 1px solid #e7e7e7;
 }
 
 .ATC-logo {
@@ -82,8 +86,8 @@ a:visited {
 .GH-languages-graph {
   grid-area: GH-languages-graph;
   height: 600px;
-  background-color: #FFFFFF;
-  border: 1px solid #F0F0F0;
+  background-color: #ffffff;
+  border: 1px solid #f0f0f0;
 }
 
 .grid-container {
@@ -94,6 +98,16 @@ a:visited {
   'ATC-certified-developer GH-languages-graph';
   grid-gap: 40px;
   justify-content: center;
-  background-color: #FDFDFD;
+  background-color: #fbfbfb;
   margin: 80px;
+}
+
+.footer {
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  text-align: center;
+  border-top-style: solid;
+  border-color: rgb(238, 238, 238);
+  border-width: 1px;
 }
