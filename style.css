@@ -1,6 +1,6 @@
 body {
   font-family: arial;
-  background-color: #fbfbfb;
+  background-color: #fafafa;
 }
 
 img.unicamp-logo {
@@ -97,7 +97,7 @@ a:visited {
   'ATC-certified-developer GH-languages-graph';
   grid-gap: 40px;
   justify-content: center;
-  background-color: #fbfbfb;
+  background-color: #fafafa;
   margin: 80px;
 }
 
