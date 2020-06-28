@@ -1,5 +1,6 @@
 body {
   font-family: arial;
+  background-color: #FDFDFD;
 }
 
 img.unicamp-logo {
@@ -29,6 +30,9 @@ a:visited {
 
 .LI-profile-badge {
   grid-area: LI-profile-badge;
+  background-color: #FFFFFF;
+  width: 329px;
+  height: 261px;
 }
 
 .Education {
@@ -38,7 +42,8 @@ a:visited {
   'UNICAMP-logo degree';
   width: 330px;
   line-height: 0.8;
-  border: 1px solid #EFEFEF;
+  background-color: #FFFFFF;
+  border: 1px solid #E7E7E7;
 }
 
 .UNICAMP-logo {
@@ -59,8 +64,9 @@ a:visited {
   grid-area: ATC-certified-developer;
   display: block;
   width: 330px;
-  border: 1px solid #EFEFEF;
   justify-content: center;
+  background-color: #FFFFFF;
+  border: 1px solid #E7E7E7;
 }
 
 .ATC-logo {
@@ -76,6 +82,8 @@ a:visited {
 .GH-languages-graph {
   grid-area: GH-languages-graph;
   height: 600px;
+  background-color: #FFFFFF;
+  border: 1px solid #F0F0F0;
 }
 
 .grid-container {
@@ -86,6 +94,6 @@ a:visited {
   'ATC-certified-developer GH-languages-graph';
   grid-gap: 40px;
   justify-content: center;
-  background-color: #FFFFFF;
+  background-color: #FDFDFD;
   margin: 80px;
 }
