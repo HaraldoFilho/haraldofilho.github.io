@@ -6,7 +6,7 @@ body {
 }
 
 
-/* Styles of images */
+/* Styles of the images */
 
 img.unicamp-logo {
   width: 100%;
@@ -41,7 +41,7 @@ a:visited {
 }
 
 
-/* Sytle of LinkedIn card */
+/* Sytle of the LinkedIn card */
 
 .LI-profile-badge {
   grid-area: LI-profile-badge;
@@ -51,7 +51,7 @@ a:visited {
 }
 
 
-/* Style of Education card */
+/* Style of the Education card */
 
 .Education {
   grid-area: Education;
@@ -78,7 +78,7 @@ a:visited {
 }
 
 
-/* Style of Android Certified Developer card */
+/* Style of the Android Certified Developer card */
 
 .ATC-certified-developer {
   grid-area: ATC-certified-developer;
@@ -100,7 +100,7 @@ a:visited {
 }
 
 
-/* Style of GitHub languages graph card */
+/* Style of the GitHub languages graph card */
 
 .GH-languages-graph {
   grid-area: GH-languages-graph;
