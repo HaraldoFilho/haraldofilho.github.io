@@ -1,7 +1,12 @@
+/* Default font and background color of the page */
+
 body {
   font-family: arial;
   background-color: #fafafa;
 }
+
+
+/* Styles of images */
 
 img.unicamp-logo {
   width: 100%;
@@ -16,6 +21,9 @@ img.atc-cert-dev {
 img.github-icon {
   height: 35px;
 }
+
+
+/* Style of the links */
 
 a:link {
   color: grey;
@@ -32,12 +40,18 @@ a:visited {
   text-decoration: none;
 }
 
+
+/* Sytle of LinkedIn card */
+
 .LI-profile-badge {
   grid-area: LI-profile-badge;
   background-color: #ffffff;
   width: 329px;
   height: 261px;
 }
+
+
+/* Style of Education card */
 
 .Education {
   grid-area: Education;
@@ -63,6 +77,9 @@ a:visited {
   margin-top: 29px;
 }
 
+
+/* Style of Android Certified Developer card */
+
 .ATC-certified-developer {
   grid-area: ATC-certified-developer;
   display: block;
@@ -82,12 +99,18 @@ a:visited {
   margin: 0px 0px 20px 27px;
 }
 
+
+/* Style of GitHub languages graph card */
+
 .GH-languages-graph {
   grid-area: GH-languages-graph;
   height: 600px;
   background-color: #ffffff;
   border: 1px solid #f0f0f0;
 }
+
+
+/* Page layout */
 
 .grid-container {
   display: grid;
