@@ -19,8 +19,10 @@ img.atc-cert-dev {
   margin: auto;
 }
 
-img.github-icon {
+img.social-icon {
   height: 35px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 
