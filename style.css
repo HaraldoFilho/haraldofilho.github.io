@@ -29,17 +29,17 @@ img.social-icon {
 /* Style of the links */
 
 a:link {
-  color: grey;
+  color: black;
   text-decoration: none;
 }
 
 a:hover {
-  color: grey;
-  text-decoration: underline;
+  color: black;
+  text-decoration: none;
 }
 
 a:visited {
-  color: grey;
+  color: black;
   text-decoration: none;
 }
 
