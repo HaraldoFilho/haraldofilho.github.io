@@ -117,6 +117,15 @@ p.nanodegree {
   border: 1px solid #f0f0f0;
 }
 
+.GitHub-Logo {
+  grid-area: GitHub-Logo;
+  position: relative;
+  height: auto;
+  width: auto;
+  right: 650px;
+  bottom: 650px;
+}
+
 
 /* Style of the Nanodegrees card */
 
@@ -152,7 +161,8 @@ p.nanodegree {
   grid-gap: 40px;
   justify-content: center;
   background-color: #fafafa;
-  margin: 80px 80px 40px 80px;
+  padding-left: 180px;
+  margin: 80px 0px -70px 0px;
 }
 
 .grid-container-2 {
