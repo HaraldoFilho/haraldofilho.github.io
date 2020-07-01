@@ -9,11 +9,6 @@ body {
 
 /* Styles of the images */
 
-img.unicamp-logo {
-  width: 100%;
-  margin: auto;
-}
-
 img.github-logo {
   width: 100px;
   height: auto;
@@ -63,31 +58,17 @@ a:visited {
 
 .Education {
   grid-area: Education;
-  display: grid;
-  grid-template-areas:
-  'UNICAMP-logo degree';
+  display: inline;
   width: 330px;
   line-height: 0.6;
   background-color: #ffffff;
   border: 1px solid #e7e7e7;
 }
 
-.UNICAMP-logo {
-  grid-area: UNICAMP-logo;
-  width: 60px;
-  margin: 25px 0px 25px 25px;
-}
-
 .degree {
-  grid-area: degree;
   font-family: arial;
-  font-size: 16px;
-  margin-top: 29px;
-}
-
-p.nanodegree {
-  font-size:14px;
-  line-height:1.4;
+  font-size: 22px;
+  margin: 25px 25px 20px 25px;
 }
 
 
@@ -109,7 +90,7 @@ p.nanodegree {
 .ATC-id {
   float: left;
   font-size: 12px;
-  margin: 0px 0px 20px 29px;
+  margin: 0px 0px 20px 25px;
 }
 
 
@@ -140,6 +121,11 @@ p.nanodegree {
   padding-left: 25px;
 }
 
+p.nanodegree {
+  font-size:14px;
+  line-height:1.4;
+}
+
 
 /* Style of the Courses card */
 
@@ -165,7 +151,7 @@ p.nanodegree {
   justify-content: center;
   background-color: #fafafa;
   padding-left: 180px;
-  margin: 72px 0px -72px 0px;
+  margin: 80px 0px -85px 0px;
 }
 
 .grid-container-2 {
@@ -176,7 +162,6 @@ p.nanodegree {
   justify-content: center;
   background-color: #fafafa;
   width: 100%
-  margin: 0px 80px 0px 80px;
 }
 
 .footer {
