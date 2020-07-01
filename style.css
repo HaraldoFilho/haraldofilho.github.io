@@ -14,6 +14,11 @@ img.unicamp-logo {
   margin: auto;
 }
 
+img.github-logo {
+  width: 100px;
+  height: auto;
+}
+
 img.atc-cert-dev {
   width: 100%;
   margin: auto;
@@ -110,20 +115,18 @@ p.nanodegree {
 
 /* Style of the GitHub languages graph card */
 
+.GitHub-Logo {
+  grid-area: GitHub-Logo;
+  position: relative;
+  right: 650px;
+  bottom: 650px;
+}
+
 .Languages {
   grid-area: GH-languages-graph;
   height: 600px;
   background-color: #ffffff;
   border: 1px solid #f0f0f0;
-}
-
-.GitHub-Logo {
-  grid-area: GitHub-Logo;
-  position: relative;
-  height: auto;
-  width: auto;
-  right: 650px;
-  bottom: 650px;
 }
 
 
@@ -162,7 +165,7 @@ p.nanodegree {
   justify-content: center;
   background-color: #fafafa;
   padding-left: 180px;
-  margin: 80px 0px -70px 0px;
+  margin: 72px 0px -72px 0px;
 }
 
 .grid-container-2 {
