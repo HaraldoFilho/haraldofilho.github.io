@@ -118,12 +118,13 @@ a:visited {
   width: 440px;
   background-color: #ffffff;
   border: 2px solid #f0f0f0;
-  padding-left: 25px;
+  padding: 20px 0px 20px 25px;
 }
 
 p.nanodegree {
   font-size:14px;
   line-height:1.4;
+  margin-top: 4px;
 }
 
 
@@ -134,8 +135,24 @@ p.nanodegree {
   width: 440px;
   background-color: #ffffff;
   border: 2px solid #f0f0f0;
-  padding-left: 25px;
-  padding-bottom: 25px;
+  padding: 20px 0px 20px 25px;
+}
+
+.title {
+  font-size: 27px;
+  font-weight: bold;
+  border-style: none none solid none;
+  border-color: #efefef;
+  border-width: thin;
+  margin: 0px 25px 20px 0px;
+  padding-bottom: 7px;
+}
+
+p.school {
+  font-size: 21px;
+  font-weight: bold;
+  padding-top: 5px;
+  margin-bottom: -5px;
 }
 
 
