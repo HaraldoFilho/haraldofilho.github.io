@@ -35,7 +35,7 @@ a:link {
 
 a:hover {
   color: black;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a:visited {
@@ -113,15 +113,15 @@ a:visited {
 
 /* Style of the Nanodegrees card */
 
-.Nanodegrees {
-  grid-area: Nanodegrees;
+.Certifications {
+  grid-area: Certifications;
   width: 440px;
   background-color: #ffffff;
   border: 2px solid #f0f0f0;
   padding: 20px 0px 20px 25px;
 }
 
-p.nanodegree {
+p.certification {
   font-size:14px;
   line-height:1.4;
   margin-top: 4px;
@@ -174,7 +174,7 @@ p.school {
 .grid-container-2 {
   display: grid;
   grid-template-areas:
-  'Nanodegrees Courses';
+  'Certifications Courses';
   grid-gap: 40px;
   justify-content: center;
   background-color: #fafafa;
