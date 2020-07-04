@@ -3,7 +3,7 @@
 
 body {
   font-family: arial;
-  color: #555555;
+  color: #737373;
   background-color: #fafafa;
 }
 
@@ -72,7 +72,7 @@ a:visited {
 .degree {
   font-family: arial;
   font-size: 23px;
-  color: #333333;
+  color: #4c4c4c;
   margin: 25px 25px 20px 25px;
 }
 
@@ -120,7 +120,7 @@ a:visited {
 }
 
 
-/* Style of the Nanodegrees card */
+/* Style of the Certifications and Courses cards */
 
 .Certifications {
   grid-area: Certifications;
@@ -138,9 +138,6 @@ p.certification {
   margin-top: 4px;
 }
 
-
-/* Style of the Courses card */
-
 .Courses {
   grid-area: Courses;
   width: 440px;
@@ -154,7 +151,7 @@ p.certification {
 .title {
   font-size: 27px;
   font-weight: bold;
-  color: #555555;
+  color: #4c4c4c;
   border-style: none none solid none;
   border-color: #efefef;
   border-width: thin;
@@ -165,6 +162,7 @@ p.certification {
 p.school {
   font-size: 19px;
   font-weight: bold;
+  color: #636363;
   padding-top: 5px;
   margin-bottom: -5px;
 }
