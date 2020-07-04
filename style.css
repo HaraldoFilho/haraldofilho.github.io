@@ -52,7 +52,7 @@ a:visited {
   background-color: #ffffff;
   width: 329px;
   height: 261px;
-  box-shadow: 5px 5px 5px #f0f0f0;
+  box-shadow: 6px 6px 6px #f1f1f1;
 }
 
 
@@ -64,7 +64,8 @@ a:visited {
   width: 330px;
   line-height: 0.6;
   background-color: #ffffff;
-  border: 2px solid #f0f0f0;
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
   box-shadow: 5px 5px 5px #f0f0f0;
 }
 
@@ -84,7 +85,8 @@ a:visited {
   width: 330px;
   justify-content: center;
   background-color: #ffffff;
-  border: 2px solid #f0f0f0;
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
   box-shadow: 5px 5px 5px #f0f0f0;
 }
 
@@ -112,7 +114,8 @@ a:visited {
   grid-area: GH-languages-graph;
   height: 600px;
   background-color: #ffffff;
-  border: 2px solid #f0f0f0;
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
   box-shadow: 5px 5px 5px #f0f0f0;
 }
 
@@ -123,7 +126,8 @@ a:visited {
   grid-area: Certifications;
   width: 440px;
   background-color: #ffffff;
-  border: 2px solid #f0f0f0;
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
   box-shadow: 5px 5px 5px #f0f0f0;
   padding: 20px 0px 20px 25px;
 }
@@ -141,7 +145,8 @@ p.certification {
   grid-area: Courses;
   width: 440px;
   background-color: #ffffff;
-  border: 2px solid #f0f0f0;
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
   box-shadow: 5px 5px 5px #f0f0f0;
   padding: 20px 0px 20px 25px;
 }
