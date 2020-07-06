@@ -3,7 +3,7 @@
 
 body {
   font-family: arial;
-  font-size: 30px;
+  font-size: 28px;
   color: #737373;
   background-color: #fafafa;
 }
@@ -52,9 +52,9 @@ a:hover {
   display: block;
   background-color: #ffffff;
   width: 329px;
-  height: 261px;
+  height: 258px;
   transform: scale(2.5);
-  margin-top: 300px;
+  margin-top: 260px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 290px;
@@ -155,7 +155,7 @@ a:hover {
 p.certification {
   font-size: 24px;
   line-height: 1.4;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .Courses {
@@ -166,7 +166,7 @@ p.certification {
   border-radius: 7px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 160px;
+  margin-bottom: 120px;
   padding: 20px 0px 60px 60px;
 }
 
