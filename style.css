@@ -124,12 +124,12 @@ a:hover {
 
 .Certifications {
   grid-area: Certifications;
-  width: 440px;
+  width: 415px;
   background-color: #ffffff;
   border: 1px solid #e3e3e3;
   border-radius: 3px;
   box-shadow: 5px 5px 5px #f0f0f0;
-  padding: 20px 0px 20px 25px;
+  padding: 20px 25px 20px 25px;
 }
 
 p.certification {
@@ -140,12 +140,12 @@ p.certification {
 
 .Courses {
   grid-area: Courses;
-  width: 440px;
+  width: 415px;
   background-color: #ffffff;
   border: 1px solid #e3e3e3;
   border-radius: 3px;
   box-shadow: 5px 5px 5px #f0f0f0;
-  padding: 20px 0px 20px 25px;
+  padding: 20px 25px 20px 25px;
 }
 
 .title {
@@ -155,7 +155,7 @@ p.certification {
   border-style: none none solid none;
   border-color: #efefef;
   border-width: thin;
-  margin: 0px 25px 20px 0px;
+  margin-bottom: 20px;
   padding-bottom: 7px;
 }
 

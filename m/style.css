@@ -3,7 +3,7 @@
 
 body {
   font-family: arial;
-  font-size: 28px;
+  font-size: 24px;
   color: #737373;
   background-color: #fafafa;
 }
@@ -57,7 +57,7 @@ a:hover {
   margin-top: 260px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 290px;
+  margin-bottom: 265px;
 }
 
 /* Style of the GitHub languages graph card */
@@ -133,7 +133,7 @@ a:hover {
 
 .ATC-id {
   float: left;
-  font-size: 24px;
+  font-size: 30px;
   margin: 0px 0px 0px 60px;
 }
 
@@ -142,32 +142,32 @@ a:hover {
 
 .Certifications {
   display: block;
-  width: 760px;
+  width: 700px;
   background-color: #ffffff;
   border: 3px solid #e3e3e3;
   border-radius: 7px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
-  padding: 20px 0px 60px 60px;
+  padding: 20px 60px 60px 60px;
 }
 
 p.certification {
-  font-size: 24px;
+  font-size: 18px;
   line-height: 1.4;
   margin-top: 8px;
 }
 
 .Courses {
   display: block;
-  width: 760px;
+  width: 700px;
   background-color: #ffffff;
   border: 3px solid #e3e3e3;
   border-radius: 7px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 120px;
-  padding: 20px 0px 60px 60px;
+  padding: 20px 60px 60px 60px;
 }
 
 .title {
@@ -177,7 +177,7 @@ p.certification {
   border-style: none none solid none;
   border-color: #efefef;
   border-width: thin;
-  margin: 40px 60px 20px 0px;
+  margin: 40px 0px 20px 0px;
   padding-bottom: 14px;
 }
 
