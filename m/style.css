@@ -52,12 +52,13 @@ a:hover {
   display: block;
   background-color: #ffffff;
   width: 329px;
-  height: 258px;
-  transform: scale(2.5);
+  height: 262px;
+  transform: scale(2.6);
   margin-top: 260px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 265px;
+  margin-bottom: 300px;
+  padding-right: 1px;
 }
 
 /* Style of the GitHub languages graph card */
@@ -68,7 +69,7 @@ a:hover {
   height: 600px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 245px;
+  margin-bottom: 260px;
   padding-right: 5px;
 }
 
@@ -83,7 +84,7 @@ a:hover {
   display: block;
   width: 600px;
   height: 600px;
-  transform: scale(1.37);
+  transform: scale(1.43);
   background-color: #ffffff;
   border: 2px solid #e3e3e3;
   border-radius: 4px;
@@ -93,7 +94,7 @@ a:hover {
 
 .Education {
   display: block;
-  width: 820px;
+  width: 860px;
   line-height: 0.6;
   background-color: #ffffff;
   border: 3px solid #e3e3e3;
@@ -116,7 +117,7 @@ a:hover {
 .Certification {
   grid-area: ATC-certified-developer;
   display: block;
-  width: 820px;
+  width: 860px;
   justify-content: center;
   background-color: #ffffff;
   border: 3px solid #e3e3e3;
@@ -142,7 +143,7 @@ a:hover {
 
 .Certifications {
   display: block;
-  width: 700px;
+  width: 740px;
   background-color: #ffffff;
   border: 3px solid #e3e3e3;
   border-radius: 7px;
@@ -160,7 +161,7 @@ p.certification {
 
 .Courses {
   display: block;
-  width: 700px;
+  width: 740px;
   background-color: #ffffff;
   border: 3px solid #e3e3e3;
   border-radius: 7px;
