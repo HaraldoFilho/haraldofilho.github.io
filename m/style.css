@@ -22,9 +22,8 @@ img.atc-cert-dev {
 }
 
 img.social-icon {
-  height: 120px;
-  margin-left: 20px;
-  margin-right: 20px;
+  width: auto;
+  height: 80px;
 }
 
 
@@ -52,7 +51,7 @@ a:hover {
   display: block;
   background-color: #ffffff;
   width: 329px;
-  height: 242px;
+  height: 244px;
   transform: scale(2.6);
   margin-top: 260px;
   margin-left: auto;
@@ -167,7 +166,7 @@ p.certification {
   border-radius: 7px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 96px;
+  margin-bottom: 56px;
   padding: 20px 60px 60px 60px;
 }
 
