@@ -190,16 +190,6 @@ p.school {
   grid-gap: 40px;
   justify-content: center;
   background-color: #fafafa;
-  width: 100%
-}
-
-.footer {
   width: 100%;
-  margin-top: 80px;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  text-align: center;
-  border-top-style: solid;
-  border-color: rgb(235, 235, 235);
-  border-width: 1px;
+  margin-bottom: 85px;
 }
