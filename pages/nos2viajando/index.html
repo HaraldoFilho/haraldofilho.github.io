@@ -11,10 +11,90 @@
       mobile_url : "nos2viajando.travelmap.net",
     });
   // ]]></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
-  <iframe src="https://nos2viajando.travelmap.net/" frameBorder="0" allowfullscreen >
+
+
+<div class="main-container">
+
+  <div class="sidebar-container">
+
+    <div class="top-container">
+      <div class="avatar">
+        <img class="avatar" src="avatar.jpg" width="80" height="80"/>
+      </div>
+      <div class="names">
+        Nós Dois Viajando
+      </div>
+      <div class="countries">
+        7 países
+      </div>
+      <div class="kms">
+        106.407 km
+      </div>
+      <div class="days">
+        121 dias
+      </div>
+      <div class="map">
+        <div id='map' style='width: 300px; height: 200px;'></div>
+      </div>
+      <div class="flags">
+        <div><img class="flag" src="icons/flags/brazil.svg"/></div>
+        <div><img class="flag" src="icons/flags/argentina.svg"/></div>
+        <div><img class="flag" src="icons/flags/paraguay.svg"/></div>
+        <div><img class="flag" src="icons/flags/united-states.svg"/></div>
+        <div><img class="flag" src="icons/flags/italy.svg"/></div>
+        <div><img class="flag" src="icons/flags/vatican.svg"/></div>
+        <div><img class="flag" src="icons/flags/croatia.svg"/></div>
+      </div>
+
+      <div class="content">
+        content<br>
+        content<br>
+        content<br>
+        content<br>
+        content<br>
+        content<br>
+        content<br>
+        content<br>
+        content<br>
+        content<br>
+        content<br>
+        content<br>
+        content<br>
+        content<br>
+        content<br>
+        content<br>
+        content<br>
+        content<br>
+        content<br>
+        content<br>
+      </div>
+
+    </div>
+
+    <div class="buttons-container">
+    </div>
+
+  </div>
+
+  <div class="map-container">
+    <iframe src="https://nos2viajando.travelmap.net/" frameBorder="0" allowfullscreen >
       Navegador não compatível
-  </iframe>
+    </iframe>
+  </div>
+
+</div>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiaGFyYWxkby1maWxobyIsImEiOiJja2Vha3RvcjQwMWw4Mzh0MzZzaGdqbXgxIn0.oRUG1yvJiEFcyjFcDqW89w';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/satellite-v9'
+  });
+</script>
+
 </body>
 </html>
