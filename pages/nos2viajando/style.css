@@ -10,15 +10,25 @@ iframe {
 }
 
 img.avatar {
-  border-radius: 50%;
+  width: 80px;
+  height: 80px;
   border-style: solid;
   border-width: 1px;
+  border-radius: 10px;
   border-color: lightgrey;
 }
 
 img.flag {
   width: 30px;
   height: 30px;
+  cursor: pointer;
+}
+
+img.metric {
+  width: 16px;
+  height: 16px;
+  margin-bottom: -2px;
+  cursor: default;
 }
 
 .avatar {
@@ -27,19 +37,19 @@ img.flag {
   width: 80px;
   height: 80px;
   margin-right: 10px;
-  cursor: default;
 }
 
-.names {
+.title {
   display: block;
-  grid-area: names;
+  grid-area: title;
   width: 100%;
   height: 30px;
   font-family: arial;
   font-weight: bold;
   font-size: 21px;
   text-align: left;
-  color: #555555;
+  padding-left: 5px;
+  color: #6a6a6a;
   cursor: default;
 }
 
@@ -49,21 +59,22 @@ img.flag {
   width: 100%;
   height: 20px;
   font-family: arial;
-  font-size: 16px;
+  font-size: 15px;
   text-align: left;
+  padding-left: 5px;
   color: grey;
   cursor: default;
 }
 
-.kms {
+.distance {
   display: block;
-  grid-area: kms;
-  width: 110px;
+  grid-area: distance;
+  width: 100px;
   height: 20px;
-  font-size: 14px;
+  font-size: 15px;
   font-family: arial;
   text-align: left;
-  padding-top: 5px;
+  padding-left: 5px;
   color: grey;
   cursor: default;
 }
@@ -74,11 +85,11 @@ img.flag {
   width: 110px;
   height: 20px;
   font-family: arial;
-  font-size: 14px;
+  font-size: 15px;
   text-align: left;
+  padding-left: 5px;
   cursor: default;
   color: grey;
-  padding-top: 5px;
 }
 
 .map {
@@ -97,7 +108,7 @@ img.flag {
   height: 30px;
   padding: 10px 5px 10px 5px;
   border-radius: 5px;
-  background-color: grey;
+  background-color: #cad2d3;
   grid-template-columns: auto auto auto auto auto auto auto;
 }
 
@@ -107,9 +118,9 @@ img.flag {
   z-index: 1;
   grid-area: top-container;
   grid-template-areas:
-  'avatar names names names names'
+  'avatar title title title title'
+  'avatar distance distance days days'
   'avatar countries countries countries countries'
-  'avatar kms kms days days'
   'map map map map map'
   'flags flags flags flags flags';
   position: sticky;
