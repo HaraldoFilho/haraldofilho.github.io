@@ -11,7 +11,8 @@
       mobile_url : "nos2viajando.travelmap.net",
     });
   // ]]></script>
-  <script src="locations.js"></script>
+  <script src="cities.js"></script>
+  <script src="parks.js"></script>
   <script src="airports.js"></script>
   <script src="countries_bbox.js"></script>
   <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
@@ -26,19 +27,22 @@
 
     <div class="top-container">
       <div class="avatar">
-        <img class="avatar" src="avatar.jpg"/>
+        <img class="avatar" src="avatar.jpg" title="Haraldo & Raquel" alt="Haraldo & Raquel"/>
       </div>
       <div class="title">
         Nós Dois Viajando
+      </div>
+      <div class="trips">
+        <img class="metric" src="icons/luggage.svg"/> 5 viagens
+      </div>
+      <div class="countries">
+        <img class="metric" src="icons/world.svg"/> 7 países
       </div>
       <div class="distance">
         <img class="metric" src="icons/distance.svg"/> 57.341 km
       </div>
       <div class="days">
         <img class="metric" src="icons/days.svg"/> 58 dias
-      </div>
-      <div class="countries">
-        <img class="metric" src="icons/world.svg"/> 7 países
       </div>
       <div class="map">
         <div id='map' style='width: 300px; height: 150px;'></div>
@@ -55,7 +59,7 @@
 
     </div>
 
-    <div class="middle-container">
+    <div id="lists" class="middle-container">
     </div>
 
     <div class="bottom-container">
@@ -92,31 +96,40 @@
 
   for (var i = 0; i < airports.length; i++) {
 
-    new mapboxgl.Marker({color:'#A0A0A0',scale:0.3,draggable:false})
+    new mapboxgl.Marker({color:'#a0a0a0',scale:0.3,draggable:false})
     .setLngLat(airports[i][0])
-    .setPopup(new mapboxgl.Popup({closeButton:false}).setText(airports[i][1]))
+    .setPopup(new mapboxgl.Popup({closeButton:false}).setText(airports[i][2]))
     .addTo(map);
 
   }
 
-  for (var i = 0; i < locations.length; i++) {
+  for (var i = 0; i < parks.length; i++) {
 
-    new mapboxgl.Marker({scale:0.4,draggable:false})
-    .setLngLat(locations[i][0])
-    .setPopup(new mapboxgl.Popup({closeButton:false}).setText(locations[i][1]))
+    new mapboxgl.Marker({color:'#6cd26c',scale:0.4,draggable:false})
+    .setLngLat(parks[i][0])
+    .setPopup(new mapboxgl.Popup({closeButton:false}).setText(parks[i][2]))
     .addTo(map);
 
-    if (locations[i][0][0] < west) {
-      west = locations[i][0][0];
+  }
+
+  for (var i = 0; i < cities.length; i++) {
+
+    new mapboxgl.Marker({scale:0.4,draggable:false})
+    .setLngLat(cities[i][0])
+    .setPopup(new mapboxgl.Popup({closeButton:false}).setText(cities[i][2]))
+    .addTo(map);
+
+    if (cities[i][0][0] < west) {
+      west = cities[i][0][0];
     }
-    if (locations[i][0][0] > east) {
-      east = locations[i][0][0];
+    if (cities[i][0][0] > east) {
+      east = cities[i][0][0];
     }
-    if (locations[i][0][1] < south) {
-      south = locations[i][0][1];
+    if (cities[i][0][1] < south) {
+      south = cities[i][0][1];
     }
-    if (locations[i][0][1] > north) {
-      north = locations[i][0][1];
+    if (cities[i][0][1] > north) {
+      north = cities[i][0][1];
     }
     initial_bbox = [west, south, east, north];
 
@@ -150,6 +163,11 @@
 
   }
 
+  function getIconSrc(country_code) {
+    return "icons/flags/".concat(countries_bbox[country_code][0]
+      .replace(/\s/g, "-").toLowerCase()).concat(".svg");
+  }
+
   document.getElementById('BR').addEventListener('click', function() { fitRegion('BR') });
   document.getElementById('AR').addEventListener('click', function() { fitRegion('AR') });
   document.getElementById('PY').addEventListener('click', function() { fitRegion('PY') });
@@ -157,6 +175,58 @@
   document.getElementById('IT').addEventListener('click', function() { fitRegion('IT') });
   document.getElementById('VA').addEventListener('click', function() { fitRegion('VA') });
   document.getElementById('HR').addEventListener('click', function() { fitRegion('HR') });
+
+  var lists = document.getElementById('lists');
+
+  var cities_list = document.createElement('DIV');
+  cities_list.setAttribute('class', 'list-title');
+  cities_list.innerText = 'Cidades';
+
+  var parks_list = document.createElement('DIV');
+  parks_list.setAttribute('class', 'list-title');
+  parks_list.setAttribute('style', 'margin-top:25px');
+  parks_list.innerText = 'Parques Nacionais';
+
+  var airports_list = document.createElement('DIV');
+  airports_list.setAttribute('class', 'list-title');
+  airports_list.setAttribute('style', 'margin-top:25px');
+  airports_list.innerText = 'Aeroportos';
+
+  lists.appendChild(cities_list);
+  for (var i = 0; i < cities.length; i++) {
+    var list_item = document.createElement('P');
+    list_item.setAttribute('class', 'list-item');
+    var tiny_flag = document.createElement('IMG');
+    tiny_flag.setAttribute('class', 'tiny_icon');
+    tiny_flag.setAttribute('src', getIconSrc(cities[i][1]));
+    list_item.appendChild(tiny_flag);
+    list_item.append(cities[i][2]);
+    lists.appendChild(list_item);
+  }
+
+  lists.appendChild(parks_list);
+  for (var i = 0; i < parks.length; i++) {
+    var list_item = document.createElement('P');
+    list_item.setAttribute('class', 'list-item');
+    var tiny_flag = document.createElement('IMG');
+    tiny_flag.setAttribute('class', 'tiny_icon');
+    tiny_flag.setAttribute('src', getIconSrc(parks[i][1]));
+    list_item.appendChild(tiny_flag);
+    list_item.append(parks[i][2]);
+    lists.appendChild(list_item);
+  }
+
+  lists.appendChild(airports_list);
+  for (var i = 0; i < airports.length; i++) {
+    var list_item = document.createElement('P');
+    list_item.setAttribute('class', 'list-item');
+    var tiny_flag = document.createElement('IMG');
+    tiny_flag.setAttribute('class', 'tiny_icon');
+    tiny_flag.setAttribute('src', getIconSrc(airports[i][1]));
+    list_item.appendChild(tiny_flag);
+    list_item.append(airports[i][2]);
+    lists.appendChild(list_item);
+  }
 
 </script>
 
