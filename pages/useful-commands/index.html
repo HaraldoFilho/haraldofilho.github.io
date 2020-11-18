@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Useful Commands</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../../img/favicon.ico">
+
+  <style>
+
+  body {
+    background-color: black;
+    font-family: arial;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+    color: #00FF00;
+    margin: 30px;
+  }
+
+  .terminal {
+    font-family: "Lucida Console", Monaco, monospace;
+  }
+
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Useful commands</h1>
+
+  <h3>Fedora</h3>
+
+  <ul>
+    <li>
+      Update grub:<br>
+      <p class="terminal">$ sudo grub2-mkconfig -o /boot/grub2/grub.cfg</p>
+    </li>
+  </ul>
+
+  <h3>Git</h3>
+
+  <ul>
+    <li>
+      Remove a file from the entire commit history:<br>
+      <p class="terminal">$ git filter-branch --tree-filter 'rm -f [file]' -- --all</p>
+    </li>
+  </ul>
+
+
+  <!-- Default Statcounter code for dev website
+  https://haraldofilho.github.io/ -->
+  <script type="text/javascript">
+  var sc_project=12350653;
+  var sc_invisible=1;
+  var sc_security="04eece67";
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js"
+  async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+  href="https://statcounter.com/" target="_blank"><img
+  class="statcounter"
+  src="https://c.statcounter.com/12350653/0/04eece67/1/"
+  alt="Web Analytics"></a></div></noscript>
+  <!-- End of Statcounter Code -->
+
+</body>
+</html>
