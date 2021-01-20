@@ -119,6 +119,15 @@ a:hover {
   box-shadow: 5px 5px 5px #f0f0f0;
 }
 
+.Graph-attribution {
+  grid-area: Graph-attribution;
+  position: relative;
+  font-size: 8px;
+  width: 100px;
+  left: 505px;
+  bottom: 25px;
+}
+
 
 /* Style of the Certifications and Courses cards */
 
