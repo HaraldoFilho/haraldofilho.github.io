@@ -19,6 +19,8 @@
 
 <body>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
   <div class="grid-container-1">
 
     <div class="LI-profile-badge"
@@ -45,10 +47,9 @@
           </a>
         </p><br>
         <p style="font-size:8px;">
-          <a href="https://sistemas.dac.unicamp.br/siga/nucleo/validar_autenticidade.xhtml"
-            title="Verify the authenticity inserting this code" target="_blank">
-            68F40B77 FA773752 93298593 4737115B EFE62562
-          </a>
+          <a id= "code_unicamp" href="https://dac.unicamp.br"
+            title="Verify the authenticity inserting this code (page in portuguese)" target="_blank">68F40B77 FA773752 93298593 4737115B EFE62562</a>
+          <input type="image" class="content-copy" src="img/content_copy.svg" onclick="copyToClipboard('#code_unicamp')"/>
         </p>
       </div>
     </div>
@@ -59,15 +60,11 @@
           <img class="atc-cert-dev" src="img/logo-atc_cert_eng.jpg"/></a>
       </div>
       <div class="ATC-id">
-        <a href="https://www.androidatc.com/_transcript.php"
-          title="Verify the authenticity inserting this ID" target="_blank">
-          ATC1001510
-        </a>
-        <span style="display:inline-block;width:148px;"></span>
-        <a href="https://mohb.dev"
-          title="View my apps website" target="_blank">
-          mohb.dev
-        </a>
+        <a id="id_atc" href="ATC1001510https://www.androidatc.com/_transcript.php"
+          title="Verify the authenticity inserting this ID" target="_blank">ATC1001510</a>
+        <input type="image"  class="content-copy" src="img/content_copy.svg" onclick="copyToClipboard('#id_atc')"/>
+        <span style="display:inline-block;width:132px;"></span>
+        <a href="https://mohb.dev" title="View my apps website" target="_blank">mohb.dev</a>
       </div>
     </div>
 
@@ -161,6 +158,16 @@
     </div>
 
   </div>
+
+  <script>
+  function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+  }
+  </script>
 
 
   <!-- Default Statcounter code for dev website
