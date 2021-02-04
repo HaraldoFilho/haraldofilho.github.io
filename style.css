@@ -61,6 +61,22 @@ a:hover {
   box-shadow: 6px 6px 6px #f1f1f1;
 }
 
+.LI-profile-badge-over {
+  position: relative;
+  grid-area: LI-profile-badge;
+  background-color: white;
+  width: 330px;
+  height: 40px;
+  border: 1px solid #e3e3e3;
+  border-top-style: none;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-radius: 3px;
+  margin-top: 220px;
+  margin-left: -1px;
+}
+
 
 /* Style of the Education card */
 
