@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="24"
+   height="21"
+   viewBox="0 0 24 21"
+   version="1.1"
+   id="svg11"
+   sodipodi:docname="certificate.svg"
+   inkscape:version="0.92.1 r15371">
+  <metadata
+     id="metadata15">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1191"
+     inkscape:window-height="684"
+     id="namedview13"
+     showgrid="false"
+     inkscape:zoom="7.375"
+     inkscape:cx="-13.016949"
+     inkscape:cy="11"
+     inkscape:window-x="385"
+     inkscape:window-y="169"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg11" />
+  <!-- Generator: Sketch 3.0.3 (7891) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title2">icon 138 certificate</title>
+  <desc
+     id="desc4">Created with Sketch.</desc>
+  <defs
+     id="defs6" />
+  <g
+     id="Page-1"
+     sketch:type="MSPage"
+     style="fill:#333333;fill-rule:evenodd;stroke:none;stroke-width:1"
+     transform="translate(-4,-6)">
+    <g
+       id="icon-138-certificate"
+       sketch:type="MSArtboardGroup"
+       style="fill:#333333">
+      <path
+         d="M 13,19.949491 V 22 H 25.997538 C 26.551183,22 27,21.55108 27,20.992516 V 8.007484 C 27,7.4510659 26.560542,7 25.997538,7 H 6.0024617 C 5.4488174,7 5,7.4489202 5,8.007484 V 20.992516 C 5,21.548934 5.4394583,22 6.0024617,22 H 8 V 19.949491 C 7.3814065,19.318223 7,18.453653 7,17.5 7,15.567003 8.5670033,14 10.5,14 c 1.932997,0 3.5,1.567003 3.5,3.5 0,0.953653 -0.381407,1.818223 -1,2.449491 z m -4,0.713693 v 3.936792 l 1.5,-1.49997 1.5,1.49997 V 20.663184 C 11.545372,20.879154 11.036799,21 10.5,21 9.9632013,21 9.4546277,20.879154 9,20.663184 Z M 8,23 H 6.0049466 C 4.8970262,23 4,22.104522 4,20.999894 V 8.0001062 C 4,6.8900584 4.8976452,6 6.0049466,6 H 25.995053 C 27.102974,6 28,6.895478 28,8.0001062 V 20.999894 C 28,22.109942 27.102355,23 25.995053,23 H 13 v 4 L 10.5,24.5 8,27 Z M 7,11 v 1 h 18 v -1 z m 9,3 v 1 h 9 v -1 z m 3,3 v 1 h 6 v -1 z m -8.5,3 C 11.880712,20 13,18.880712 13,17.5 13,16.119288 11.880712,15 10.5,15 9.1192881,15 8,16.119288 8,17.5 8,18.880712 9.1192881,20 10.5,20 Z"
+         id="certificate"
+         sketch:type="MSShapeGroup"
+         inkscape:connector-curvature="0"
+         style="fill:#333333" />
+    </g>
+  </g>
+</svg>
