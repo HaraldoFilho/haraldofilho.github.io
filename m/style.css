@@ -3,353 +3,158 @@
 
 body {
   font-family: arial;
-  font-size: 24px;
-  color: #737373;
-  background-color: #fafafa;
-}
-
-
-/* Style of the images */
-
-img.github-logo {
-  width: 200px;
-  height: auto;
-}
-
-img.atc-cert-dev {
-  width: 100%;
-  margin: auto;
-}
-
-img.social-icon {
-  width: auto;
-  height: 80px;
-}
-
-
-/* Style of the links */
-
-a:link {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:visited {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #006fa6;
-  text-decoration: none;
-}
-
-
-/* Sytle of the LinkedIn card */
-
-.LI-profile-badge {
-  display: block;
-  background-color: #ffffff;
-  width: 329px;
-  height: 244px;
-  transform: scale(2.6);
-  margin-top: 260px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 240px;
-  padding-right: 1px;
-}
-
-/* Style of the GitHub languages graph card */
-
-.GitHub {
-  display: block;
-  width: 600px;
-  height: 600px;
-  margin-top: 80px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 260px;
-  padding-right: 5px;
-}
-
-.GitHub-Logo {
-  position: relative;
-  z-index: 1;
-  left: -80px;
-  top: 0px;
-}
-
-.Languages {
-  display: block;
-  width: 600px;
-  height: 600px;
-  transform: scale(1.43);
-  background-color: #ffffff;
-  border: 2px solid #e3e3e3;
-  border-radius: 4px;
-}
-
-/* Style of the Education card */
-
-.Education {
-  display: block;
-  width: 860px;
-  line-height: 0.6;
-  background-color: #ffffff;
-  border: 3px solid #e3e3e3;
-  border-radius: 7px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 40px;
-}
-
-.degree {
-  font-family: arial;
-  font-size: 64px;
-  color: #4c4c4c;
-  margin: 60px;
-}
-
-
-/* Style of the Android Certified Developer card */
-
-.Certification {
-  grid-area: ATC-certified-developer;
-  display: block;
-  width: 860px;
-  justify-content: center;
-  background-color: #ffffff;
-  border: 3px solid #e3e3e3;
-  border-radius: 7px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 40px;
-  padding-bottom: 90px;
-}
-
-.ATC-logo {
-  margin: 60px 60px 10px 60px;
-}
-
-.ATC-id {
-  float: left;
-  font-size: 30px;
-  margin: 0px 0px 0px 60px;
-}
-
-
-/* Style of the Certifications and Courses cards */
-
-.Certifications {
-  display: block;
-  width: 740px;
-  background-color: #ffffff;
-  border: 3px solid #e3e3e3;
-  border-radius: 7px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 40px;
-  padding: 20px 60px 60px 60px;
-}
-
-p.certification {
-  font-size: 16px;
-  line-height: 1.4;
-  margin-top: 8px;
-}
-
-.Courses {
-  display: block;
-  width: 740px;
-  background-color: #ffffff;
-  border: 3px solid #e3e3e3;
-  border-radius: 7px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 56px;
-  padding: 20px 60px 60px 60px;
-}
-
-.title {
-  font-size: 48px;
-  font-weight: bold;
-  color: #4c4c4c;
-  border-style: none none solid none;
-  border-color: #efefef;
-  border-width: thin;
-  margin: 40px 0px 20px 0px;
-  padding-bottom: 14px;
-}
-
-p.school {
-  font-size: 38px;
-  font-weight: bold;
-  color: #636363;
-  padding-top: 5px;
-  margin: 40px 60px -5px 0px;
-}
-
-/* Default font and background color of the page */
-
-body {
-  font-family: arial;
-  font-size: 20px;
-  color: #737373;
-  background-color: #fafafa;
-}
-
-
-/* Style of the images */
-
-img.github-logo {
-  width: 200px;
-  height: auto;
-}
-
-img.atc-cert-dev {
-  width: 100%;
-  margin: auto;
-}
-
-img.social-icon {
-  width: auto;
-  height: 80px;
-}
-
-img.certificate {
-  height: 28px;
-  margin-bottom: -4px;
-}
-
-/* Style of the links */
-
-a:link {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:visited {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #006fa6;
-  text-decoration: none;
-}
-
-
-/* Sytle of the LinkedIn card */
-
-.LI-profile-badge {
-  display: block;
-  background-color: #ffffff;
-  width: 329px;
-  height: 244px;
-  transform: scale(2.6);
-  margin-top: 260px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 240px;
-  padding-right: 1px;
-}
-
-/* Style of the GitHub languages graph card */
-
-.GitHub {
-  display: block;
-  width: 600px;
-  height: 600px;
-  margin-top: 80px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 260px;
-  padding-right: 5px;
-}
-
-.GitHub-Logo {
-  position: relative;
-  z-index: 1;
-  left: -80px;
-  top: 0px;
-}
-
-.Languages {
-  display: block;
-  width: 600px;
-  height: 600px;
-  transform: scale(1.43);
-  background-color: #ffffff;
-  border: 2px solid #e3e3e3;
-  border-radius: 4px;
-}
-
-/* Style of the Education card */
-
-.Education {
-  display: block;
-  width: 860px;
-  line-height: 0.6;
-  background-color: #ffffff;
-  border: 3px solid #e3e3e3;
-  border-radius: 7px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 40px;
-}
-
-.degree {
-  font-family: arial;
-  font-size: 64px;
-  color: #4c4c4c;
-  margin: 60px;
-}
-
-
-/* Style of the Android Certified Developer card */
-
-.Certification {
-  grid-area: ATC-certified-developer;
-  display: block;
-  width: 860px;
-  justify-content: center;
-  background-color: #ffffff;
-  border: 3px solid #e3e3e3;
-  border-radius: 7px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 40px;
-  padding-bottom: 90px;
-}
-
-.ATC-logo {
-  margin: 60px 60px 10px 60px;
-}
-
-.ATC-id {
-  float: left;
-  font-size: 30px;
-  margin: 0px 0px 0px 60px;
-}
-
-
-/* Style of the Certifications and Courses cards */
-
-.Certifications {
-  display: block;
-  width: 740px;
-  background-color: #ffffff;
-  border: 3px solid #e3e3e3;
-  border-radius: 7px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 40px;
-  padding: 20px 60px 60px 60px;
-}
-
-p.certification {
   font-size: 18px;
+  color: #737373;
+  background-color: #fafafa;
+}
+
+
+/* Style of the images */
+
+img.github-logo {
+  width: 200px;
+  height: auto;
+}
+
+img.atc-cert-dev {
+  width: 100%;
+  margin: auto;
+}
+
+img.social-icon {
+  width: auto;
+  height: 80px;
+}
+
+
+/* Style of the links */
+
+a:link {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #006fa6;
+  text-decoration: none;
+}
+
+
+/* Sytle of the LinkedIn card */
+
+.LI-profile-badge {
+  display: block;
+  background-color: #ffffff;
+  width: 329px;
+  height: 244px;
+  transform: scale(2.6);
+  margin-top: 260px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 240px;
+  padding-right: 1px;
+}
+
+/* Style of the GitHub languages graph card */
+
+.GitHub {
+  display: block;
+  width: 600px;
+  height: 600px;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 260px;
+  padding-right: 5px;
+}
+
+.GitHub-Logo {
+  position: relative;
+  z-index: 1;
+  left: -80px;
+  top: 0px;
+}
+
+.Languages {
+  display: block;
+  width: 600px;
+  height: 600px;
+  transform: scale(1.43);
+  background-color: #ffffff;
+  border: 2px solid #e3e3e3;
+  border-radius: 4px;
+}
+
+/* Style of the Education card */
+
+.Education {
+  display: block;
+  width: 860px;
+  line-height: 0.6;
+  background-color: #ffffff;
+  border: 3px solid #e3e3e3;
+  border-radius: 7px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+.degree {
+  font-family: arial;
+  font-size: 64px;
+  color: #4c4c4c;
+  margin: 60px;
+}
+
+
+/* Style of the Android Certified Developer card */
+
+.Certification {
+  grid-area: ATC-certified-developer;
+  display: block;
+  width: 860px;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 3px solid #e3e3e3;
+  border-radius: 7px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  padding-bottom: 90px;
+}
+
+.ATC-logo {
+  margin: 60px 60px 10px 60px;
+}
+
+.ATC-id {
+  float: left;
+  font-size: 30px;
+  margin: 0px 0px 0px 60px;
+}
+
+
+/* Style of the Certifications and Courses cards */
+
+.Certifications {
+  display: block;
+  width: 740px;
+  background-color: #ffffff;
+  border: 3px solid #e3e3e3;
+  border-radius: 7px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  padding: 20px 60px 60px 60px;
+}
+
+p.certification {
+  font-size: 14px;
   line-height: 1.4;
   margin-top: 8px;
 }
@@ -367,7 +172,7 @@ p.certification {
 }
 
 .title {
-  font-size: 64px;
+  font-size: 42px;
   font-weight: bold;
   color: #4c4c4c;
   border-style: none none solid none;
@@ -378,7 +183,7 @@ p.certification {
 }
 
 p.school {
-  font-size: 42px;
+  font-size: 32px;
   font-weight: bold;
   color: #636363;
   padding-top: 5px;
