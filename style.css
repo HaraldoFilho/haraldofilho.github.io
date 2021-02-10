@@ -26,6 +26,11 @@ img.social-icon {
   margin-right: 5px;
 }
 
+img.certificate {
+  height: 16px;
+  margin-bottom: -4px;
+}
+
 .content-copy {
   height: 9px;
   width: 9px;

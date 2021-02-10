@@ -154,7 +154,7 @@ a:hover {
 }
 
 p.certification {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.4;
   margin-top: 8px;
 }
@@ -172,7 +172,7 @@ p.certification {
 }
 
 .title {
-  font-size: 64px;
+  font-size: 56px;
   font-weight: bold;
   color: #4c4c4c;
   border-style: none none solid none;
@@ -183,12 +183,13 @@ p.certification {
 }
 
 p.school {
-  font-size: 42px;
+  font-size: 38px;
   font-weight: bold;
   color: #636363;
   padding-top: 5px;
   margin: 40px 60px -5px 0px;
 }
+
 /* Default font and background color of the page */
 
 body {
@@ -216,6 +217,10 @@ img.social-icon {
   height: 80px;
 }
 
+img.certificate {
+  height: 24px;
+  margin-bottom: -6px;
+}
 
 /* Style of the links */
 
