@@ -172,7 +172,7 @@ p.certification {
 }
 
 .title {
-  font-size: 56px;
+  font-size: 48px;
   font-weight: bold;
   color: #4c4c4c;
   border-style: none none solid none;
@@ -194,7 +194,7 @@ p.school {
 
 body {
   font-family: arial;
-  font-size: 24px;
+  font-size: 20px;
   color: #737373;
   background-color: #fafafa;
 }
@@ -218,8 +218,8 @@ img.social-icon {
 }
 
 img.certificate {
-  height: 24px;
-  margin-bottom: -6px;
+  height: 28px;
+  margin-bottom: -4px;
 }
 
 /* Style of the links */
