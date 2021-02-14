@@ -41,8 +41,22 @@
 
   <ul>
     <li>
+      Change the git author identity:<br>
+      <p class="terminal">$ git config user.name "author_name"</p>
+      <p class="terminal">$ git config user.email "author_email"</p>
+      <p class="terminal" style="font-size:14px">or to change for all the users:</p>
+      <p class="terminal">$ git config --global user.name "author_name"</p>
+      <p class="terminal">$ git config --global user.email "author_email"</p>
+    </li>
+    <li>
       Remove a file from the entire commit history:<br>
       <p class="terminal">$ git filter-branch --tree-filter 'rm -f [file]' -- --all</p>
+    </li>
+    <li>
+      Change the author in the entire commit history:<br>
+      <p class="terminal">$ git filter-branch -f --env-filter "GIT_AUTHOR_NAME='new_name'; GIT_AUTHOR_EMAIL='new_email'; \<br>&nbsp&nbspGIT_COMMITTER_NAME='new_name'; GIT_COMMITTER_EMAIL='new_email';" HEAD;</p>
+      <p class="terminal">$ git log  &nbsp&nbsp# to check the changes</p>
+      <p class="terminal">$ git push --force origin master</p>
     </li>
   </ul>
 
