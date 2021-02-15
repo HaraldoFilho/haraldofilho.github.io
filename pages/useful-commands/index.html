@@ -28,6 +28,8 @@
 
   <h1>Useful commands</h1>
 
+  <br>
+
   <h3>Fedora</h3>
 
   <ul>
@@ -36,6 +38,8 @@
       <p class="terminal">$ sudo grub2-mkconfig -o /boot/grub2/grub.cfg</p>
     </li>
   </ul>
+
+  <br>
 
   <h3>Git</h3>
 
@@ -48,17 +52,32 @@
       <p class="terminal">$ git config --global user.name "author_name"</p>
       <p class="terminal">$ git config --global user.email "author_email"</p>
     </li>
+    <br>
     <li>
       Remove a file from the entire commit history:<br>
       <p class="terminal">$ git filter-branch --tree-filter 'rm -f [file]' -- --all</p>
     </li>
+    <br>
     <li>
       Change the author in the entire commit history:<br>
       <p class="terminal">$ git filter-branch -f --env-filter "GIT_AUTHOR_NAME='new_name'; GIT_AUTHOR_EMAIL='new_email'; \<br>&nbsp&nbspGIT_COMMITTER_NAME='new_name'; GIT_COMMITTER_EMAIL='new_email';" HEAD;</p>
       <p class="terminal">$ git log  &nbsp&nbsp# to check the changes</p>
       <p class="terminal">$ git push --force origin master</p>
     </li>
+    <br>
+    <li>
+      Change the author on selected commits:<br>
+      <p class="terminal">$ git rebase -i start_commit</p>
+      <p class="terminal" style="font-size:14px">iteratively:</p>
+      <p class="terminal">$ git commit --amend --author="new_name &lt;new_email&gt;"</p>
+      <p class="terminal">$ git rebase --continue</p>
+      <p class="terminal" style="font-size:14px">when finished:</p>
+      <p class="terminal">$ git log  &nbsp&nbsp# to check the changes</p>
+      <p class="terminal">$ git push --force origin master</p>
+    </li>
   </ul>
+
+  <br>
 
   <h3>Anaconda</h3>
 
@@ -68,15 +87,19 @@
       <p class="terminal">$ conda install -c anaconda ipykernel</p>
       <p class="terminal">$ python -m ipykernel install --user --name=[environment]</p>
     </li>
+    <br>
     <li>
       Remove kernel from Jupyter Notebook:<br>
       <p class="terminal">$ jupyter kernelspec uninstall [kernel]</p>
     </li>
+    <br>
     <li>
       List all kernels:
       <p class="terminal">$ jupyter kernelspec list </p>
     </li>
   </ul>
+
+  <br>
 
   <h3>Tar</h3>
 
@@ -85,6 +108,7 @@
       Archive and compress a directory to a file:<br>
       <p class="terminal">$ tar -czf file_name.tar.gz dir_name</p>
     </li>
+    <br>
     <li>
       Extract a file:<br>
       <p class="terminal">$ tar -xzf file_name.tar.gz</p>
