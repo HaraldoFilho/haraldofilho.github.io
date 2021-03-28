@@ -195,10 +195,19 @@ p.certification {
 }
 
 p.school {
-  font-size: 19px;
+  font-size: 20px;
   font-weight: bold;
   color: #636363;
   padding-top: 5px;
+  margin-bottom: -5px;
+}
+
+p.institution {
+  font-size: 17px;
+  font-weight: bold;
+  color: #636363;
+  padding-top: 5px;
+  padding-left: 10px;
   margin-bottom: -5px;
 }
 
