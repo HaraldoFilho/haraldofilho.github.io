@@ -159,28 +159,30 @@ a:hover {
 
 .Certifications {
   grid-area: Certifications;
-  width: 415px;
+  width: 405px;
+  font-size: 16px;
   background-color: #ffffff;
   border: 1px solid #e3e3e3;
   border-radius: 3px;
   box-shadow: 5px 5px 5px #f0f0f0;
-  padding: 20px 25px 20px 25px;
+  padding: 25px 30px 25px 30px;
 }
 
 p.certification {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.4;
   margin-top: 4px;
 }
 
 .Courses {
   grid-area: Courses;
-  width: 415px;
+  width: 405px;
+  font-size: 15px;
   background-color: #ffffff;
   border: 1px solid #e3e3e3;
   border-radius: 3px;
   box-shadow: 5px 5px 5px #f0f0f0;
-  padding: 20px 25px 20px 25px;
+  padding: 25px 30px 25px 30px;
 }
 
 .title {
@@ -195,7 +197,7 @@ p.certification {
 }
 
 p.school {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   color: #636363;
   padding-top: 5px;
@@ -203,7 +205,7 @@ p.school {
 }
 
 p.institution {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
   color: #636363;
   padding-top: 5px;
