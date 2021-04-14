@@ -60,9 +60,11 @@ a:hover {
 .LI-profile-badge {
   grid-area: LI-profile-badge;
   background-color: #ffffff;
-  width: 329px;
+  width: 330px;
   height: 261px;
-  box-shadow: 6px 6px 6px #f1f1f1;
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
+  box-shadow: 5px 5px 5px #f0f0f0;
 }
 
 
