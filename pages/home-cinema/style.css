@@ -50,6 +50,13 @@ a:hover {
   padding-right: 20px;
 }
 
+.screen {
+  grid-area: screen;
+  width: 550px;
+  text-align: left;
+  padding-right: 20px;
+}
+
 .av_tech {
   grid-area: av_tech;
   width: 300px;
@@ -83,6 +90,18 @@ a:hover {
 }
 
 .room-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: lightgrey;
+  border-style: none none solid none;
+  border-color: lightgrey;
+  border-width: thin;
+  margin-bottom: 23px;
+  padding-bottom: 5px;
+  text-align: left;
+}
+
+.screen-title {
   font-size: 20px;
   font-weight: bold;
   color: lightgrey;
@@ -160,6 +179,7 @@ a:hover {
   'title title'
   'photos photos'
   'room av_tech'
+  'screen av_tech'
   'gear media'
   'decor stuff';
   justify-content: center;
