@@ -77,6 +77,12 @@ a:hover {
   padding-right: 20px;
 }
 
+.streaming {
+  grid-area: streaming;
+  width: 300px;
+  text-align: left;
+}
+
 .media {
   grid-area: media;
   width: 300px;
@@ -161,6 +167,18 @@ a:hover {
   text-align: left;
 }
 
+.streaming-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: lightgrey;
+  border-style: none none solid none;
+  border-color: lightgrey;
+  border-width: thin;
+  margin-bottom: 23px;
+  padding-bottom: 5px;
+  text-align: left;
+}
+
 .media-title {
   font-size: 20px;
   font-weight: bold;
@@ -180,6 +198,7 @@ a:hover {
   'photos photos'
   'room av_tech'
   'screen av_tech'
+  'gear streaming'
   'gear media'
   'decor stuff';
   justify-content: center;
