@@ -21,7 +21,7 @@ a:hover {
   text-decoration: none;
 }
 
-.title {
+.page-title {
   grid-area: title;
   font-size: 40px;
   font-weight: bold;
@@ -95,91 +95,7 @@ a:hover {
   text-align: left;
 }
 
-.room-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: lightgrey;
-  border-style: none none solid none;
-  border-color: lightgrey;
-  border-width: thin;
-  margin-bottom: 23px;
-  padding-bottom: 5px;
-  text-align: left;
-}
-
-.screen-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: lightgrey;
-  border-style: none none solid none;
-  border-color: lightgrey;
-  border-width: thin;
-  margin-bottom: 23px;
-  padding-bottom: 5px;
-  text-align: left;
-}
-
-.av_tech-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: lightgrey;
-  border-style: none none solid none;
-  border-color: lightgrey;
-  border-width: thin;
-  margin-bottom: 23px;
-  padding-bottom: 5px;
-  text-align: left;
-}
-
-.gear-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: lightgrey;
-  border-style: none none solid none;
-  border-color: lightgrey;
-  border-width: thin;
-  margin-bottom: 23px;
-  padding-bottom: 5px;
-  text-align: left;
-}
-
-.decor-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: lightgrey;
-  border-style: none none solid none;
-  border-color: lightgrey;
-  border-width: thin;
-  margin-bottom: 23px;
-  padding-bottom: 5px;
-  text-align: left;
-}
-
-.stuff-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: lightgrey;
-  border-style: none none solid none;
-  border-color: lightgrey;
-  border-width: thin;
-  margin-bottom: 23px;
-  padding-bottom: 5px;
-  text-align: left;
-}
-
-.streaming-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: lightgrey;
-  border-style: none none solid none;
-  border-color: lightgrey;
-  border-width: thin;
-  margin-bottom: 23px;
-  padding-bottom: 5px;
-  text-align: left;
-}
-
-.media-title {
+.title {
   font-size: 20px;
   font-weight: bold;
   color: lightgrey;
