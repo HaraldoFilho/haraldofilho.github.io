@@ -33,8 +33,16 @@ a:hover {
   text-align: left;
 }
 
+.location {
+  grid-area: location;
+  font-weight: bold;
+  margin-top: -40px;
+  text-align: right;
+}
+
 .photos {
   grid-area: photos;
+  margin-top: -30px;
 }
 
 .photos-grid {
@@ -111,6 +119,7 @@ a:hover {
   display: grid;
   grid-template-areas:
   'title title'
+  'location location'
   'photos photos'
   'room av_tech'
   'screen av_tech'
