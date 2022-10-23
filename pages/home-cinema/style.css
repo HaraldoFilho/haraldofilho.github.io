@@ -103,6 +103,17 @@ a:hover {
   text-align: left;
 }
 
+.films {
+  grid-area: films;
+}
+
+.films-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+  column-gap: 7px;
+  margin-bottom: 50px;
+}
+
 .title {
   font-size: 20px;
   font-weight: bold;
@@ -125,7 +136,8 @@ a:hover {
   'screen av_tech'
   'gear streaming'
   'gear media'
-  'decor stuff';
+  'decor stuff'
+  'films films';
   justify-content: center;
   width: 100%;
   grid-gap: 50px;
