@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
   <link rel="stylesheet" type="text/css" href="style.css" />
+
+  <script src="data/films.js"></script>
+
   <!-- Mobile redirect script by https://www.pagecrafter.com -->
   <script type="text/javascript" src="../../../js/redirection-mobile.js"></script>
   <script type="text/javascript">// <![CDATA[
@@ -229,22 +232,34 @@
       </div>
 
       <div class="films">
-        <div class="title" style="">Latest Watched Films</div>
-        <div class="films-grid">
-          <div><a href="https://letterboxd.com/hpfilho/film/free-guy/" target="_blank"><img src="https://a.ltrbxd.com/resized/film-poster/4/7/9/8/1/4/479814-free-guy-0-600-0-900-crop.jpg?v=0cd7303445" width="85"></a></div>
-          <div><a href="https://letterboxd.com/hpfilho/film/the-last-duel-2021/" target="_blank"><img src="https://a.ltrbxd.com/resized/film-poster/5/4/4/3/8/0/544380-the-last-duel-0-600-0-900-crop.jpg?v=b3cf1ae7a1" width="85"></a></div>
-          <div><a href="https://letterboxd.com/hpfilho/film/upstream-color" target="_blank"><img src="https://a.ltrbxd.com/resized/sm/upload/gp/ky/a2/x2/ckbUVwa9r7h348upwiRvjpl4sQp-0-600-0-900-crop.jpg?v=c08832ee85" width="85"></a></div>
-          <div><a href="https://letterboxd.com/hpfilho/film/drive-my-car/" target="_blank"><img src="https://a.ltrbxd.com/resized/film-poster/6/7/9/2/9/1/679291-drive-my-car-0-600-0-900-crop.jpg?v=9e1f7c9f35" width="85"></a></div>
-          <div><a href="https://letterboxd.com/hpfilho/film/maelstrom/" target="_blank"><img src="https://a.ltrbxd.com/resized/film-poster/2/8/5/1/2/28512-maelstrom-0-600-0-900-crop.jpg?v=bbbd2f69ec" width="85"></a></div>
-          <div><a href="https://letterboxd.com/hpfilho/film/crimes-of-the-future-2022/" target="_blank"><img src="https://a.ltrbxd.com/resized/film-poster/7/3/6/3/1/8/736318-crimes-of-the-future-0-600-0-900-crop.jpg?v=ae8a4b1603" width="85"></a></div>
-          <div><a href="https://letterboxd.com/hpfilho/film/the-worlds-end/" target="_blank"><img src="https://a.ltrbxd.com/resized/film-poster/8/6/9/9/1/86991-the-world-s-end-0-600-0-900-crop.jpg?v=48a7252f0d" width="85"></a></div>
-          <div><a href="https://letterboxd.com/hpfilho/film/everything-everywhere-all-at-once/" target="_blank"><img src="https://a.ltrbxd.com/resized/film-poster/4/7/4/4/7/4/474474-everything-everywhere-all-at-once-0-600-0-900-crop.jpg?v=281f1a041e" width="85"></a></div>
-          <div><a href="https://letterboxd.com/hpfilho/film/top-gun/" target="_blank"><img src="https://a.ltrbxd.com/resized/sm/upload/e9/dh/nn/5w/fKSZl8ONN7DQh5ujgdObRIFmhiZ-0-600-0-900-crop.jpg?v=042d149015" width="85"></a></div>
-          <div><a href="https://letterboxd.com/hpfilho/film/prey-2022/" target="_blank"><img src="https://a.ltrbxd.com/resized/film-poster/6/8/6/3/8/9/686389-prey-0-600-0-900-crop.jpg?v=f9f0c6bb6e" width="85"></a></div>
-        </div>
+        <div class="title" style="">NOW SHOWING</div>
+        <div class="films-grid" id="film-posters"></div>
       </div>
 
     </div>
+
+    <script>
+
+      var film_posters = document.getElementById('film-posters');
+
+      for (var i = 0; i < films.length; i++) {
+        var url = films[i][0];
+        var img = films[i][1];
+        console.log(url);
+        console.log(img);
+        var film = document.createElement('DIV');
+        var link = document.createElement('A');
+        link.setAttribute('href', url);
+        link.setAttribute('target', '_blank');
+        var poster = document.createElement('IMG');
+        poster.setAttribute('src', img);
+        poster.setAttribute('width', '85');
+        link.appendChild(poster);
+        film.appendChild(link);
+        film_posters.append(film);
+      }
+
+    </script>
 
 
     <!-- Default Statcounter code for dev website
