@@ -44,6 +44,7 @@ a:hover {
   grid-area: last-watched;
   font-weight: normal;
   font-size: 10px;
+  color: grey;
   margin-top: -40px;
   text-align: center;
 }
