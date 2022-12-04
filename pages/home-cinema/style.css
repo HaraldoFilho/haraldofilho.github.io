@@ -151,3 +151,72 @@ a:hover {
   width: 100%;
   grid-gap: 50px;
 }
+
+
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(9,9,9);
+  background-color: rgba(9,9,9, 0.95);
+  overflow-y: scroll;
+  transition: 0s;
+  cursor: normal;
+}
+
+.overlay-content {
+  position: relative;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+}
+
+.overlay::-webkit-scrollbar {
+  display: none;
+}
+
+.overlay-grid-container {
+  display: grid;
+  grid-template-areas:
+  'arr_back photo arr_forward'
+  'close close close';
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  grid-gap: 50px;
+}
+
+.photo_thumb {
+  width: 180px;
+  cursor: pointer;
+}
+
+.icon {
+  justify-content: center;
+  width: 40px;
+  cursor: pointer;
+}
+
+.photo {
+  grid-area: photo;
+  justify-content: center;
+  width: 960px;
+}
+
+.arr_back {
+  grid-area: arr_back;
+  justify-content: center;
+}
+
+.arr_forward {
+  grid-area: arr_forward;
+  justify-content: center;
+}
+
+.close {
+  grid-area: close;
+  justify-content: center;
+}
