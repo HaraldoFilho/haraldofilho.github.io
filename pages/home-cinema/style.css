@@ -23,21 +23,15 @@ a:hover {
 
 .page-title {
   grid-area: title;
-  font-size: 40px;
+  font-size: 50px;
   font-weight: bold;
   color: lightgrey;
   border-style: none none solid none;
   border-color: lightgrey;
   border-width: thin;
   padding-bottom: 5px;
+  margin-top: 30px;
   text-align: left;
-}
-
-.location {
-  grid-area: location;
-  font-weight: bold;
-  margin-top: -40px;
-  text-align: right;
 }
 
 .last-watched {
@@ -51,13 +45,22 @@ a:hover {
 
 .photos {
   grid-area: photos;
-  margin-top: -30px;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 
 .photos-grid {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   column-gap: 5px;
+}
+
+.description {
+  grid-area: description;
+  margin-top: -30px;
+  width: 920px;
+  line-height: 25px;
+  text-align: justify;
 }
 
 .room {
@@ -116,11 +119,24 @@ a:hover {
   grid-area: films;
 }
 
-.films-grid {
+.film-posters {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
   column-gap: 7px;
-  margin-bottom: 50px;
+}
+
+.film-ratings {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+  column-gap: 7px;
+  margin-bottom: 62px;
+}
+
+.rating {
+  width: 85px;
+  font-size: 12px;
+  color: grey;
+  text-align: center;
 }
 
 .title {
@@ -139,8 +155,8 @@ a:hover {
   display: grid;
   grid-template-areas:
   'title title'
-  'location location'
   'photos photos'
+  'description description'
   'room av_tech'
   'screen av_tech'
   'gear streaming'
