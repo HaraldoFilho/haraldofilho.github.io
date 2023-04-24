@@ -126,7 +126,9 @@ while (my $line = <WATCHED>) {
     }
 }
 
-print COLLECTION_DATA "  [\'Watched BDs\', $count, \'$url\', \'watched\'],\n";
+$url = $url.'detail/';
+
+print COLLECTION_DATA "  [\'Watched (BDs)\', $count, \'$url\', \'watched\'],\n";
 
 print COLLECTION_DATA "]\n";
 
@@ -187,3 +189,4 @@ print FILMS_DATA "]\n";
 close(RSS);
 close(DIARY);
 close(FILMS_DATA);
+

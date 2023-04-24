@@ -6,5 +6,5 @@ var collection = [
   ['BD/DVD', 53, 'https://letterboxd.com/hpfilho/list/blu-ray-dvd/', 'disc'],
   ['Dolby Atmos', 14, 'https://letterboxd.com/hpfilho/list/dolby-atmos/', 'audio'],
   ['DTS X', 5, 'https://letterboxd.com/hpfilho/list/dts-x/', 'audio'],
-  ['Watched BDs', 6, 'https://letterboxd.com/hpfilho/list/watched-in-my-home-cinema/', 'watched'],
+  ['Watched (BDs)', 6, 'https://letterboxd.com/hpfilho/list/watched-in-my-home-cinema/detail/', 'watched'],
 ]

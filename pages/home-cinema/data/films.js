@@ -27,5 +27,4 @@ var films = [
   ['https://letterboxd.com/hpfilho/film/the-last-duel-2021/', 'https://a.ltrbxd.com/resized/film-poster/5/4/4/3/8/0/544380-the-last-duel-0-600-0-900-crop.jpg?v=b3cf1ae7a1', '★★★★'],
   ['https://letterboxd.com/hpfilho/film/upstream-color/', 'https://a.ltrbxd.com/resized/sm/upload/gp/ky/a2/x2/ckbUVwa9r7h348upwiRvjpl4sQp-0-600-0-900-crop.jpg?v=c08832ee85', '★★★½'],
   ['https://letterboxd.com/hpfilho/film/drive-my-car/', 'https://a.ltrbxd.com/resized/film-poster/6/7/9/2/9/1/679291-drive-my-car-0-600-0-900-crop.jpg?v=9e1f7c9f35', '★★★★'],
-  ['https://letterboxd.com/hpfilho/film/maelstrom/', 'https://a.ltrbxd.com/resized/film-poster/2/8/5/1/2/28512-maelstrom-0-600-0-900-crop.jpg?v=bbbd2f69ec', '★★★½'],
 ]
