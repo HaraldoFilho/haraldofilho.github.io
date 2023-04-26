@@ -29,9 +29,6 @@ open(ATMOS, $atmos) or die("File $atmos not found");
 my $dtsx = 'html/dtsx.html';
 open(DTSX, $dtsx) or die("File $dtsx not found");
 
-my $watched = 'html/watched.html';
-open(WATCHED, $watched) or die("File $watched not found");
-
 my $collection_data_file = '../data/collection.js';
 open(COLLECTION_DATA, '>', $collection_data_file) or die("File $collection_data_file not found");
 
@@ -117,19 +114,6 @@ while (my $line = <DTSX>) {
 
 print COLLECTION_DATA "  [\'DTS X\', $count, \'$url\', \'audio\'],\n";
 
-while (my $line = <WATCHED>) {
-    if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
-        $url = $1;
-    }
-    if ($line =~ /A list of ([0-9]*) films/) {
-        $count = $1;
-    }
-}
-
-$url = $url.'detail/';
-
-print COLLECTION_DATA "  [\'Watched (BDs)\', $count, \'$url\', \'watched\'],\n";
-
 print COLLECTION_DATA "]\n";
 
 close(FILMS);
@@ -139,7 +123,6 @@ close(DVD);
 close(BD_DVD);
 close(ATMOS);
 close(DTSX);
-close(WATCHED);
 
 close(COLLECTION_DATA);
 
