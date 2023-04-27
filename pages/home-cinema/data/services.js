@@ -7,7 +7,7 @@ var services = [
   ['Disney+', 'https://www.disneyplus.com/', 'active'],
   ['MUBI', 'https://www.mubi.com/', ''],
   ['Paramount+', 'https://www.paramountplus.com/', ''],
-  ['Lionsgate+', 'https://www.lionsgateplus.com/', 'active'],
+  ['Lionsgate+', 'https://www.lionsgateplus.com/', ''],
   ['Telecine Play', 'https://www.telecine.com.br/', ''],
   ['Globoplay', 'https://globoplay.globo.com/', '']
 ]
