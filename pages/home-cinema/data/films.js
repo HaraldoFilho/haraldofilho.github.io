@@ -1,4 +1,5 @@
 var films = [
+  ['https://letterboxd.com/hpfilho/film/it-chapter-two/', 'https://a.ltrbxd.com/resized/film-poster/4/0/5/5/4/5/405545-it-chapter-two-0-600-0-900-crop.jpg?v=727cc83650', '★★★½'],
   ['https://letterboxd.com/hpfilho/film/it-2017/', 'https://a.ltrbxd.com/resized/sm/upload/w3/47/76/am/6uDpMsdn8bbZScDptbika5JEtSH-0-600-0-900-crop.jpg?v=ee603d8e3b', '★★★★'],
   ['https://letterboxd.com/hpfilho/film/guardians-of-the-galaxy/2/', 'https://a.ltrbxd.com/resized/film-poster/9/3/6/7/6/93676-guardians-of-the-galaxy-0-600-0-900-crop.jpg?v=3cc8cb967f', '★★★★'],
   ['https://letterboxd.com/hpfilho/film/kong-skull-island/', 'https://a.ltrbxd.com/resized/film-poster/2/2/0/0/8/0/220080-kong-skull-island-0-600-0-900-crop.jpg?v=71e0e3ba82', '★★★½'],
