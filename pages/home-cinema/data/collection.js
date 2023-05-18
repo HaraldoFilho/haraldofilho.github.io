@@ -1,9 +1,9 @@
 var collection = [
-  ['Films', 322, 'https://letterboxd.com/hpfilho/list/my-film-collection/', 'collection'],
+  ['Films', 323, 'https://letterboxd.com/hpfilho/list/my-film-collection/', 'collection'],
   ['Miniseries', 3, 'https://letterboxd.com/hpfilho/list/my-miniseries-collection/', 'collection'],
-  ['Blu-ray', 116, 'https://letterboxd.com/hpfilho/list/blu-ray/', 'disc'],
+  ['Blu-ray', 118, 'https://letterboxd.com/hpfilho/list/blu-ray/', 'disc'],
   ['DVD', 263, 'https://letterboxd.com/hpfilho/list/dvd/', 'disc'],
-  ['BD/DVD', 54, 'https://letterboxd.com/hpfilho/list/blu-ray-dvd/', 'disc'],
-  ['Dolby Atmos', 17, 'https://letterboxd.com/hpfilho/list/dolby-atmos/', 'audio'],
+  ['BD/DVD', 55, 'https://letterboxd.com/hpfilho/list/blu-ray-dvd/', 'disc'],
+  ['Dolby Atmos', 18, 'https://letterboxd.com/hpfilho/list/dolby-atmos/', 'audio'],
   ['DTS X', 7, 'https://letterboxd.com/hpfilho/list/dts-x/', 'audio'],
 ]
