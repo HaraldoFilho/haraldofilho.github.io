@@ -1,4 +1,5 @@
 var films = [
+  ['https://letterboxd.com/hpfilho/film/synchronic/', 'https://a.ltrbxd.com/resized/film-poster/4/7/8/1/0/7/478107-synchronic-0-600-0-900-crop.jpg?v=f6d00a3f29', '★★★'],
   ['https://letterboxd.com/hpfilho/film/hot-fuzz/', 'https://a.ltrbxd.com/resized/sm/upload/xe/2y/e6/gy/4XLSKzQcE4lIgJgd71Y8UhAhxqQ-0-600-0-900-crop.jpg?v=45bc32b708', '★★★★'],
   ['https://letterboxd.com/hpfilho/film/guardians-of-the-galaxy-vol-2/1/', 'https://a.ltrbxd.com/resized/sm/upload/1g/4f/6e/5b/prvWMj8cBFgVn5MLlsjlvH2hiIh-0-600-0-900-crop.jpg?v=edbe39cfb9', '★★★★'],
   ['https://letterboxd.com/hpfilho/film/it-chapter-two/', 'https://a.ltrbxd.com/resized/film-poster/4/0/5/5/4/5/405545-it-chapter-two-0-600-0-900-crop.jpg?v=727cc83650', '★★★½'],
