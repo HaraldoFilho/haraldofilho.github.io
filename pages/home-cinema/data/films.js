@@ -1,4 +1,6 @@
 var films = [
+  ['https://letterboxd.com/hpfilho/film/firebase/', 'https://a.ltrbxd.com/resized/film-poster/3/9/5/4/8/9/395489-firebase-0-600-0-900-crop.jpg?v=b4768cc9f5', '★★★½'],
+  ['https://letterboxd.com/hpfilho/film/rakka/', 'https://a.ltrbxd.com/resized/film-poster/3/9/3/6/2/4/393624-rakka-0-600-0-900-crop.jpg?v=cd0d8012de', '★★★½'],
   ['https://letterboxd.com/hpfilho/film/synchronic/', 'https://a.ltrbxd.com/resized/film-poster/4/7/8/1/0/7/478107-synchronic-0-600-0-900-crop.jpg?v=f6d00a3f29', '★★★'],
   ['https://letterboxd.com/hpfilho/film/hot-fuzz/', 'https://a.ltrbxd.com/resized/sm/upload/xe/2y/e6/gy/4XLSKzQcE4lIgJgd71Y8UhAhxqQ-0-600-0-900-crop.jpg?v=45bc32b708', '★★★★'],
   ['https://letterboxd.com/hpfilho/film/guardians-of-the-galaxy-vol-2/1/', 'https://a.ltrbxd.com/resized/sm/upload/1g/4f/6e/5b/prvWMj8cBFgVn5MLlsjlvH2hiIh-0-600-0-900-crop.jpg?v=edbe39cfb9', '★★★★'],
@@ -30,5 +32,4 @@ var films = [
   ['https://letterboxd.com/hpfilho/film/the-unbearable-weight-of-massive-talent/', 'https://a.ltrbxd.com/resized/film-poster/5/7/4/3/8/5/574385-the-unbearable-weight-of-massive-talent-0-600-0-900-crop.jpg?v=2c49da09f3', '★★★★'],
   ['https://letterboxd.com/hpfilho/film/all-quiet-on-the-western-front-2022/', 'https://a.ltrbxd.com/resized/film-poster/1/6/5/3/0/16530-all-quiet-on-the-western-front-0-600-0-900-crop.jpg?v=bff4d496a1', '★★★★½'],
   ['https://letterboxd.com/hpfilho/film/free-guy/', 'https://a.ltrbxd.com/resized/film-poster/4/7/9/8/1/4/479814-free-guy-0-600-0-900-crop.jpg?v=0cd7303445', '★★★★'],
-  ['https://letterboxd.com/hpfilho/film/the-last-duel-2021/', 'https://a.ltrbxd.com/resized/film-poster/5/4/4/3/8/0/544380-the-last-duel-0-600-0-900-crop.jpg?v=b3cf1ae7a1', '★★★★'],
 ]
