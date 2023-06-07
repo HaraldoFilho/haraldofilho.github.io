@@ -4,6 +4,6 @@ var collection = [
   ['Blu-ray', 122, 'https://letterboxd.com/hpfilho/list/blu-ray/', 'disc'],
   ['DVD', 264, 'https://letterboxd.com/hpfilho/list/dvd/', 'disc'],
   ['BD/DVD', 56, 'https://letterboxd.com/hpfilho/list/blu-ray-dvd/', 'disc'],
-  ['Dolby Atmos', 21, 'https://letterboxd.com/hpfilho/list/dolby-atmos/', 'audio'],
+  ['Dolby Atmos', 21, 'https://letterboxd.com/hpfilho/list/dolby-atmos-audio/', 'audio'],
   ['DTS X', 8, 'https://letterboxd.com/hpfilho/list/dts-x/', 'audio'],
 ]

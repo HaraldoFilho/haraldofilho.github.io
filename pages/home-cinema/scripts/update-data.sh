@@ -17,10 +17,10 @@ mv index.html dvd.html
 wget 'https://letterboxd.com/hpfilho/list/blu-ray-dvd/'
 mv index.html bd+dvd.html
 
-wget 'https://letterboxd.com/hpfilho/list/dolby-atmos/'
+wget 'https://letterboxd.com/hpfilho/list/my-dolby-atmos-discs/'
 mv index.html atmos.html
 
-wget 'https://letterboxd.com/hpfilho/list/dts-x/'
+wget 'https://letterboxd.com/hpfilho/list/my-dts-x-discs/'
 mv index.html dtsx.html
 
 wget 'https://letterboxd.com/hpfilho/rss/'
@@ -49,4 +49,3 @@ git pull origin master
 git add *
 git commit -m "[auto] Updated home-cinema page"
 git push origin master
-
