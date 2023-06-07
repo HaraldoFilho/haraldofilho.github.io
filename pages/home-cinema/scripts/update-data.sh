@@ -5,13 +5,13 @@ cd /home/pi/github/tinyhomecinema.github.io/scripts/html
 wget 'https://letterboxd.com/hpfilho/list/my-film-collection/'
 mv index.html films.html
 
-wget 'https://letterboxd.com/hpfilho/list/miniseries/'
+wget 'https://letterboxd.com/hpfilho/list/my-miniseries-collection/'
 mv index.html miniseries.html
 
-wget 'https://letterboxd.com/hpfilho/list/blu-ray/'
+wget 'https://letterboxd.com/hpfilho/list/my-blu-ray-discs/'
 mv index.html blu-ray.html
 
-wget 'https://letterboxd.com/hpfilho/list/dvd/'
+wget 'https://letterboxd.com/hpfilho/list/my-dvds/'
 mv index.html dvd.html
 
 wget 'https://letterboxd.com/hpfilho/list/blu-ray-dvd/'
