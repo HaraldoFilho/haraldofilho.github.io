@@ -5,9 +5,9 @@ var services = [
   ['Apple TV+', 'https://www.apple.com/apple-tv-plus/', 'active'],
   ['STAR+', 'https://www.starplus.com/', 'active'],
   ['Disney+', 'https://www.disneyplus.com/', 'active'],
-  ['MUBI', 'https://www.mubi.com/', ''],
-  ['Paramount+', 'https://www.paramountplus.com/', ''],
   ['Lionsgate+', 'https://www.lionsgateplus.com/', 'active'],
+  ['MUBI', 'https://www.mubi.com/', ''],
+  ['Paramount+', 'https://www.paramountplus.com/', 'active'],
   ['Telecine Play', 'https://www.telecine.com.br/', ''],
   ['Globoplay', 'https://globoplay.globo.com/', '']
 ]
