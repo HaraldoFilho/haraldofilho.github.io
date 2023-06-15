@@ -32,5 +32,4 @@ var films = [
   ['https://letterboxd.com/hpfilho/film/serenity/', 'https://a.ltrbxd.com/resized/sm/upload/43/41/2j/rl/serenity-0-600-0-900-crop.jpg?v=2e4d0d5a3b', '★★★½'],
   ['https://letterboxd.com/hpfilho/film/black-widow-2021/', 'https://a.ltrbxd.com/resized/film-poster/4/2/7/8/0/7/427807-black-widow-0-600-0-900-crop.jpg?v=691395e563', '★★★½'],
   ['https://letterboxd.com/hpfilho/film/atomic-blonde/', 'https://a.ltrbxd.com/resized/film-poster/2/7/0/4/7/7/270477-atomic-blonde-0-600-0-900-crop.jpg?v=97fb76a7d4', '★★★½'],
-  ['https://letterboxd.com/hpfilho/film/the-unbearable-weight-of-massive-talent/', 'https://a.ltrbxd.com/resized/film-poster/5/7/4/3/8/5/574385-the-unbearable-weight-of-massive-talent-0-600-0-900-crop.jpg?v=2c49da09f3', '★★★★'],
 ]

@@ -1,0 +1,44 @@
+body {
+  margin: 80px;
+  background-color: #FCFCFC;
+  font-family: arial;
+}
+
+.page-title {
+  grid-area: title;
+  font-size: 50px;
+  font-weight: bold;
+  color: #4F4F4F;
+  border-style: none none solid none;
+  border-color: #4F4F4F;
+  border-width: thin;
+  padding-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.covers {
+  grid-area: covers;
+}
+
+.covers-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-template-rows: auto auto auto auto auto auto auto;
+  grid-gap: 30px;
+}
+
+.cover_thumb {
+  width: 160px;
+  box-shadow: 5px 5px 5px lightgrey;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+  'title title'
+  'covers covers';
+  justify-content: center;
+  width: 100%;
+}
