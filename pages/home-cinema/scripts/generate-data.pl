@@ -154,11 +154,16 @@ my $id;
 my $img;
 
 while (my $line = <RSS>) {
-    if ($line =~ /.*<title>.*\s-\s(.*)<\/title>\s<link>(.*)<\/link> <guid\s.*letterboxd-.*-(.*)<\/guid>.*<img src=\"(.*)\".*/) {
+    if ($line =~ /.*<title>.*\s-\s(.*)<\/title>\s<link>(.*)<\/link> <guid\s.*letterboxd-.*-(.*)<\/guid>.*<img src=\"(.*)\?v.*/) {
         $rating = $1;
         $link = $2;
         $id = $3;
         $img = $4;
+
+        if ($rating =~ /(.*)\s\(.*/) {
+            $rating = $1;
+        }
+
         for (@film_ids) {
             if ($id == $_) {
                 print FILMS_DATA "  [\'$link\', \'$img\', \'$rating\'],\n";
