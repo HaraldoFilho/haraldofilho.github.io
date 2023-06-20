@@ -1,5 +1,5 @@
 var films = [
-  ['https://letterboxd.com/hpfilho/film/black-mirror-beyond-the-sea/', 'https://a.ltrbxd.com/resized/sm/upload/5c/69/2i/i4/BlackMirror-BeyondTheSea_1-0-600-0-900-crop.jpg', '★★★★'],
+  ['https://letterboxd.com/hpfilho/film/black-mirror-beyond-the-sea/', 'https://a.ltrbxd.com/resized/sm/upload/zt/6s/r6/pr/BlackMirror-BeyondTheSea_2-0-600-0-900-crop.jpg', '★★★★'],
   ['https://letterboxd.com/hpfilho/film/a-beautiful-planet/', 'https://a.ltrbxd.com/resized/film-poster/3/0/1/9/1/2/301912-a-beautiful-planet-0-600-0-900-crop.jpg', '★★★★★'],
   ['https://letterboxd.com/hpfilho/film/empire-of-the-sun/1/', 'https://a.ltrbxd.com/resized/film-poster/4/6/5/3/9/46539-empire-of-the-sun-0-600-0-900-crop.jpg', '★★★★★'],
   ['https://letterboxd.com/hpfilho/film/the-book-of-boba-fett/', 'https://a.ltrbxd.com/resized/film-poster/9/3/3/4/6/3/933463-the-book-of-boba-fett-0-600-0-900-crop.jpg', '★★★½'],
