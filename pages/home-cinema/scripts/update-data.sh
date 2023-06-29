@@ -26,7 +26,7 @@ mv index.html dtsx.html
 wget 'https://letterboxd.com/hpfilho/rss/'
 mv index.html rss.html
 
-wget 'https://letterboxd.com/hpfilho/tag/home-cinema/diary/'
+wget 'https://letterboxd.com/hpfilho/tag/now-showing/diary/'
 mv index.html diary.html
 
 cd /home/pi/github/tinyhomecinema.github.io/scripts
