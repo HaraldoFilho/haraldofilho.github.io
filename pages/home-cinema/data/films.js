@@ -20,5 +20,4 @@ var films = [
   ['https://letterboxd.com/hpfilho/film/a-quiet-place-part-ii/', 'https://a.ltrbxd.com/resized/film-poster/4/5/0/3/3/7/450337-a-quiet-place-part-ii-0-600-0-900-crop.jpg', '★★★★'],
   ['https://letterboxd.com/hpfilho/film/a-wolf-at-the-door/', 'https://a.ltrbxd.com/resized/film-poster/1/5/2/1/0/8/152108-a-wolf-at-the-door-0-600-0-900-crop.jpg', '★★★★'],
   ['https://letterboxd.com/hpfilho/film/john-wick/', 'https://a.ltrbxd.com/resized/film-poster/1/7/2/0/7/6/172076-john-wick-0-600-0-900-crop.jpg', '★★★½'],
-  ['https://letterboxd.com/hpfilho/film/deadpool/', 'https://a.ltrbxd.com/resized/film-poster/2/2/0/5/7/5/220575-deadpool-0-600-0-900-crop.jpg', '★★★★'],
 ]
