@@ -8,6 +8,9 @@ use warnings;
 
 my $base_url = "https://letterboxd.com";
 
+my $shelf = 'html/shelf.html';
+open(SHELF, $shelf) or die("File $shelf not found");
+
 my $films = 'html/films.html';
 open(FILMS, $films) or die("File $films not found");
 
@@ -36,6 +39,17 @@ print COLLECTION_DATA "var collection = [\n";
 
 my $url;
 my $count;
+
+while (my $line = <SHELF>) {
+    if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
+        $url = $1;
+    }
+    if ($line =~ /A list of ([0-9]*) films/) {
+        $count = $1;
+    }
+}
+
+print COLLECTION_DATA "  [\'Films / Miniseries\', $count, \'$url\', \'shelf\'],\n";
 
 while (my $line = <FILMS>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
@@ -116,6 +130,7 @@ print COLLECTION_DATA "  [\'DTS X\', $count, \'$url\', \'audio\'],\n";
 
 print COLLECTION_DATA "]\n";
 
+close(SHELF);
 close(FILMS);
 close(MINISERIES);
 close(BLURAY);
@@ -177,4 +192,3 @@ print FILMS_DATA "]\n";
 close(RSS);
 close(DIARY);
 close(FILMS_DATA);
-
