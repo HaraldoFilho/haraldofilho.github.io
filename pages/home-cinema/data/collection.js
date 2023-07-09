@@ -1,5 +1,5 @@
 var collection = [
-  ['Films / Miniseries', 330, 'https://letterboxd.com/hpfilho/list/my-home-cinema-shelf/', 'shelf'],
+  ['Films / Miniseries', 332, 'https://letterboxd.com/hpfilho/list/my-home-cinema-shelf/', 'shelf'],
   ['Films', 327, 'https://letterboxd.com/hpfilho/list/my-film-collection/', 'collection'],
   ['Miniseries', 4, 'https://letterboxd.com/hpfilho/list/my-miniseries-collection/', 'collection'],
   ['Blu-ray', 125, 'https://letterboxd.com/hpfilho/list/my-blu-ray-discs/', 'disc'],

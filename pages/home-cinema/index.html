@@ -316,8 +316,7 @@
     var text = item.concat(': ').concat(quantity);
     var textNode = document.createTextNode(text);
     link.appendChild(textNode);
-    var line = document.createElement('LI');
-    line.appendChild(link);
+    shelf.appendChild(link);
 
     var film_collection = document.getElementById('collection-list');
     var prev_type = "collection";
