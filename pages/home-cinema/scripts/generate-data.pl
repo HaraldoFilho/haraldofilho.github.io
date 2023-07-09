@@ -14,6 +14,9 @@ open(SHELF, $shelf) or die("File $shelf not found");
 my $films = 'html/films.html';
 open(FILMS, $films) or die("File $films not found");
 
+my $shorts = 'html/shorts.html';
+open(SHORTS, $shorts) or die("File $shorts not found");
+
 my $miniseries = 'html/miniseries.html';
 open(MINISERIES, $miniseries) or die("File $miniseries not found");
 
@@ -49,7 +52,7 @@ while (my $line = <SHELF>) {
     }
 }
 
-print COLLECTION_DATA "  [\'Films / Miniseries\', $count, \'$url\', \'shelf\'],\n";
+print COLLECTION_DATA "  [\'Movies\', $count, \'$url\', \'shelf\'],\n";
 
 while (my $line = <FILMS>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
@@ -61,6 +64,17 @@ while (my $line = <FILMS>) {
 }
 
 print COLLECTION_DATA "  [\'Films\', $count, \'$url\', \'collection\'],\n";
+
+while (my $line = <SHORTS>) {
+    if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
+        $url = $1;
+    }
+    if ($line =~ /A list of ([0-9]*) films/) {
+        $count = $1;
+    }
+}
+
+print COLLECTION_DATA "  [\'Shorts\', $count, \'$url\', \'collection\'],\n";
 
 while (my $line = <MINISERIES>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
@@ -132,6 +146,7 @@ print COLLECTION_DATA "]\n";
 
 close(SHELF);
 close(FILMS);
+close(SHORTS);
 close(MINISERIES);
 close(BLURAY);
 close(DVD);
