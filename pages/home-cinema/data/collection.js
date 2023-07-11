@@ -1,5 +1,5 @@
 var collection = [
-  ['Movies', 341, 'https://letterboxd.com/hpfilho/list/my-home-cinema-shelf/', 'shelf'],
+  ['Movies', 392, 'https://letterboxd.com/hpfilho/list/my-home-cinema-shelf/', 'shelf'],
   ['Films', 327, 'https://letterboxd.com/hpfilho/list/my-film-collection/', 'collection'],
   ['Shorts', 68, 'https://letterboxd.com/hpfilho/list/my-short-films-collection/', 'collection'],
   ['Miniseries', 4, 'https://letterboxd.com/hpfilho/list/my-miniseries-collection/', 'collection'],
