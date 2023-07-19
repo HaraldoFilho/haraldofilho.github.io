@@ -8,11 +8,14 @@ mv index.html shelf.html
 wget 'https://letterboxd.com/hpfilho/list/my-film-collection/'
 mv index.html films.html
 
+wget 'https://letterboxd.com/hpfilho/list/my-miniseries-collection/'
+mv index.html miniseries.html
+
 wget 'https://letterboxd.com/hpfilho/list/my-short-films-collection/'
 mv index.html shorts.html
 
-wget 'https://letterboxd.com/hpfilho/list/my-miniseries-collection/'
-mv index.html miniseries.html
+wget 'https://letterboxd.com/hpfilho/list/my-special-feature-documentaries-collection/'
+mv index.html documentaries.html
 
 wget 'https://letterboxd.com/hpfilho/list/my-blu-ray-discs/'
 mv index.html blu-ray.html
