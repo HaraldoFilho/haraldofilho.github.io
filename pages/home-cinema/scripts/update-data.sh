@@ -1,5 +1,7 @@
 #!/bin/bash
 
+git pull origin main
+
 cd /home/pi/github/tinyhomecinema.github.io/scripts/html
 
 wget 'https://letterboxd.com/hpfilho/list/my-home-cinema-shelf/'
@@ -44,7 +46,6 @@ cd /home/pi/github/tinyhomecinema.github.io/scripts
 
 rm /home/pi/github/tinyhomecinema.github.io/scripts/html/*
 
-git pull origin main
 git add ../data/collection.js
 git add ../data/films.js
 git commit -m "[auto] Updated data"
