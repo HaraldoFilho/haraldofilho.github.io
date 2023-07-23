@@ -2,6 +2,7 @@ var collection = [
   ['Movies', 398, 'https://letterboxd.com/hpfilho/list/my-home-cinema-shelf/', 'shelf'],
   ['Films', 332, 'https://letterboxd.com/hpfilho/list/my-film-collection/', 'collection'],
   ['Shorts', 68, 'https://letterboxd.com/hpfilho/list/my-short-films-collection/', 'collection'],
+  ['Documentaries', 19, 'https://letterboxd.com/hpfilho/list/my-special-feature-documentaries-collection/', 'collection'],
   ['Miniseries', 4, 'https://letterboxd.com/hpfilho/list/my-miniseries-collection/', 'collection'],
   ['Blu-ray', 131, 'https://letterboxd.com/hpfilho/list/my-blu-ray-discs/', 'disc'],
   ['DVD', 263, 'https://letterboxd.com/hpfilho/list/my-dvds/', 'disc'],
