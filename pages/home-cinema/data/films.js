@@ -18,5 +18,4 @@ var films = [
   ['https://letterboxd.com/hpfilho/film/john-wick-chapter-2/', 'https://a.ltrbxd.com/resized/sm/upload/wb/rc/zd/o6/fWz9LMfdES80BsJKucgzI5ZJhnB-0-600-0-900-crop.jpg', '★★★½'],
   ['https://letterboxd.com/hpfilho/film/argentina-1985/', 'https://a.ltrbxd.com/resized/film-poster/6/3/7/9/2/9/637929-argentina-1985-0-600-0-900-crop.jpg', '★★★★'],
   ['https://letterboxd.com/hpfilho/film/the-menu-2022/', 'https://a.ltrbxd.com/resized/film-poster/5/2/1/3/2/3/521323-the-menu-0-600-0-900-crop.jpg', '★★★★'],
-  ['https://letterboxd.com/hpfilho/film/glass-onion/', 'https://a.ltrbxd.com/resized/film-poster/5/8/6/7/2/3/586723-glass-onion-a-knives-out-mystery-0-600-0-900-crop.jpg', '★★★★'],
 ]
