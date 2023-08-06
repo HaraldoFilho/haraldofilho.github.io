@@ -23,15 +23,17 @@ a:hover {
 
 .page-title {
   grid-area: title;
+  font-family: serif;
   font-size: 50px;
   font-weight: bold;
   color: lightgrey;
-  border-style: none none solid none;
+  border-style: solid none solid none;
   border-color: lightgrey;
   border-width: thin;
+  padding-top: 5px;
   padding-bottom: 5px;
-  margin-top: 30px;
-  text-align: left;
+  text-align: center;
+  margin-top: -40px;
 }
 
 .last-watched {
@@ -45,13 +47,12 @@ a:hover {
 
 .photos {
   grid-area: photos;
-  margin-top: -10px;
-  margin-bottom: 10px;
+  margin-top: 50px;
 }
 
 .photos-grid {
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto;
   column-gap: 5px;
 }
 
@@ -154,8 +155,8 @@ a:hover {
 .grid-container {
   display: grid;
   grid-template-areas:
-  'title title'
   'photos photos'
+  'title title'
   'description description'
   'room av_tech'
   'screen av_tech'
@@ -206,7 +207,7 @@ a:hover {
 }
 
 .photo_thumb {
-  width: 180px;
+  width: 225px;
   cursor: pointer;
 }
 
