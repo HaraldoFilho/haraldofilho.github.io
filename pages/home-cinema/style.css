@@ -52,7 +52,7 @@ a:hover {
 
 .photos-grid {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto;
   column-gap: 5px;
 }
 
@@ -207,7 +207,7 @@ a:hover {
 }
 
 .photo_thumb {
-  width: 225px;
+  width: 305px;
   cursor: pointer;
 }
 
