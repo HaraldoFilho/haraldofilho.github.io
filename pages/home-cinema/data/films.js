@@ -16,5 +16,4 @@ var films = [
   ['https://letterboxd.com/hpfilho/film/luther-the-fallen-sun/', 'https://a.ltrbxd.com/resized/film-poster/6/4/4/8/1/9/644819-luther-the-fallen-sun-0-600-0-900-crop.jpg', '★★★½'],
   ['https://letterboxd.com/hpfilho/film/triangle-of-sadness/', 'https://a.ltrbxd.com/resized/film-poster/4/2/7/9/7/0/427970-triangle-of-sadness-0-600-0-900-crop.jpg', '★★★★'],
   ['https://letterboxd.com/hpfilho/film/the-fabelmans/', 'https://a.ltrbxd.com/resized/film-poster/7/2/1/2/8/8/721288-the-fabelmans-0-600-0-900-crop.jpg', '★★★★★'],
-  ['https://letterboxd.com/hpfilho/film/finch/', 'https://a.ltrbxd.com/resized/film-poster/4/5/1/9/0/2/451902-finch-0-600-0-900-crop.jpg', '★★★½'],
 ]
