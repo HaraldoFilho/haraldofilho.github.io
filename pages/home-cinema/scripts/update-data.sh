@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd /home/pi/github/tinyhomecinema.github.io/
+
 git pull origin main
 
 cd /home/pi/github/tinyhomecinema.github.io/scripts/html
