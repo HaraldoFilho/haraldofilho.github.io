@@ -1,4 +1,5 @@
 var films = [
+  ['https://letterboxd.com/hpfilho/film/paradise-2023-1/', 'https://a.ltrbxd.com/resized/film-poster/1/0/2/7/5/7/8/1027578-paradise-0-600-0-900-crop.jpg', '★★★'],
   ['https://letterboxd.com/hpfilho/film/the-nice-guys/', 'https://a.ltrbxd.com/resized/film-poster/2/1/6/3/0/1/216301-the-nice-guys-0-600-0-900-crop.jpg', '★★★★'],
   ['https://letterboxd.com/hpfilho/film/reset-2017/', 'https://a.ltrbxd.com/resized/film-poster/3/8/9/7/5/1/389751-reset-0-600-0-900-crop.jpg', '★★★'],
   ['https://letterboxd.com/hpfilho/film/i-tonya/', 'https://a.ltrbxd.com/resized/sm/upload/hv/nn/05/ss/d20vOJpywFDoz7Dd4ChomGdP0fr-0-600-0-900-crop.jpg', '★★★★'],
@@ -15,5 +16,4 @@ var films = [
   ['https://letterboxd.com/hpfilho/film/kong-skull-island/', 'https://a.ltrbxd.com/resized/film-poster/2/2/0/0/8/0/220080-kong-skull-island-0-600-0-900-crop.jpg', '★★★½'],
   ['https://letterboxd.com/hpfilho/film/the-banshees-of-inisherin/', 'https://a.ltrbxd.com/resized/film-poster/5/9/8/8/8/2/598882-the-banshees-of-inisherin-0-600-0-900-crop.jpg', '★★★★'],
   ['https://letterboxd.com/hpfilho/film/luther-the-fallen-sun/', 'https://a.ltrbxd.com/resized/film-poster/6/4/4/8/1/9/644819-luther-the-fallen-sun-0-600-0-900-crop.jpg', '★★★½'],
-  ['https://letterboxd.com/hpfilho/film/triangle-of-sadness/', 'https://a.ltrbxd.com/resized/film-poster/4/2/7/9/7/0/427970-triangle-of-sadness-0-600-0-900-crop.jpg', '★★★★'],
 ]
