@@ -16,5 +16,4 @@ var films = [
   ['https://letterboxd.com/hpfilho/film/it-chapter-two/', 'https://a.ltrbxd.com/resized/film-poster/4/0/5/5/4/5/405545-it-chapter-two-0-600-0-900-crop.jpg', '★★★½'],
   ['https://letterboxd.com/hpfilho/film/it-2017/', 'https://a.ltrbxd.com/resized/sm/upload/w3/47/76/am/6uDpMsdn8bbZScDptbika5JEtSH-0-600-0-900-crop.jpg', '★★★★'],
   ['https://letterboxd.com/hpfilho/film/kong-skull-island/', 'https://a.ltrbxd.com/resized/film-poster/2/2/0/0/8/0/220080-kong-skull-island-0-600-0-900-crop.jpg', '★★★½'],
-  ['https://letterboxd.com/hpfilho/film/the-banshees-of-inisherin/', 'https://a.ltrbxd.com/resized/film-poster/5/9/8/8/8/2/598882-the-banshees-of-inisherin-0-600-0-900-crop.jpg', '★★★★'],
 ]
