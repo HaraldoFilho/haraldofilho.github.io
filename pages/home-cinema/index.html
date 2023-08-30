@@ -29,11 +29,7 @@
       </div>
 
       <div class="photos">
-        <div class="photos-grid">
-          <div><img class="photo_thumb" src="img/IMG_1.jpg" onclick="openPhoto(1)"></div>
-          <div><img class="photo_thumb" src="img/IMG_2.jpg" onclick="openPhoto(2)"></div>
-          <div><img class="photo_thumb" src="img/IMG_3.jpg" onclick="openPhoto(3)"></div>
-        </div>
+        <div id="header-photos" class="photos-grid"></div>
       </div>
 
       <div class="description">
@@ -231,7 +227,7 @@
         <div class="title" style=""><a href="https://boxd.it/nzQeM$cNzlkzSf6uB2nQEX">LATEST RELEASES</a></div>
         <div class="film-posters" id="film-posters"></div>
         <div class="film-ratings" id="film-ratings"></div>
-        <div class="last-watched">| <a href="https://letterboxd.com/hpfilho/tag/cineminha/diary/">WATCHING DIARY</a> | <a href="https://boxd.it/nzQeM$cNzlkzSf6uB2nQEX">FIRST SHOWINGS</a> | <a href="https://boxd.it/oR1Sm$2WMykxOCoj4FW3SC">REWATCHINGS</a> | <a href="https://letterboxd.com/hpfilho/tag/tv-cineminha/diary/">TV</a> | <a href="https://letterboxd.com/hpfilho/tag/short-cineminha/diary/">SHORTS</a> | <a href="https://letterboxd.com/hpfilho/list/watched-in-my-home-cinema/">BLU-RAYS</a> |</div>
+        <div class="last-watched">| <a href="https://boxd.it/oR1Sm$2WMykxOCoj4FW3SC">RERUNS</a> | <a href="https://letterboxd.com/hpfilho/tag/cineminha/diary/">DIARY</a> | <a href="https://letterboxd.com/hpfilho/tag/tv-cineminha/diary/">TV</a> | <a href="https://letterboxd.com/hpfilho/tag/short-cineminha/diary/">SHORTS</a> | <a href="https://letterboxd.com/hpfilho/list/watched-in-my-home-cinema/">BLU-RAYS</a> |</div>
       </div>
 
     </div>
@@ -338,7 +334,6 @@
       var film = document.createElement('DIV');
       var link = document.createElement('A');
       link.setAttribute('href', url);
-      // link.setAttribute('target', '_blank');
       var poster = document.createElement('IMG');
       poster.setAttribute('src', img);
       poster.setAttribute('width', '85');
@@ -355,6 +350,39 @@
 
     }
 
+    var number_of_photos = 5;
+    var indexes = [1, 2, 3]; // fixed photos
+    // indexes = getHeaderPhotosIndexes(number_of_photos); // random photos (comment to fix photos)
+
+    var header_photos = document.getElementById('header-photos');
+
+    for (var i = 0; i < 3 ; i++) {
+      var photo_number = indexes[i];
+      var photo = document.createElement('DIV');
+      var photo_img = document.createElement('IMG');
+      photo_img.setAttribute('class', 'photo_thumb');
+      photo_img.setAttribute('src', "img/IMG_".concat(photo_number).concat(".jpg"));
+      photo_img.setAttribute('onclick', "openPhoto(".concat(photo_number).concat(")"));
+      photo.appendChild(photo_img);
+      header_photos.appendChild(photo);
+    }
+
+    function getHeaderPhotosIndexes(max) {
+      var indexes = [];
+      var index = getRandomIndex(max);
+      for (var i = 0; i < 3; i++) {
+        while (indexes.includes(index)) {
+          index = getRandomIndex(max);
+        }
+        indexes.push(index);
+      }
+      return indexes;
+    }
+
+    function getRandomIndex(max) {
+      slideIndex = Math.floor(Math.random() * max) + 1;
+      return slideIndex;
+    }
 
     var current_photo;
 
@@ -364,58 +392,30 @@
       var url = 'img/IMG_'.concat(current_photo).concat('.jpg');
       photo.setAttribute('src', url);
       document.getElementById('overlay').style.height = "100%";
-      if (current_photo > 1) {
-        document.getElementById('arr_back').setAttribute('src', 'icons/arrow_back.svg');
-        document.getElementById('arr_back').style.cursor = "pointer";
-      } else {
-        document.getElementById('arr_back').setAttribute('src', 'icons/blank.svg');
-        document.getElementById('arr_back').style.cursor = "default";
-      }
-      if (current_photo < 5) {
-        document.getElementById('arr_forward').setAttribute('src', 'icons/arrow_forward.svg');
-        document.getElementById('arr_forward').style.cursor = "pointer";
-      } else {
-        document.getElementById('arr_forward').setAttribute('src', 'icons/blank.svg');
-        document.getElementById('arr_forward').style.cursor = "default";
-      }
+      document.getElementById('arr_back').setAttribute('src', 'icons/arrow_back.svg');
+      document.getElementById('arr_back').style.cursor = "pointer";
+      document.getElementById('arr_forward').setAttribute('src', 'icons/arrow_forward.svg');
+      document.getElementById('arr_forward').style.cursor = "pointer";
     }
 
     function nextPhoto() {
       current_photo++;
-      if (current_photo > 5) {
-        current_photo = 5;
-      }
-      var photo = document.getElementById('photo');
-      var url = 'img/IMG_'.concat(current_photo).concat('.jpg');
-      photo.setAttribute('src', url);
-      document.getElementById('arr_back').setAttribute('src', 'icons/arrow_back.svg');
-      document.getElementById('arr_back').style.cursor = "pointer";
-      if (current_photo < 5) {
-        document.getElementById('arr_forward').setAttribute('src', 'icons/arrow_forward.svg');
-        document.getElementById('arr_forward').style.cursor = "pointer";
-      } else {
-        document.getElementById('arr_forward').setAttribute('src', 'icons/blank.svg');
-        document.getElementById('arr_forward').style.cursor = "default";
-      }
-    }
-
-    function previousPhoto() {
-      current_photo--;
-      if (current_photo < 1) {
+      if (current_photo > number_of_photos) {
         current_photo = 1;
       }
       var photo = document.getElementById('photo');
       var url = 'img/IMG_'.concat(current_photo).concat('.jpg');
       photo.setAttribute('src', url);
-      if (current_photo > 1) {
-        document.getElementById('arr_back').setAttribute('src', 'icons/arrow_back.svg');
-        document.getElementById('arr_back').style.cursor = "pointer";
-      } else {
-        document.getElementById('arr_back').setAttribute('src', 'icons/blank.svg');
-        document.getElementById('arr_back').style.cursor = "default";
+    }
+
+    function previousPhoto() {
+      current_photo--;
+      if (current_photo < 1) {
+        current_photo = number_of_photos;
       }
-      document.getElementById('arr_forward').setAttribute('src', 'icons/arrow_forward.svg');
-      document.getElementById('arr_forward').style.cursor = "pointer";
+      var photo = document.getElementById('photo');
+      var url = 'img/IMG_'.concat(current_photo).concat('.jpg');
+      photo.setAttribute('src', url);
     }
 
     function closePhoto() {
