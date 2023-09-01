@@ -133,6 +133,61 @@ a:hover {
   margin-bottom: 62px;
 }
 
+.logos {
+  grid-area: logos;
+  display: grid;
+  justify: center;
+  height: 20px;
+  grid-template-columns: auto auto;
+  column-gap: 80px;
+  border-style: solid none solid none;
+  border-color: grey;
+  border-width: thin;
+  padding: 10px 100px 10px 100px;
+
+}
+
+.logos-techs {
+  display: grid;
+  column-gap: 0px;
+  align-items: left;
+  grid-template-columns: auto auto;
+}
+
+.logos-brands {
+  display: grid;
+  column-gap: 15px;
+  align-items: right;
+  grid-template-columns: auto auto auto auto auto;
+}
+
+.logo {
+  justify-content: center;
+  height: 12px;
+}
+
+.logo-yamaha {
+  justify-content: center;
+  padding-top: 3px;
+  height: 13px;
+}
+
+.logo-onkyo {
+  justify-content: center;
+  height: 10px;
+}
+
+.logo-sony {
+  justify-content: center;
+  height: 10px;
+}
+
+.logo-lg {
+  justify-content: center;
+  padding-top: 2px;
+  height: 15px;
+}
+
 .rating {
   width: 85px;
   font-size: 12px;
@@ -163,7 +218,8 @@ a:hover {
   'gear streaming'
   'gear media'
   'decor stuff'
-  'films films';
+  'films films'
+  'logos logos';
   justify-content: center;
   width: 100%;
   grid-gap: 50px;
