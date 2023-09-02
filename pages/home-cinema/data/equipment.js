@@ -1,3 +1,11 @@
+var speakers = [
+  ['FL/FR', 'Yamaha NS-B51', 'https://europe.yamaha.com/en/products/audio_visual/speaker_systems/ns-p51/'],
+  ['C', 'Yamaha NS-C51', 'https://europe.yamaha.com/en/products/audio_visual/speaker_systems/ns-p51/'],
+  ['Sub', 'Yamaha NS-SW050', 'https://europe.yamaha.com/en/products/audio_visual/speaker_systems/ns-sw050/'],
+  ['SL/SR', 'Dayton Audio SAT-BK', 'https://www.daytonaudio.com/product/757/sat-bk-2-way-satellite-speaker-pair-black/'],
+  ['HL/HR', 'Dayton Audio SAT-BK', 'https://www.daytonaudio.com/product/757/sat-bk-2-way-satellite-speaker-pair-black/']
+]
+
 var electronics = [
   ['Smart TV OLED 55" LG OLED55A1', '', 'https://www.lg.com/us/tvs/lg-oled55a1pua-oled-4k-tv/'],
   ['Receiver Onkyo 7.2-ch TX-SR494', '', 'https://www.onkyousa.com/product/tx-sr494-a-v-receiver/'],

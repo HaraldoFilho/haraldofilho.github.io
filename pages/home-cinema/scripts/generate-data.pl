@@ -38,11 +38,11 @@ open(ATMOS, $atmos) or die("File $atmos not found");
 my $dtsx = 'html/dtsx.html';
 open(DTSX, $dtsx) or die("File $dtsx not found");
 
-my $collection_data_file = '../data/collection.js';
-open(COLLECTION_DATA, '>', $collection_data_file) or die("File $collection_data_file not found");
+my $media_data_file = '../data/media.js';
+open(MEDIA_DATA, '>', $media_data_file) or die("File $media_data_file not found");
 
-print COLLECTION_DATA "var collection = [\n";
 
+print MEDIA_DATA "var shelves = [\n";
 my $url;
 my $count;
 
@@ -55,7 +55,13 @@ while (my $line = <SHELF>) {
     }
 }
 
-print COLLECTION_DATA "  [\'Movies\', $count, \'$url\', \'shelf\'],\n";
+print MEDIA_DATA "  [\'Movies\', $count, \'$url\', \'shelf\'],\n";
+print MEDIA_DATA "  [\'TV Shows\', 6, \'https://www.themoviedb.org/list/8256420\', \'shelf\'],\n";
+print MEDIA_DATA "  [\'Soundtrack CDs\', 35, \'https://tinyhomecinema.page/music/\', \'shelf\'],\n";
+print MEDIA_DATA "  [\'Film Books\', 26, \'https://www.librarything.com/catalog.php?view=hpfilho&collection=794026&shelf=shelf&sort=title&previousOffset=0&shelf_rows=3&collection=794026\', \'shelf\']\n";
+print MEDIA_DATA "]\n";
+
+print MEDIA_DATA "\nvar collection = [\n";
 
 while (my $line = <FILMS>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
@@ -66,7 +72,7 @@ while (my $line = <FILMS>) {
     }
 }
 
-print COLLECTION_DATA "  [\'Films\', $count, \'$url\', \'collection\'],\n";
+print MEDIA_DATA "  [\'Films\', $count, \'$url\', \'collection\'],\n";
 
 while (my $line = <SHORTS>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
@@ -77,7 +83,7 @@ while (my $line = <SHORTS>) {
     }
 }
 
-print COLLECTION_DATA "  [\'Shorts\', $count, \'$url\', \'collection\'],\n";
+print MEDIA_DATA "  [\'Shorts\', $count, \'$url\', \'collection\'],\n";
 
 while (my $line = <DOCS>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
@@ -88,7 +94,7 @@ while (my $line = <DOCS>) {
     }
 }
 
-print COLLECTION_DATA "  [\'Documentaries\', $count, \'$url\', \'collection\'],\n";
+print MEDIA_DATA "  [\'Documentaries\', $count, \'$url\', \'collection\'],\n";
 
 while (my $line = <MINISERIES>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
@@ -99,7 +105,7 @@ while (my $line = <MINISERIES>) {
     }
 }
 
-print COLLECTION_DATA "  [\'Miniseries\', $count, \'$url\', \'collection\'],\n";
+print MEDIA_DATA "  [\'Miniseries\', $count, \'$url\', \'collection\'],\n";
 
 while (my $line = <BLURAY>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
@@ -110,7 +116,7 @@ while (my $line = <BLURAY>) {
     }
 }
 
-print COLLECTION_DATA "  [\'Blu-ray\', $count, \'$url\', \'disc\'],\n";
+print MEDIA_DATA "  [\'Blu-ray\', $count, \'$url\', \'disc\'],\n";
 
 while (my $line = <DVD>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
@@ -121,7 +127,7 @@ while (my $line = <DVD>) {
     }
 }
 
-print COLLECTION_DATA "  [\'DVD\', $count, \'$url\', \'disc\'],\n";
+print MEDIA_DATA "  [\'DVD\', $count, \'$url\', \'disc\'],\n";
 
 while (my $line = <BD_DVD>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
@@ -132,7 +138,7 @@ while (my $line = <BD_DVD>) {
     }
 }
 
-print COLLECTION_DATA "  [\'BD\/DVD\', $count, \'$url\', \'disc\'],\n";
+print MEDIA_DATA "  [\'BD\/DVD\', $count, \'$url\', \'disc\'],\n";
 
 while (my $line = <ATMOS>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
@@ -143,7 +149,7 @@ while (my $line = <ATMOS>) {
     }
 }
 
-print COLLECTION_DATA "  [\'Dolby Atmos\', $count, \'$url\', \'audio\'],\n";
+print MEDIA_DATA "  [\'Dolby Atmos\', $count, \'$url\', \'audio\'],\n";
 
 while (my $line = <DTSX>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
@@ -154,9 +160,9 @@ while (my $line = <DTSX>) {
     }
 }
 
-print COLLECTION_DATA "  [\'DTS X\', $count, \'$url\', \'audio\'],\n";
+print MEDIA_DATA "  [\'DTS X\', $count, \'$url\', \'audio\'],\n";
 
-print COLLECTION_DATA "]\n";
+print MEDIA_DATA "]\n";
 
 close(SHELF);
 close(FILMS);
@@ -169,7 +175,7 @@ close(BD_DVD);
 close(ATMOS);
 close(DTSX);
 
-close(COLLECTION_DATA);
+close(MEDIA_DATA);
 
 
 # FILMS DATA

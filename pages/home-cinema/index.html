@@ -7,13 +7,14 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
   <link rel="stylesheet" type="text/css" href="style.css" />
 
-  <script src="data/speakers.js"></script>
+  <script src="js/functions.js"></script>
+
   <script src="data/equipment.js"></script>
-  <script src="data/films.js"></script>
-  <script src="data/services.js"></script>
   <script src="data/media.js"></script>
+  <script src="data/services.js"></script>
   <script src="data/decor.js"></script>
   <script src="data/stuff.js"></script>
+  <script src="data/films.js"></script>
 
   <!-- Mobile redirect script by https://www.pagecrafter.com -->
   <script type="text/javascript" src="js/redirection-mobile.js"></script>
@@ -89,7 +90,7 @@
       <div class="gear">
         <div id="title-gear" class="title-grid-left">
           <div class="title">Equipment</div>
-          <div id="more-gear" class="more" onclick="moreEquipment(true)">MORE</div>
+          <div id="more-gear" class="more" onclick="addMoreEquipment(true)">MORE</div>
         </div>
 
         <div id="gear-list">
@@ -125,7 +126,7 @@
       <div id="media" class="media">
         <div id="title-media" class="title-grid-right">
           <div class="title">Physical Media</div>
-          <div id="more-media" class="more" onclick="moreMedia(true)">MORE</div>
+          <div id="more-media" class="more" onclick="addMoreMedia(true)">MORE</div>
         </div>
 
         <h4>Shelves</h4>
@@ -137,7 +138,7 @@
       <div id="decor" class="decor">
         <div id="title-decor" class="title-grid-left">
           <div class="title">Decor</div>
-          <div id="more-decor" class="more" onclick="moreDecor(true)">MORE</div>
+          <div id="more-decor" class="more" onclick="addMoreDecor(true)">MORE</div>
         </div>
 
         <h4>Door</h4>
@@ -153,7 +154,7 @@
       <div id="stuff" class="stuff">
         <div id="title-stuff" class="title-grid-right">
           <div class="title">Other Stuff</div>
-          <div id="more-stuff" class="more" onclick="moreStuff(true)">MORE</div>
+          <div id="more-stuff" class="more" onclick="addMoreStuff(true)">MORE</div>
         </div>
 
         <h4>Wall Stands</h4>
@@ -219,450 +220,54 @@
 
     <script>
 
-    var speakers_list = document.getElementById('speakers-list');
+    var current_photo;
+    var number_of_photos = 5;
+    var indexes = [1, 2, 3]; // fixed photos
+    // indexes = getHeaderPhotosIndexes(number_of_photos); // random photos (comment to fix photos)
 
-    for (var i = 0; i < speakers.length; i++) {
+    var header_photos = document.getElementById('header-photos');
 
-      var item = document.createElement('LI');
-      var type = document.createTextNode(speakers[i][0].concat(": "));
-      var text = document.createTextNode(speakers[i][1]);
-      var url = speakers[i][2];
-
-      var bold_type = document.createElement('B');
-      bold_type.appendChild(type);
-      item.appendChild(bold_type);
-
-      if (url.length > 0) {
-        var link = document.createElement('A');
-        link.setAttribute('href', url);
-        link.setAttribute('target', '_blank');
-        link.appendChild(text);
-        item.appendChild(link);
-      } else {
-        item.appendChild(text);
-      }
-      speakers_list.appendChild(item);
-
+    for (var i = 0; i < 3 ; i++) {
+      var photo_number = indexes[i];
+      var photo = document.createElement('DIV');
+      var photo_img = document.createElement('IMG');
+      photo_img.setAttribute('class', 'photo_thumb');
+      photo_img.setAttribute('src', "img/IMG_".concat(photo_number).concat(".jpg"));
+      photo_img.setAttribute('alt', "Click to enlarge");
+      photo_img.setAttribute('onclick', "openPhoto(".concat(photo_number).concat(")"));
+      photo.appendChild(photo_img);
+      header_photos.appendChild(photo);
     }
+
+    window.onkeyup = function (event) {
+      if (event.keyCode == 27) {
+        closePhoto();
+      }
+    }
+
+    var speakers_list = document.getElementById('speakers-list');
+    addSpeakers(speakers, speakers_list);
 
     var electronics_list = document.getElementById('electronics-list');
-
-    for (var i = 0; i < electronics.length; i++) {
-
-      var item = document.createElement('LI');
-      var text = document.createTextNode(electronics[i][0]);
-      var note = document.createTextNode(" ".concat(electronics[i][1]));
-      var url = electronics[i][2];
-
-      if (url.length > 0) {
-        var link = document.createElement('A');
-        link.setAttribute('href', url);
-        link.setAttribute('target', '_blank');
-        link.appendChild(text);
-        item.appendChild(link);
-      } else {
-        item.appendChild(text);
-      }
-      item.appendChild(note);
-      electronics_list.appendChild(item);
-
-    }
-
-    function moreEquipment(click) {
-
-      var gear_list = document.getElementById('gear-list');
-
-      var power_and_automation_header = document.createElement('H4');
-      var header_text = document.createTextNode("Power and Automation");
-      power_and_automation_header.appendChild(header_text);
-
-      gear_list.appendChild(power_and_automation_header);
-
-      var power_and_automation_list = document.createElement('UL');
-
-      for (var i = 0; i < power_and_automation.length; i++) {
-
-        var text = power_and_automation[i][0];
-        var note = power_and_automation[i][1];
-        var url = power_and_automation[i][2];
-        var line = document.createElement('LI');
-        var textNode = document.createTextNode(text);
-
-        if (url.length > 0) {
-          var link = document.createElement('A');
-          link.setAttribute('href', url);
-          link.appendChild(textNode);
-          line.appendChild(link);
-        } else {
-          line.appendChild(textNode);
-        }
-        power_and_automation_list.appendChild(line);
-
-      }
-
-      gear_list.appendChild(power_and_automation_list);
-
-      var climatization_header = document.createElement('H4');
-      var header_text = document.createTextNode("Climatization");
-      climatization_header.appendChild(header_text);
-
-      gear_list.appendChild(climatization_header);
-
-      var climatization_list = document.createElement('UL');
-
-      for (var i = 0; i < climatization.length; i++) {
-
-        var text = climatization[i][0];
-        var note = climatization[i][1];
-        var url = climatization[i][2];
-        var line = document.createElement('LI');
-        var textNode = document.createTextNode(text);
-
-        if (url.length > 0) {
-          var link = document.createElement('A');
-          link.setAttribute('href', url);
-          link.appendChild(textNode);
-          line.appendChild(link);
-        } else {
-          line.appendChild(textNode);
-        }
-        climatization_list.appendChild(line);
-
-      }
-
-      gear_list.appendChild(climatization_list);
-
-      var more = document.getElementById('more-gear');
-      more.setAttribute('style', 'display: none');
-
-      var title = document.getElementById('title-gear');
-      title.setAttribute('style', 'width: 1000px')
-
-      if(click) {
-        moreMedia(false);
-      }
-
-    }
-
-    var streaming_services = document.getElementById('services-list');
-
-    for (var i = 0; i < services.length; i++) {
-
-      var service = services[i][0];
-      var url = services[i][1];
-      var status = services[i][2];
-
-      if (status == 'active') {
-        var link = document.createElement('A');
-        link.setAttribute('href', url);
-        link.setAttribute('target', '_blank');
-        var textNode = document.createTextNode(service);
-        link.appendChild(textNode);
-        var line = document.createElement('LI');
-        line.appendChild(link);
-        streaming_services.appendChild(line);
-      }
-
-    }
+    addEquipment(electronics, electronics_list);
 
     var shelves_list = document.getElementById('shelves');
+    addMediaItems(shelves, shelves_list, 'shelf');
 
-    for (var i = 0; i < shelves.length; i++) {
-
-      var item = shelves[i][0];
-      var quantity = shelves[i][1];
-      var url = shelves[i][2];
-      var type = shelves[i][3];
-
-      var link = document.createElement('A');
-      link.setAttribute('href', url);
-      var text = item.concat(': ').concat(quantity);
-      var textNode = document.createTextNode(text);
-      link.appendChild(textNode);
-      var line = document.createElement('LI');
-      line.appendChild(link);
-      shelves_list.appendChild(line);
-
-    }
-
-    function moreMedia(click) {
-
-      var media = document.getElementById('media');
-
-      var collection_header = document.createElement('H4');
-      var header_text = document.createTextNode("Film Collection");
-      collection_header.appendChild(header_text);
-
-      media.appendChild(collection_header);
-
-      var film_collection = document.createElement('UL');
-
-      var prev_type = "collection";
-
-      for (var i = 0; i < collection.length; i++) {
-
-        var item = collection[i][0];
-        var quantity = collection[i][1];
-        var url = collection[i][2];
-        var type = collection[i][3];
-
-        if (type != prev_type) {
-          var line_break = document.createElement('BR');
-          film_collection.appendChild(line_break);
-        }
-
-        var link = document.createElement('A');
-        link.setAttribute('href', url);
-        var text = item.concat(': ').concat(quantity);
-        var textNode = document.createTextNode(text);
-        link.appendChild(textNode);
-        var line = document.createElement('LI');
-        line.appendChild(link);
-        film_collection.appendChild(line);
-
-        prev_type = type;
-
-      }
-
-      media.appendChild(film_collection);
-
-      var more = document.getElementById('more-media');
-      more.setAttribute('style', 'display: none');
-
-      var title = document.getElementById('title-media');
-      title.setAttribute('style', 'width: 460px')
-
-      if(click) {
-        moreEquipment(false);
-      }
-
-    }
+    var streaming_services = document.getElementById('services-list');
+    addServices(services, streaming_services);
 
     var decor_door = document.getElementById("decor-door");
-
-    for (var i = 0; i < door.length; i++) {
-
-      var text = door[i][0];
-      var url = door[i][1];
-      var target = door[i][2];
-      var line = document.createElement('LI');
-      var textNode = document.createTextNode(text);
-
-      if (url.length > 0) {
-        var link = document.createElement('A');
-        link.setAttribute('href', url);
-        if(target.length > 0) {
-          link.setAttribute('target', target);
-        }
-        link.appendChild(textNode);
-        line.appendChild(link);
-      } else {
-        line.appendChild(textNode);
-      }
-
-      decor_door.appendChild(line);
-
-    }
+    addItems(door, decor_door);
 
     var decor_wall = document.getElementById("decor-wall");
-
-    for (var i = 0; i < wall.length; i++) {
-
-      var text = wall[i][0];
-      var url = wall[i][1];
-      var target = wall[i][2];
-      var line = document.createElement('LI');
-      var textNode = document.createTextNode(text);
-
-      if (url.length > 0) {
-        var link = document.createElement('A');
-        link.setAttribute('href', url);
-        if(target.length > 0) {
-          link.setAttribute('target', target);
-        }
-        link.appendChild(textNode);
-        line.appendChild(link);
-      } else {
-        line.appendChild(textNode);
-      }
-
-      decor_wall.appendChild(line);
-
-    }
-
-    function moreDecor(click) {
-
-      var decor_list = document.getElementById('decor');
-
-      var miniatures_header = document.createElement('H4');
-      var header_text = document.createTextNode("Miniatures");
-      miniatures_header.appendChild(header_text);
-
-      decor_list.appendChild(miniatures_header);
-
-      var miniatures_list = document.createElement('UL');
-
-      for (var i = 0; i < miniatures.length; i++) {
-
-        var text = miniatures[i][0];
-        var note = miniatures[i][1];
-        var url = miniatures[i][2];
-        var line = document.createElement('LI');
-        var textNode = document.createTextNode(text);
-
-        if (url.length > 0) {
-          var link = document.createElement('A');
-          link.setAttribute('href', url);
-          link.appendChild(textNode);
-          line.appendChild(link);
-        } else {
-          line.appendChild(textNode);
-        }
-        miniatures_list.appendChild(line);
-
-      }
-
-      decor_list.appendChild(miniatures_list);
-
-      var tapes_header = document.createElement('H4');
-      var header_text = document.createTextNode("VHS Tapes");
-      tapes_header.appendChild(header_text);
-
-      decor_list.appendChild(tapes_header);
-
-      var tapes_list = document.createElement('UL');
-
-      for (var i = 0; i < tapes.length; i++) {
-
-        var text = tapes[i][0];
-        var note = tapes[i][1];
-        var url = tapes[i][2];
-        var line = document.createElement('LI');
-        var textNode = document.createTextNode(text);
-
-        if (url.length > 0) {
-          var link = document.createElement('A');
-          link.setAttribute('href', url);
-          link.appendChild(textNode);
-          line.appendChild(link);
-        } else {
-          line.appendChild(textNode);
-        }
-        tapes_list.appendChild(line);
-
-      }
-
-      decor_list.appendChild(tapes_list);
-
-      var more = document.getElementById('more-decor');
-      more.setAttribute('style', 'display: none');
-
-      var title = document.getElementById('title-decor');
-      title.setAttribute('style', 'width: 1000px')
-
-      if(click) {
-        moreStuff(false);
-      }
-
-    }
+    addItems(wall, decor_wall);
 
     var stuff_stands = document.getElementById("stuff-stands");
-
-    for (var i = 0; i < stands.length; i++) {
-
-      var text = stands[i][0];
-      var url = stands[i][1];
-      var target = stands[i][2];
-      var line = document.createElement('LI');
-      var textNode = document.createTextNode(text);
-
-      if (url.length > 0) {
-        var link = document.createElement('A');
-        link.setAttribute('href', url);
-        if(target.length > 0) {
-          link.setAttribute('target', target);
-        }
-        link.appendChild(textNode);
-        line.appendChild(link);
-      } else {
-        line.appendChild(textNode);
-      }
-
-      stuff_stands.appendChild(line);
-
-    }
+    addItems(stands, stuff_stands);
 
     var stuff_furniture = document.getElementById("stuff-furniture");
-
-    for (var i = 0; i < furniture.length; i++) {
-
-      var text = furniture[i][0];
-      var url = furniture[i][1];
-      var target = furniture[i][2];
-      var line = document.createElement('LI');
-      var textNode = document.createTextNode(text);
-
-      if (url.length > 0) {
-        var link = document.createElement('A');
-        link.setAttribute('href', url);
-        if(target.length > 0) {
-          link.setAttribute('target', target);
-        }
-        link.appendChild(textNode);
-        line.appendChild(link);
-      } else {
-        line.appendChild(textNode);
-      }
-
-      stuff_furniture.appendChild(line);
-
-    }
-
-    function moreStuff(click) {
-
-      var stuff_list = document.getElementById('stuff');
-
-      var ambiance_header = document.createElement('H4');
-      var header_text = document.createTextNode("Ambiance");
-      ambiance_header.appendChild(header_text);
-
-      stuff_list.appendChild(ambiance_header);
-
-      var ambiance_list = document.createElement('UL');
-
-      for (var i = 0; i < ambiance.length; i++) {
-
-        var text = ambiance[i][0];
-        var note = ambiance[i][1];
-        var url = ambiance[i][2];
-        var line = document.createElement('LI');
-        var textNode = document.createTextNode(text);
-
-        if (url.length > 0) {
-          var link = document.createElement('A');
-          link.setAttribute('href', url);
-          link.appendChild(textNode);
-          line.appendChild(link);
-        } else {
-          line.appendChild(textNode);
-        }
-        ambiance_list.appendChild(line);
-
-      }
-
-      stuff_list.appendChild(ambiance_list);
-
-      var more = document.getElementById('more-stuff');
-      more.setAttribute('style', 'display: none');
-
-      var title = document.getElementById('title-stuff');
-      title.setAttribute('style', 'width: 460px')
-
-      if(click) {
-        moreDecor(false);
-      }
-
-    }
+    addItems(furniture, stuff_furniture);
 
     var film_posters = document.getElementById('film-posters');
     var film_ratings = document.getElementById('film-ratings');
@@ -687,85 +292,6 @@
       rate.innerText = txt;
       film_ratings.append(rate);
 
-    }
-
-    var number_of_photos = 5;
-    var indexes = [1, 2, 3]; // fixed photos
-    // indexes = getHeaderPhotosIndexes(number_of_photos); // random photos (comment to fix photos)
-
-    var header_photos = document.getElementById('header-photos');
-
-    for (var i = 0; i < 3 ; i++) {
-      var photo_number = indexes[i];
-      var photo = document.createElement('DIV');
-      var photo_img = document.createElement('IMG');
-      photo_img.setAttribute('class', 'photo_thumb');
-      photo_img.setAttribute('src', "img/IMG_".concat(photo_number).concat(".jpg"));
-      photo_img.setAttribute('alt', "Click to enlarge");
-      photo_img.setAttribute('onclick', "openPhoto(".concat(photo_number).concat(")"));
-      photo.appendChild(photo_img);
-      header_photos.appendChild(photo);
-    }
-
-    function getHeaderPhotosIndexes(max) {
-      var indexes = [];
-      var index = getRandomIndex(max);
-      for (var i = 0; i < 3; i++) {
-        while (indexes.includes(index)) {
-          index = getRandomIndex(max);
-        }
-        indexes.push(index);
-      }
-      return indexes;
-    }
-
-    function getRandomIndex(max) {
-      slideIndex = Math.floor(Math.random() * max) + 1;
-      return slideIndex;
-    }
-
-    var current_photo;
-
-    function openPhoto(number) {
-      current_photo = number;
-      var photo = document.getElementById('photo');
-      var url = 'img/IMG_'.concat(current_photo).concat('.jpg');
-      photo.setAttribute('src', url);
-      document.getElementById('overlay').style.height = "100%";
-      document.getElementById('arr_back').setAttribute('src', 'icons/arrow_back.svg');
-      document.getElementById('arr_back').style.cursor = "pointer";
-      document.getElementById('arr_forward').setAttribute('src', 'icons/arrow_forward.svg');
-      document.getElementById('arr_forward').style.cursor = "pointer";
-    }
-
-    function nextPhoto() {
-      current_photo++;
-      if (current_photo > number_of_photos) {
-        current_photo = 1;
-      }
-      var photo = document.getElementById('photo');
-      var url = 'img/IMG_'.concat(current_photo).concat('.jpg');
-      photo.setAttribute('src', url);
-    }
-
-    function previousPhoto() {
-      current_photo--;
-      if (current_photo < 1) {
-        current_photo = number_of_photos;
-      }
-      var photo = document.getElementById('photo');
-      var url = 'img/IMG_'.concat(current_photo).concat('.jpg');
-      photo.setAttribute('src', url);
-    }
-
-    function closePhoto() {
-      document.getElementById('overlay').style.height = "0%";
-    }
-
-    window.onkeyup = function (event) {
-      if (event.keyCode == 27) {
-        closePhoto();
-      }
     }
 
     </script>
