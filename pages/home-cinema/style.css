@@ -36,15 +36,6 @@ a:hover {
   margin-top: -40px;
 }
 
-.last-watched {
-  grid-area: last-watched;
-  font-weight: normal;
-  font-size: 10px;
-  color: grey;
-  margin-top: -40px;
-  text-align: center;
-}
-
 .photos {
   grid-area: photos;
   margin-top: 50px;
@@ -133,6 +124,21 @@ a:hover {
   margin-bottom: 62px;
 }
 
+.rating {
+  width: 85px;
+  font-size: 12px;
+  color: darkgrey;
+  text-align: center;
+}
+
+.bottom-links {
+  font-weight: normal;
+  font-size: 10px;
+  color: darkgrey;
+  margin-top: -40px;
+  text-align: center;
+}
+
 .logos {
   grid-area: logos;
   display: grid;
@@ -143,7 +149,7 @@ a:hover {
   border-style: solid none solid none;
   border-color: grey;
   border-width: thin;
-  padding: 10px 100px 10px 100px;
+  padding: 10px 65px 10px 70px;
 
 }
 
@@ -158,41 +164,67 @@ a:hover {
   display: grid;
   column-gap: 15px;
   align-items: right;
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto;
 }
 
-.logo {
+.logo-dolby {
   justify-content: center;
+  padding-top: 5px;
+  height: 11px;
+}
+
+.logo-dts {
+  justify-content: center;
+  padding-top: 4px;
   height: 12px;
 }
 
 .logo-yamaha {
   justify-content: center;
-  padding-top: 3px;
+  padding-top: 4px;
   height: 13px;
 }
 
+.logo-dayton {
+  justify-content: center;
+  height: 9px;
+}
+
 .logo-onkyo {
+  justify-content: center;
+  height: 9px;
+}
+
+.logo-pioneer {
   justify-content: center;
   height: 10px;
 }
 
 .logo-sony {
   justify-content: center;
-  height: 10px;
+  height: 9px;
 }
 
 .logo-lg {
   justify-content: center;
-  padding-top: 2px;
-  height: 15px;
+  padding-top: 5px;
+  height: 10px;
 }
 
-.rating {
-  width: 85px;
-  font-size: 12px;
-  color: grey;
-  text-align: center;
+.title-grid-left {
+  display: grid;
+  grid-template-areas: 'auto auto';
+  justify-content: 'left right';
+  margin-bottom: -23px;
+  width: 950px;
+}
+
+.title-grid-right {
+  display: grid;
+  grid-template-areas: 'auto auto';
+  justify-content: 'left right';
+  margin-bottom: -23px;
+  width: 410px;
 }
 
 .title {
@@ -207,6 +239,21 @@ a:hover {
   text-align: left;
 }
 
+.more {
+  display: block;
+  font-size: 10px;
+  font-weight: bold;
+  color: lightgrey;
+  border-style: none none solid none;
+  border-color: lightgrey;
+  border-width: thin;
+  margin-bottom: 23px;
+  padding-top: 10px;
+  text-align: right;
+  width: 50px;
+  cursor: pointer;
+}
+
 .grid-container {
   display: grid;
   grid-template-areas:
@@ -215,8 +262,8 @@ a:hover {
   'description description'
   'room av_tech'
   'screen av_tech'
-  'gear streaming'
   'gear media'
+  'gear streaming'
   'decor stuff'
   'films films'
   'logos logos';

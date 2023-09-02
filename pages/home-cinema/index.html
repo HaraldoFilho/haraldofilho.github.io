@@ -3,12 +3,17 @@
 <head>
   <title>Cineminha | Tiny Home Cinema</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
   <link rel="stylesheet" type="text/css" href="style.css" />
 
+  <script src="data/speakers.js"></script>
+  <script src="data/equipment.js"></script>
   <script src="data/films.js"></script>
   <script src="data/services.js"></script>
-  <script src="data/collection.js"></script>
+  <script src="data/media.js"></script>
+  <script src="data/decor.js"></script>
+  <script src="data/stuff.js"></script>
 
   <!-- Mobile redirect script by https://www.pagecrafter.com -->
   <script type="text/javascript" src="js/redirection-mobile.js"></script>
@@ -44,7 +49,7 @@
       </div>
 
       <div class="room">
-        <div class="title" style="">Room Dimensions</div>
+        <div class="title">Room Dimensions</div>
         <b>Width:</b> 2.54 m (8.3 ft)<br>
         <b>Depth:</b> 2.60 m (8.5 ft)<br>
         <b>Height:</b> 2.54 m (8.3 ft)<br><br>
@@ -52,7 +57,7 @@
       </div>
 
       <div class="screen">
-        <div class="title" style="">Screen Specifications</div>
+        <div class="title">Screen Specifications</div>
         <b>Display Type:</b> <a href="https://en.wikipedia.org/wiki/OLED" target="_blank">OLED</a> TV<br>
         <b>Diagonal Size:</b> <a href="https://en.wikipedia.org/wiki/Display_size" target="_blank">55 in</a><br>
         <b>Aspect Ratio:</b> <a href="https://en.wikipedia.org/wiki/Display_aspect_ratio" target="_blank">16:9</a><br>
@@ -60,7 +65,7 @@
       </div>
 
       <div class="av_tech">
-        <div class="title" style="">A/V Technologies</div>
+        <div class="title">A/V Technologies</div>
 
         <h4>Audio</h4>
         <ul>
@@ -82,42 +87,22 @@
       </div>
 
       <div class="gear">
-        <div class="title" style="">Equipment</div>
+        <div id="title-gear" class="title-grid-left">
+          <div class="title">Equipment</div>
+          <div id="more-gear" class="more" onclick="moreEquipment(true)">MORE</div>
+        </div>
 
-        <h4>Speakers (5.1.2 ch)</h4>
-        <ul>
-          <li><b>FL/FR:</b> <a href="https://europe.yamaha.com/en/products/audio_visual/speaker_systems/ns-p51/index.html" target="_blank">Yamaha NS-B51</a></li>
-          <li><b>C:</b> <a href="https://europe.yamaha.com/en/products/audio_visual/speaker_systems/ns-p51/index.html" target="_blank">Yamaha NS-C51</a></li>
-          <li><b>Sub:</b> <a href="https://europe.yamaha.com/en/products/audio_visual/speaker_systems/ns-sw050/index.html" target="_blank">Yamaha NS-SW050</a></li>
-          <li><b>SL/SR:</b> <a href="https://www.daytonaudio.com/product/757/sat-bk-2-way-satellite-speaker-pair-black" target="_blank">Dayton Audio SAT-BK</a></li>
-          <li><b>HL/HR:</b> <a href="https://www.daytonaudio.com/product/757/sat-bk-2-way-satellite-speaker-pair-black" target="_blank">Dayton Audio SAT-BK</a></li>
-        </ul>
+        <div id="gear-list">
 
-        <h4>Electronics</h4>
-        <ul>
-          <li><a href="https://www.lg.com/us/tvs/lg-oled55a1pua-oled-4k-tv" target="_blank">Smart TV OLED 55" LG OLED55A1</a></li>
-          <li><a href="https://www.onkyousa.com/product/tx-sr494-a-v-receiver/" target="_blank">Receiver Onkyo 7.2-ch TX-SR494</a></li>
-          <li><a href="https://electronics.sony.com/tv-video/blu-ray-dvd-players/blu-ray/p/bdps1700" target="_blank">Blu-ray Player Sony BDP-S1700</a> *</li>
-          <li><a href="https://www.pioneerelectronics.com/PUSA/Home/Blu-ray-Disc/Pioneer-DVD-Players/DV-414" target="_blank">DVD Player Pioneer DV-414</a> **</li>
-          <li>VHS VCR Philips VR755 ***</li>
-          <li>HDMI Dongle Google Chromecast 3</li>
-          <li><a href="https://www.samsung.com/us/tablets/tab-a7/tab-a7-lite/" target="_blank">Tablet Samsung Galaxy Tab A7 Lite</a></li>
-        </ul>
+          <h4>Speakers (5.1.2 ch)</h4>
+          <ul id="speakers-list">
+          </ul>
 
-        <h4>Power and Automation</h4>
-        <ul>
-          <li>Power Conditioner AAT PWC-1</li>
-          <li>Plug NovaDigital Smart Home WiFi WK-BR</li>
-          <li>Universal IR Control Steck WiFi SMDCUPS1</li>
-          <li>Light Switch Smarteck Touch WiFi SMCI1PS1</li>
-          <li>Light Switch Smarteck Touch Dimmer WiFi SMCD1PS1</li>
-        </ul>
+          <h4>Electronics</h4>
+          <ul id="electronics-list">
+          </ul>
 
-        <h4>Climatization</h4>
-        <ul>
-          <li>Air Conditioner Samsung WindFree Plus 9000 BTU</li>
-          <li>Thermo Hygrometer Elitech LT-2</li>
-        </ul>
+        </div>
 
         <br>
         <p style="font-size:10px;color:darkgrey">
@@ -129,7 +114,7 @@
       </div>
 
       <div class="streaming">
-        <div class="title" style="">Streaming</div>
+        <div class="title">Streaming</div>
 
         <h4>Current Services</h4>
         <ul id="services-list">
@@ -137,87 +122,46 @@
 
       </div>
 
-      <div class="media">
-        <div class="title" style="">Physical Media</div>
+      <div id="media" class="media">
+        <div id="title-media" class="title-grid-right">
+          <div class="title">Physical Media</div>
+          <div id="more-media" class="more" onclick="moreMedia(true)">MORE</div>
+        </div>
 
         <h4>Shelves</h4>
-        <ul>
-          <li id="shelf"></li>
-          <li><a href="https://www.themoviedb.org/list/8256420">TV Shows: 6</a></li>
-          <li><a href="https://tinyhomecinema.page/music/">Soundtrack CDs: 35</a></li>
-          <li><a href="https://www.librarything.com/catalog.php?view=hpfilho&collection=794026&shelf=shelf&sort=title&previousOffset=0&shelf_rows=3&collection=794026">Film Books: 26</a></li>
-        </ul>
-
-        <h4>Film Collection</h4>
-        <ul id="collection-list">
+        <ul id="shelves">
         </ul>
 
       </div>
 
-      <div class="decor">
-        <div class="title" style="">Decor</div>
+      <div id="decor" class="decor">
+        <div id="title-decor" class="title-grid-left">
+          <div class="title">Decor</div>
+          <div id="more-decor" class="more" onclick="moreDecor(true)">MORE</div>
+        </div>
 
         <h4>Door</h4>
-        <ul>
-          <li><a href="https://www.etsy.com/listing/951606986/home-cinema-home-theater-sign" target="_blank">Home Theater Sign CineSigns "Home Cinema" Silver</a></li>
-          <li>Decal "Charlie Chaplin's The Kid"</li>
+        <ul id="decor-door">
         </ul>
 
         <h4>Wall</h4>
-        <ul>
-          <li><a href="https://www.etsy.com/listing/951581325/dolby-atmos-home-theater-sign" target="_blank">Custom Home Theater Sign CineSigns "Dolby Atmos" Silver</a></li>
-          <li><a href="https://www.etsy.com/listing/937633862/dts-x-home-theater-sign" target="_blank">Custom Home Theater Sign CineSigns "DTS X" Silver</a></li>
-          <li>Exit Sign ("SAÍDA")</li>
-          <li><a href="https://www.etsy.com/listing/962767013/dvd-frame-blu-ray-frame-now-playing-now" target="_blank">Custom DVD/Blu-ray Frame NoTimeLikeTheGift "Now Showing"</a></li>
-          <li><a href="https://www.etsy.com/listing/826247167/famous-iconic-film-quotes-a2-poster" target="_blank">Poster PersonifiedInPrint "Famous Film Quotes"</a></li>
-          <li><a href="https://www.etsy.com/listing/526999053/roy-batty-blade-runner-custom-soundwave" target="_blank">Poster TheGeekMonkey "Blade Runner - Roy Batty's Monologue"</a></li>
-          <li><a href="https://boxd.it/imfd2$AMC0T1gelm4HfekC">Film Posters</a></li>
-        </ul>
-
-        <h4>Miniatures</h4>
-        <ul>
-          <li><a href="https://www.miniarquiteturaurbana.com.br/product-page/diorama-locadora-de-vhs-antiga-vers%C3%A3o-20cm" target="_blank">Mini Video Rental Store</a></li>
-          <li>Star Wars ships and figures</li>
-          <li>GoT Queen's Guard</li>
-          <li>Wall-E</li>
-        </ul>
-
-        <h4>VHS Tapes</h4>
-        <ul>
-          <li>Star Wars Trilogy - Special Edition</li>
-          <li>Jurassic Park (in special embossed case)</li>
-          <li>Contact</li>
+        <ul id="decor-wall">
         </ul>
 
       </div>
 
-      <div class="stuff">
-        <div class="title" style="">Other Stuff</div>
+      <div id="stuff" class="stuff">
+        <div id="title-stuff" class="title-grid-right">
+          <div class="title">Other Stuff</div>
+          <div id="more-stuff" class="more" onclick="moreStuff(true)">MORE</div>
+        </div>
 
         <h4>Wall Stands</h4>
-        <ul>
-          <li>TV Stand ELG A02V6N</li>
-          <li>Supports Avatron SCH-01T-B (4)</li>
+        <ul id="stuff-stands">
         </ul>
 
         <h4>Furniture</h4>
-        <ul>
-          <li>Double Reclining Chair</li>
-          <li>Wood Equipment Rack</li>
-          <li>Wood Bookshelf</li>
-          <li>Wood Wall Shelf for BD/DVD</li>
-          <li>Wood Wall Shelf for CD/Decor</li>
-          <li>Plywood TV/Speakers Wall Panel</li>
-          <li>Plywood Baseboard Wall Panels</li>
-        </ul>
-
-        <h4>Ambiance</h4>
-        <ul>
-          <li>Wall Paint Suvinil Matte Patativa</li>
-          <li>Vinyl Floor Tarkett Injoy Centeio</li>
-          <li>Acoustic Blackout Black Curtain</li>
-          <li>Warm Light Scounces and Spots</li>
-          <li>Cold Light Spots</li>
+        <ul id="stuff-furniture">
         </ul>
 
       </div>
@@ -226,18 +170,19 @@
         <div class="title" style=""><a href="https://boxd.it/nzQeM$cNzlkzSf6uB2nQEX">LATEST RELEASES</a></div>
         <div class="film-posters" id="film-posters"></div>
         <div class="film-ratings" id="film-ratings"></div>
-        <div class="last-watched">| <a href="https://boxd.it/oR1Sm$2WMykxOCoj4FW3SC">RERUNS</a> | <a href="https://letterboxd.com/hpfilho/tag/cineminha/diary/">DIARY</a> | <a href="https://letterboxd.com/hpfilho/tag/tv-cineminha/diary/">TV</a> | <a href="https://letterboxd.com/hpfilho/tag/short-cineminha/diary/">SHORTS</a> | <a href="https://letterboxd.com/hpfilho/list/watched-in-my-home-cinema/">BLU-RAYS</a> |</div>
+        <div class="bottom-links">| <a href="https://boxd.it/oR1Sm$2WMykxOCoj4FW3SC">RERUNS</a> | <a href="https://letterboxd.com/hpfilho/tag/cineminha/diary/">DIARY</a> | <a href="https://letterboxd.com/hpfilho/tag/tv-cineminha/diary/">TV</a> | <a href="https://letterboxd.com/hpfilho/tag/short-cineminha/diary/">SHORTS</a> | <a href="https://letterboxd.com/hpfilho/list/watched-in-my-home-cinema/">BLU-RAYS</a> |</div>
       </div>
 
       <div class="logos">
         <div class="logos-techs">
-          <div><a href="https://www.dolby.com/" target="_blank"><img class="logo" src="logos/Dolby_Atmos.svg"></a></div>
-          <div><a href="https://dts.com/" target="_blank"><img class="logo" src="logos/DTS_X.svg"></a></div>
+          <div><a href="https://www.dolby.com/" target="_blank"><img class="logo-dolby" src="logos/Dolby_Atmos.svg"></a></div>
+          <div><a href="https://dts.com/" target="_blank"><img class="logo-dts" src="logos/DTS_X.svg"></a></div>
         </div>
         <div class="logos-brands">
           <div><a href="https://www.yamaha.com/" target="_blank"><img class="logo-yamaha" src="logos/Yamaha.svg"></a></div>
+          <div><a href="https://www.daytonaudio.com/" target="_blank"><img class="logo-dayton" src="logos/Dayton_Audio.png"></a></div>
           <div><a href="https://intl.onkyo-av.com/" target="_blank"><img class="logo-onkyo" src="logos/Onkyo.png"></a></div>
-          <div><a href="https://www.pioneerelectronics.com/" target="_blank"><img class="logo" src="logos/Pioneer.png"></a></div>
+          <div><a href="https://www.pioneerelectronics.com/" target="_blank"><img class="logo-pioneer" src="logos/Pioneer.png"></a></div>
           <div><a href="https://www.sony.com/" target="_blank"><img class="logo-sony" src="logos/Sony.png"></a></div>
           <div><a href="https://www.lg.com/" target="_blank"><img class="logo-lg" src="logos/LG.svg"></a></div>
         </div>
@@ -274,6 +219,131 @@
 
     <script>
 
+    var speakers_list = document.getElementById('speakers-list');
+
+    for (var i = 0; i < speakers.length; i++) {
+
+      var item = document.createElement('LI');
+      var type = document.createTextNode(speakers[i][0].concat(": "));
+      var text = document.createTextNode(speakers[i][1]);
+      var url = speakers[i][2];
+
+      var bold_type = document.createElement('B');
+      bold_type.appendChild(type);
+      item.appendChild(bold_type);
+
+      if (url.length > 0) {
+        var link = document.createElement('A');
+        link.setAttribute('href', url);
+        link.setAttribute('target', '_blank');
+        link.appendChild(text);
+        item.appendChild(link);
+      } else {
+        item.appendChild(text);
+      }
+      speakers_list.appendChild(item);
+
+    }
+
+    var electronics_list = document.getElementById('electronics-list');
+
+    for (var i = 0; i < electronics.length; i++) {
+
+      var item = document.createElement('LI');
+      var text = document.createTextNode(electronics[i][0]);
+      var note = document.createTextNode(" ".concat(electronics[i][1]));
+      var url = electronics[i][2];
+
+      if (url.length > 0) {
+        var link = document.createElement('A');
+        link.setAttribute('href', url);
+        link.setAttribute('target', '_blank');
+        link.appendChild(text);
+        item.appendChild(link);
+      } else {
+        item.appendChild(text);
+      }
+      item.appendChild(note);
+      electronics_list.appendChild(item);
+
+    }
+
+    function moreEquipment(click) {
+
+      var gear_list = document.getElementById('gear-list');
+
+      var power_and_automation_header = document.createElement('H4');
+      var header_text = document.createTextNode("Power and Automation");
+      power_and_automation_header.appendChild(header_text);
+
+      gear_list.appendChild(power_and_automation_header);
+
+      var power_and_automation_list = document.createElement('UL');
+
+      for (var i = 0; i < power_and_automation.length; i++) {
+
+        var text = power_and_automation[i][0];
+        var note = power_and_automation[i][1];
+        var url = power_and_automation[i][2];
+        var line = document.createElement('LI');
+        var textNode = document.createTextNode(text);
+
+        if (url.length > 0) {
+          var link = document.createElement('A');
+          link.setAttribute('href', url);
+          link.appendChild(textNode);
+          line.appendChild(link);
+        } else {
+          line.appendChild(textNode);
+        }
+        power_and_automation_list.appendChild(line);
+
+      }
+
+      gear_list.appendChild(power_and_automation_list);
+
+      var climatization_header = document.createElement('H4');
+      var header_text = document.createTextNode("Climatization");
+      climatization_header.appendChild(header_text);
+
+      gear_list.appendChild(climatization_header);
+
+      var climatization_list = document.createElement('UL');
+
+      for (var i = 0; i < climatization.length; i++) {
+
+        var text = climatization[i][0];
+        var note = climatization[i][1];
+        var url = climatization[i][2];
+        var line = document.createElement('LI');
+        var textNode = document.createTextNode(text);
+
+        if (url.length > 0) {
+          var link = document.createElement('A');
+          link.setAttribute('href', url);
+          link.appendChild(textNode);
+          line.appendChild(link);
+        } else {
+          line.appendChild(textNode);
+        }
+        climatization_list.appendChild(line);
+
+      }
+
+      gear_list.appendChild(climatization_list);
+
+      var more = document.getElementById('more-gear');
+      more.setAttribute('style', 'display: none');
+
+      var title = document.getElementById('title-gear');
+      title.setAttribute('style', 'width: 1000px')
+
+      if(click) {
+        moreMedia(false);
+      }
+
+    }
+
     var streaming_services = document.getElementById('services-list');
 
     for (var i = 0; i < services.length; i++) {
@@ -295,34 +365,14 @@
 
     }
 
-    var shelf = document.getElementById('shelf');
+    var shelves_list = document.getElementById('shelves');
 
-    var item = collection[0][0];
-    var quantity = collection[0][1];
-    var url = collection[0][2];
-    var type = collection[0][3];
+    for (var i = 0; i < shelves.length; i++) {
 
-    var link = document.createElement('A');
-    link.setAttribute('href', url);
-    var text = item.concat(': ').concat(quantity);
-    var textNode = document.createTextNode(text);
-    link.appendChild(textNode);
-    shelf.appendChild(link);
-
-    var film_collection = document.getElementById('collection-list');
-    var prev_type = "collection";
-
-    for (var i = 1; i < collection.length; i++) {
-
-      var item = collection[i][0];
-      var quantity = collection[i][1];
-      var url = collection[i][2];
-      var type = collection[i][3];
-
-      if (type != prev_type) {
-        var line_break = document.createElement('BR');
-        film_collection.appendChild(line_break);
-      }
+      var item = shelves[i][0];
+      var quantity = shelves[i][1];
+      var url = shelves[i][2];
+      var type = shelves[i][3];
 
       var link = document.createElement('A');
       link.setAttribute('href', url);
@@ -331,9 +381,286 @@
       link.appendChild(textNode);
       var line = document.createElement('LI');
       line.appendChild(link);
-      film_collection.appendChild(line);
+      shelves_list.appendChild(line);
 
-      prev_type = type;
+    }
+
+    function moreMedia(click) {
+
+      var media = document.getElementById('media');
+
+      var collection_header = document.createElement('H4');
+      var header_text = document.createTextNode("Film Collection");
+      collection_header.appendChild(header_text);
+
+      media.appendChild(collection_header);
+
+      var film_collection = document.createElement('UL');
+
+      var prev_type = "collection";
+
+      for (var i = 0; i < collection.length; i++) {
+
+        var item = collection[i][0];
+        var quantity = collection[i][1];
+        var url = collection[i][2];
+        var type = collection[i][3];
+
+        if (type != prev_type) {
+          var line_break = document.createElement('BR');
+          film_collection.appendChild(line_break);
+        }
+
+        var link = document.createElement('A');
+        link.setAttribute('href', url);
+        var text = item.concat(': ').concat(quantity);
+        var textNode = document.createTextNode(text);
+        link.appendChild(textNode);
+        var line = document.createElement('LI');
+        line.appendChild(link);
+        film_collection.appendChild(line);
+
+        prev_type = type;
+
+      }
+
+      media.appendChild(film_collection);
+
+      var more = document.getElementById('more-media');
+      more.setAttribute('style', 'display: none');
+
+      var title = document.getElementById('title-media');
+      title.setAttribute('style', 'width: 460px')
+
+      if(click) {
+        moreEquipment(false);
+      }
+
+    }
+
+    var decor_door = document.getElementById("decor-door");
+
+    for (var i = 0; i < door.length; i++) {
+
+      var text = door[i][0];
+      var url = door[i][1];
+      var target = door[i][2];
+      var line = document.createElement('LI');
+      var textNode = document.createTextNode(text);
+
+      if (url.length > 0) {
+        var link = document.createElement('A');
+        link.setAttribute('href', url);
+        if(target.length > 0) {
+          link.setAttribute('target', target);
+        }
+        link.appendChild(textNode);
+        line.appendChild(link);
+      } else {
+        line.appendChild(textNode);
+      }
+
+      decor_door.appendChild(line);
+
+    }
+
+    var decor_wall = document.getElementById("decor-wall");
+
+    for (var i = 0; i < wall.length; i++) {
+
+      var text = wall[i][0];
+      var url = wall[i][1];
+      var target = wall[i][2];
+      var line = document.createElement('LI');
+      var textNode = document.createTextNode(text);
+
+      if (url.length > 0) {
+        var link = document.createElement('A');
+        link.setAttribute('href', url);
+        if(target.length > 0) {
+          link.setAttribute('target', target);
+        }
+        link.appendChild(textNode);
+        line.appendChild(link);
+      } else {
+        line.appendChild(textNode);
+      }
+
+      decor_wall.appendChild(line);
+
+    }
+
+    function moreDecor(click) {
+
+      var decor_list = document.getElementById('decor');
+
+      var miniatures_header = document.createElement('H4');
+      var header_text = document.createTextNode("Miniatures");
+      miniatures_header.appendChild(header_text);
+
+      decor_list.appendChild(miniatures_header);
+
+      var miniatures_list = document.createElement('UL');
+
+      for (var i = 0; i < miniatures.length; i++) {
+
+        var text = miniatures[i][0];
+        var note = miniatures[i][1];
+        var url = miniatures[i][2];
+        var line = document.createElement('LI');
+        var textNode = document.createTextNode(text);
+
+        if (url.length > 0) {
+          var link = document.createElement('A');
+          link.setAttribute('href', url);
+          link.appendChild(textNode);
+          line.appendChild(link);
+        } else {
+          line.appendChild(textNode);
+        }
+        miniatures_list.appendChild(line);
+
+      }
+
+      decor_list.appendChild(miniatures_list);
+
+      var tapes_header = document.createElement('H4');
+      var header_text = document.createTextNode("VHS Tapes");
+      tapes_header.appendChild(header_text);
+
+      decor_list.appendChild(tapes_header);
+
+      var tapes_list = document.createElement('UL');
+
+      for (var i = 0; i < tapes.length; i++) {
+
+        var text = tapes[i][0];
+        var note = tapes[i][1];
+        var url = tapes[i][2];
+        var line = document.createElement('LI');
+        var textNode = document.createTextNode(text);
+
+        if (url.length > 0) {
+          var link = document.createElement('A');
+          link.setAttribute('href', url);
+          link.appendChild(textNode);
+          line.appendChild(link);
+        } else {
+          line.appendChild(textNode);
+        }
+        tapes_list.appendChild(line);
+
+      }
+
+      decor_list.appendChild(tapes_list);
+
+      var more = document.getElementById('more-decor');
+      more.setAttribute('style', 'display: none');
+
+      var title = document.getElementById('title-decor');
+      title.setAttribute('style', 'width: 1000px')
+
+      if(click) {
+        moreStuff(false);
+      }
+
+    }
+
+    var stuff_stands = document.getElementById("stuff-stands");
+
+    for (var i = 0; i < stands.length; i++) {
+
+      var text = stands[i][0];
+      var url = stands[i][1];
+      var target = stands[i][2];
+      var line = document.createElement('LI');
+      var textNode = document.createTextNode(text);
+
+      if (url.length > 0) {
+        var link = document.createElement('A');
+        link.setAttribute('href', url);
+        if(target.length > 0) {
+          link.setAttribute('target', target);
+        }
+        link.appendChild(textNode);
+        line.appendChild(link);
+      } else {
+        line.appendChild(textNode);
+      }
+
+      stuff_stands.appendChild(line);
+
+    }
+
+    var stuff_furniture = document.getElementById("stuff-furniture");
+
+    for (var i = 0; i < furniture.length; i++) {
+
+      var text = furniture[i][0];
+      var url = furniture[i][1];
+      var target = furniture[i][2];
+      var line = document.createElement('LI');
+      var textNode = document.createTextNode(text);
+
+      if (url.length > 0) {
+        var link = document.createElement('A');
+        link.setAttribute('href', url);
+        if(target.length > 0) {
+          link.setAttribute('target', target);
+        }
+        link.appendChild(textNode);
+        line.appendChild(link);
+      } else {
+        line.appendChild(textNode);
+      }
+
+      stuff_furniture.appendChild(line);
+
+    }
+
+    function moreStuff(click) {
+
+      var stuff_list = document.getElementById('stuff');
+
+      var ambiance_header = document.createElement('H4');
+      var header_text = document.createTextNode("Ambiance");
+      ambiance_header.appendChild(header_text);
+
+      stuff_list.appendChild(ambiance_header);
+
+      var ambiance_list = document.createElement('UL');
+
+      for (var i = 0; i < ambiance.length; i++) {
+
+        var text = ambiance[i][0];
+        var note = ambiance[i][1];
+        var url = ambiance[i][2];
+        var line = document.createElement('LI');
+        var textNode = document.createTextNode(text);
+
+        if (url.length > 0) {
+          var link = document.createElement('A');
+          link.setAttribute('href', url);
+          link.appendChild(textNode);
+          line.appendChild(link);
+        } else {
+          line.appendChild(textNode);
+        }
+        ambiance_list.appendChild(line);
+
+      }
+
+      stuff_list.appendChild(ambiance_list);
+
+      var more = document.getElementById('more-stuff');
+      more.setAttribute('style', 'display: none');
+
+      var title = document.getElementById('title-stuff');
+      title.setAttribute('style', 'width: 460px')
+
+      if(click) {
+        moreDecor(false);
+      }
 
     }
 
@@ -355,7 +682,6 @@
       film_posters.append(film);
 
       var txt = films[i][2];
-      console.log(txt);
       var rate = document.createElement('DIV');
       rate.setAttribute('class', 'rating');
       rate.innerText = txt;
