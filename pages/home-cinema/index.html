@@ -141,10 +141,6 @@
           <div id="more-decor" class="more" onclick="addMoreDecor(true)">MORE</div>
         </div>
 
-        <h4>Door</h4>
-        <ul id="decor-door">
-        </ul>
-
         <h4>Wall</h4>
         <ul id="decor-wall">
         </ul>
@@ -156,10 +152,6 @@
           <div class="title">Other Stuff</div>
           <div id="more-stuff" class="more" onclick="addMoreStuff(true)">MORE</div>
         </div>
-
-        <h4>Wall Stands</h4>
-        <ul id="stuff-stands">
-        </ul>
 
         <h4>Furniture</h4>
         <ul id="stuff-furniture">
@@ -225,6 +217,10 @@
     var indexes = [1, 2, 3]; // fixed photos
     // indexes = getHeaderPhotosIndexes(number_of_photos); // random photos (comment to fix photos)
 
+    var initial_number_of_services = 6;
+    var current_services = 0;
+    var next_service = 1;
+
     var header_photos = document.getElementById('header-photos');
 
     for (var i = 0; i < 3 ; i++) {
@@ -255,16 +251,10 @@
     addMediaItems(shelves, shelves_list, 'shelf');
 
     var streaming_services = document.getElementById('services-list');
-    addServices(services, streaming_services);
-
-    var decor_door = document.getElementById("decor-door");
-    addItems(door, decor_door);
+    addServices();
 
     var decor_wall = document.getElementById("decor-wall");
     addItems(wall, decor_wall);
-
-    var stuff_stands = document.getElementById("stuff-stands");
-    addItems(stands, stuff_stands);
 
     var stuff_furniture = document.getElementById("stuff-furniture");
     addItems(furniture, stuff_furniture);

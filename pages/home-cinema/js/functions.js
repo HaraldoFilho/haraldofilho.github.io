@@ -164,7 +164,7 @@ function addMediaItems(media, items, initial_type) {
 
 }
 
-function addServices(services, items) {
+function addServices() {
 
   for (var i = 0; i < services.length; i++) {
 
@@ -172,7 +172,58 @@ function addServices(services, items) {
     var url = services[i][1];
     var status = services[i][2];
 
-    if (status == 'active') {
+    if (status == 'current') {
+      current_services++;
+      if (current_services <= initial_number_of_services) {
+        var link = document.createElement('A');
+        link.setAttribute('href', url);
+        link.setAttribute('target', '_blank');
+        var textNode = document.createTextNode(service);
+        link.appendChild(textNode);
+        var line = document.createElement('LI');
+        line.appendChild(link);
+        streaming_services.appendChild(line);
+        next_service++;
+      }
+    }
+
+  }
+
+  if (current_services > initial_number_of_services) {
+    var textNode = document.createTextNode('...');
+    var line = document.createElement('LI');
+    line.setAttribute('id', 'more-services');
+    line.setAttribute('onclick', 'addMoreServices()');
+    line.setAttribute('style', 'cursor: pointer');
+    line.appendChild(textNode);
+    streaming_services.appendChild(line);
+  }
+
+}
+
+function addMoreServices() {
+
+  var service = services[initial_number_of_services][0];
+  var url = services[initial_number_of_services][1];
+  var status = services[initial_number_of_services][2];
+
+  var link = document.createElement('A');
+  link.setAttribute('href', url);
+  link.setAttribute('target', '_blank');
+  var textNode = document.createTextNode(service);
+  link.appendChild(textNode);
+  var line = document.getElementById('more-services');
+  line.innerText = "";
+  line.setAttribute('onclick', '');
+  line.appendChild(link);
+
+  for (var i = next_service; i < services.length; i++) {
+
+    var service = services[i][0];
+    var url = services[i][1];
+    var status = services[i][2];
+
+    if (status == 'current') {
       var link = document.createElement('A');
       link.setAttribute('href', url);
       link.setAttribute('target', '_blank');
@@ -180,7 +231,7 @@ function addServices(services, items) {
       link.appendChild(textNode);
       var line = document.createElement('LI');
       line.appendChild(link);
-      items.appendChild(line);
+      streaming_services.appendChild(line);
     }
 
   }
@@ -248,6 +299,14 @@ function addMoreDecor(click) {
 
   var decor_list = document.getElementById('decor');
 
+  var door_header = document.createElement('H4');
+  var header_text = document.createTextNode("Door");
+  door_header.appendChild(header_text);
+  decor_list.appendChild(door_header);
+  var door_list = document.createElement('UL');
+  addItems(door, door_list);
+  decor_list.appendChild(door_list);
+
   var miniatures_header = document.createElement('H4');
   var header_text = document.createTextNode("Miniatures");
   miniatures_header.appendChild(header_text);
@@ -279,6 +338,14 @@ function addMoreDecor(click) {
 function addMoreStuff(click) {
 
   var stuff_list = document.getElementById('stuff');
+
+  var stands_header = document.createElement('H4');
+  var header_text = document.createTextNode("Wall Stands");
+  stands_header.appendChild(header_text);
+  stuff_list.appendChild(stands_header);
+  var stands_list = document.createElement('UL');
+  addItems(stands, stands_list);
+  stuff_list.appendChild(stands_list);
 
   var ambiance_header = document.createElement('H4');
   var header_text = document.createTextNode("Ambiance");

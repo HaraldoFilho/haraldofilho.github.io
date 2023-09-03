@@ -1,4 +1,6 @@
 var films = [
+  ['https://letterboxd.com/hpfilho/film/barbarian-2022/', 'https://a.ltrbxd.com/resized/film-poster/8/1/9/6/4/8/819648-barbarian-0-600-0-900-crop.jpg', '★★★½'],
+  ['https://letterboxd.com/hpfilho/film/victoria-2015/', 'https://a.ltrbxd.com/resized/sm/upload/p7/5b/rd/8f/t66eAg7xBLGoSSoA8JtJtX3NKs1-0-600-0-900-crop.jpg', '★★★★'],
   ['https://letterboxd.com/hpfilho/film/nobody-2021/', 'https://a.ltrbxd.com/resized/film-poster/5/4/2/5/5/5/542555-nobody-0-600-0-900-crop.jpg', '★★★½'],
   ['https://letterboxd.com/hpfilho/film/they-cloned-tyrone/', 'https://a.ltrbxd.com/resized/film-poster/6/5/8/9/0/6/658906-they-cloned-tyrone-0-600-0-900-crop.jpg', '★★★½'],
   ['https://letterboxd.com/hpfilho/film/paradise-2023-1/', 'https://a.ltrbxd.com/resized/film-poster/1/0/2/7/5/7/8/1027578-paradise-0-600-0-900-crop.jpg', '★★★'],
@@ -15,5 +17,4 @@ var films = [
   ['https://letterboxd.com/hpfilho/film/hot-fuzz/', 'https://a.ltrbxd.com/resized/sm/upload/xe/2y/e6/gy/4XLSKzQcE4lIgJgd71Y8UhAhxqQ-0-600-0-900-crop.jpg', '★★★★'],
   ['https://letterboxd.com/hpfilho/film/it-chapter-two/', 'https://a.ltrbxd.com/resized/film-poster/4/0/5/5/4/5/405545-it-chapter-two-0-600-0-900-crop.jpg', '★★★½'],
   ['https://letterboxd.com/hpfilho/film/it-2017/', 'https://a.ltrbxd.com/resized/sm/upload/w3/47/76/am/6uDpMsdn8bbZScDptbika5JEtSH-0-600-0-900-crop.jpg', '★★★★'],
-  ['https://letterboxd.com/hpfilho/film/kong-skull-island/', 'https://a.ltrbxd.com/resized/film-poster/2/2/0/0/8/0/220080-kong-skull-island-0-600-0-900-crop.jpg', '★★★½'],
 ]
