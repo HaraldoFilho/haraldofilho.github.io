@@ -114,8 +114,11 @@
 
       </div>
 
-      <div class="streaming">
-        <div class="title">Streaming</div>
+      <div id="streaming" class="streaming">
+        <div id="title-streaming" class="title-grid-right">
+          <div class="title">Streaming</div>
+          <div id="past-services" class="more" onclick="addPastServices()">MORE</div>
+        </div>
 
         <h4>Current Services</h4>
         <ul id="services-list">
@@ -217,9 +220,31 @@
     var indexes = [1, 2, 3]; // fixed photos
     // indexes = getHeaderPhotosIndexes(number_of_photos); // random photos (comment to fix photos)
 
-    var initial_number_of_services = 6;
-    var current_services = 0;
-    var next_service = 1;
+    var max_initial_number_of_services = 7;
+
+    var current_services = [];
+    var past_services = [];
+    var all_current_services_visible = false;
+
+    for (var i = 0; i < services.length; i++) {
+      switch (services[i][2]) {
+        case 'current':
+        current_services.push(services[i])
+        break;
+        case 'past':
+        past_services.push(services[i])
+        break;
+        default:
+      }
+    }
+
+    if (past_services.length == 0) {
+      var more = document.getElementById('past-services');
+      var title = document.getElementById('title-streaming');
+      more.setAttribute('style', 'display: none');
+      title.setAttribute('style', 'width: 504px');
+    }
+
 
     var header_photos = document.getElementById('header-photos');
 
@@ -251,7 +276,7 @@
     addMediaItems(shelves, shelves_list, 'shelf');
 
     var streaming_services = document.getElementById('services-list');
-    addServices();
+    addCurrentServices();
 
     var decor_wall = document.getElementById("decor-wall");
     addItems(wall, decor_wall);

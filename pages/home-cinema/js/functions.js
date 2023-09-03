@@ -164,36 +164,35 @@ function addMediaItems(media, items, initial_type) {
 
 }
 
-function addServices() {
+function addCurrentServices() {
 
-  for (var i = 0; i < services.length; i++) {
+  if (max_initial_number_of_services < current_services.length) {
+    max_initial_number_of_services -= 1;
+  }
 
-    var service = services[i][0];
-    var url = services[i][1];
-    var status = services[i][2];
+  for (var i = 0; i < current_services.length; i++) {
 
-    if (status == 'current') {
-      current_services++;
-      if (current_services <= initial_number_of_services) {
+    var service = current_services[i][0];
+    var url = current_services[i][1];
+    var status = current_services[i][2];
+
+      if (i < max_initial_number_of_services) {
         var link = document.createElement('A');
         link.setAttribute('href', url);
-        link.setAttribute('target', '_blank');
         var textNode = document.createTextNode(service);
         link.appendChild(textNode);
         var line = document.createElement('LI');
         line.appendChild(link);
         streaming_services.appendChild(line);
-        next_service++;
       }
-    }
 
   }
 
-  if (current_services > initial_number_of_services) {
+  if (i > max_initial_number_of_services) {
     var textNode = document.createTextNode('...');
     var line = document.createElement('LI');
     line.setAttribute('id', 'more-services');
-    line.setAttribute('onclick', 'addMoreServices()');
+    line.setAttribute('onclick', 'addMoreCurrentServices()');
     line.setAttribute('style', 'cursor: pointer');
     line.appendChild(textNode);
     streaming_services.appendChild(line);
@@ -201,15 +200,14 @@ function addServices() {
 
 }
 
-function addMoreServices() {
+function addMoreCurrentServices() {
 
-  var service = services[initial_number_of_services][0];
-  var url = services[initial_number_of_services][1];
-  var status = services[initial_number_of_services][2];
+  var service = current_services[max_initial_number_of_services][0];
+  var url = current_services[max_initial_number_of_services][1];
+  var status = current_services[max_initial_number_of_services][2];
 
   var link = document.createElement('A');
   link.setAttribute('href', url);
-  link.setAttribute('target', '_blank');
   var textNode = document.createTextNode(service);
   link.appendChild(textNode);
   var line = document.getElementById('more-services');
@@ -217,16 +215,15 @@ function addMoreServices() {
   line.setAttribute('onclick', '');
   line.appendChild(link);
 
-  for (var i = next_service; i < services.length; i++) {
+  for (var i = max_initial_number_of_services+1; i < current_services.length; i++) {
 
-    var service = services[i][0];
-    var url = services[i][1];
-    var status = services[i][2];
+    var service = current_services[i][0];
+    var url = current_services[i][1];
+    var status = current_services[i][2];
 
     if (status == 'current') {
       var link = document.createElement('A');
       link.setAttribute('href', url);
-      link.setAttribute('target', '_blank');
       var textNode = document.createTextNode(service);
       link.appendChild(textNode);
       var line = document.createElement('LI');
@@ -235,6 +232,48 @@ function addMoreServices() {
     }
 
   }
+
+  all_current_services_visible = true;
+
+}
+
+function addPastServices() {
+
+  if (!all_current_services_visible && max_initial_number_of_services < current_services.length) {
+    addMoreCurrentServices();
+  }
+
+  var streaming = document.getElementById('streaming');
+
+  var past_services_header = document.createElement('H4');
+  var header_text = document.createTextNode("Past Services");
+  past_services_header.appendChild(header_text);
+  streaming.appendChild(past_services_header);
+
+  var past_services_list = document.createElement('UL');
+  streaming.appendChild(past_services_list);
+
+  for (var i = 0; i < past_services.length; i++) {
+
+    var service = past_services[i][0];
+    var url = past_services[i][1];
+    var status = past_services[i][2];
+
+        var link = document.createElement('A');
+        link.setAttribute('href', url);
+        var textNode = document.createTextNode(service);
+        link.appendChild(textNode);
+        var line = document.createElement('LI');
+        line.appendChild(link);
+        past_services_list.appendChild(line);
+
+  }
+
+  var more = document.getElementById('past-services');
+  more.setAttribute('style', 'display: none');
+
+  var title = document.getElementById('title-streaming');
+  title.setAttribute('style', 'width: 504px');
 
 }
 
@@ -262,7 +301,7 @@ function addMoreEquipment(click) {
   more.setAttribute('style', 'display: none');
 
   var title = document.getElementById('title-gear');
-  title.setAttribute('style', 'width: 997px')
+  title.setAttribute('style', 'width: 997px');
 
   if(click) {
     addMoreMedia(false);
@@ -287,7 +326,7 @@ function addMoreMedia(click) {
   more.setAttribute('style', 'display: none');
 
   var title = document.getElementById('title-media');
-  title.setAttribute('style', 'width: 457px')
+  title.setAttribute('style', 'width: 457px');
 
   if(click) {
     addMoreEquipment(false);
@@ -327,7 +366,7 @@ function addMoreDecor(click) {
   more.setAttribute('style', 'display: none');
 
   var title = document.getElementById('title-decor');
-  title.setAttribute('style', 'width: 1044px')
+  title.setAttribute('style', 'width: 1044px');
 
   if(click) {
     addMoreStuff(false);
@@ -359,7 +398,7 @@ function addMoreStuff(click) {
   more.setAttribute('style', 'display: none');
 
   var title = document.getElementById('title-stuff');
-  title.setAttribute('style', 'width: 497px')
+  title.setAttribute('style', 'width: 497px');
 
   if(click) {
     addMoreDecor(false);
