@@ -211,6 +211,18 @@ a:hover {
   height: 10px;
 }
 
+.room-grid {
+  display: grid;
+  grid-template-areas: 'auto auto';
+  justify-content: 'left left';
+}
+
+.screen-grid {
+  display: grid;
+  grid-template-areas: 'auto auto';
+  justify-content: 'left left';
+}
+
 .title-grid-left {
   display: grid;
   grid-template-areas: 'auto auto';

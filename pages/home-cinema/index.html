@@ -30,6 +30,8 @@
 
     <div class="grid-container">
 
+      <!-- Header -->
+
       <div class="page-title">
         C I N E M I N H A
       </div>
@@ -37,6 +39,29 @@
       <div class="photos">
         <div id="header-photos" class="photos-grid"></div>
       </div>
+
+      <!-- Photos Overlay -->
+
+      <div id="overlay" class="overlay">
+        <div class="overlay-content">
+          <div class="overlay-grid-container">
+            <div class="arr_back">
+              <img id="arr_back" class="icon" onclick="previousPhoto()">
+            </div>
+            <div class="photo">
+              <img id="photo" class="photo">
+            </div>
+            <div class="arr_forward">
+              <img id="arr_forward" class="icon" onclick="nextPhoto()">
+            </div>
+            <div class="close">
+              <img class="icon" src="icons/close.svg" onclick="closePhoto()">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Description -->
 
       <div class="description">
         The <b>Cineminha</b> (Portuguese diminutive for <i>cinema</i>) is a <i><b>tiny home cinema</b></i> room built in a space of just 6.72 m<sup>2</sup>, a spare room in a three bedroom apartment located in <a href="https://www.google.com/maps/place/Campinas+-+SP/@-0.8339764,-72.4389721,3z/data=!4m6!3m5!1s0x94c8c8f6a2552649:0x7475001c58043536!8m2!3d-22.9050824!4d-47.0613327!16zL20vMGgxbGY?entry=ttu" target="_blank">Campinas, Brazil</a>.
@@ -49,20 +74,34 @@
         A collection of a few hundred titles of Blu-ray discs and DVDs, a few dozen soundtrack CDs and some film books completes the film loving experience.
       </div>
 
+      <!-- Sections -->
+
       <div class="room">
         <div class="title">Room Dimensions</div>
-        <b>Width:</b> 2.54 m (8.3 ft)<br>
-        <b>Depth:</b> 2.60 m (8.5 ft)<br>
-        <b>Height:</b> 2.54 m (8.3 ft)<br><br>
-        <b>Useful Area:</b> <br>6.60 m<sup>2</sup> (70.55 sq ft)<br>
+        <div class="room-grid">
+          <div>
+            <b>Width:</b> 2.54 m (8.3 ft)<br>
+            <b>Depth:</b> 2.60 m (8.5 ft)<br>
+            <b>Height:</b> 2.54 m (8.3 ft)<br>
+          </div>
+          <div>
+            <b>Useful Area:</b> <br>6.60 m<sup>2</sup> (70.55 sq ft)
+          </div>
+        </div>
       </div>
 
       <div class="screen">
         <div class="title">Screen Specifications</div>
-        <b>Display Type:</b> <a href="https://en.wikipedia.org/wiki/OLED" target="_blank">OLED</a> TV<br>
-        <b>Diagonal Size:</b> <a href="https://en.wikipedia.org/wiki/Display_size" target="_blank">55 in</a><br>
-        <b>Aspect Ratio:</b> <a href="https://en.wikipedia.org/wiki/Display_aspect_ratio" target="_blank">16:9</a><br>
-        <b>Resolution:</b> <a href="https://en.wikipedia.org/wiki/4K_resolution" target="_blank">4K UHD</a><br>
+        <div class="screen-grid">
+          <div>
+            <b>Display Type:</b> <a href="https://en.wikipedia.org/wiki/OLED" target="_blank">OLED</a> TV<br>
+            <b>Diagonal Size:</b> <a href="https://en.wikipedia.org/wiki/Display_size" target="_blank">55 in</a><br>
+          </div>
+          <div>
+            <b>Aspect Ratio:</b> <a href="https://en.wikipedia.org/wiki/Display_aspect_ratio" target="_blank">16:9</a><br>
+            <b>Resolution:</b> <a href="https://en.wikipedia.org/wiki/4K_resolution" target="_blank">4K UHD</a><br>
+          </div>
+        </div>
       </div>
 
       <div class="av_tech">
@@ -162,12 +201,16 @@
 
       </div>
 
+      <!-- Film Posters -->
+
       <div class="films">
         <div class="title" style=""><a href="https://boxd.it/nzQeM$cNzlkzSf6uB2nQEX">LATEST RELEASES</a></div>
         <div class="film-posters" id="film-posters"></div>
         <div class="film-ratings" id="film-ratings"></div>
         <div class="bottom-links">| <a href="https://boxd.it/oR1Sm$2WMykxOCoj4FW3SC">RERUNS</a> | <a href="https://letterboxd.com/hpfilho/tag/cineminha/diary/">DIARY</a> | <a href="https://letterboxd.com/hpfilho/tag/tv-cineminha/diary/">TV</a> | <a href="https://letterboxd.com/hpfilho/tag/short-cineminha/diary/">SHORTS</a> | <a href="https://letterboxd.com/hpfilho/list/watched-in-my-home-cinema/">BLU-RAYS</a> |</div>
       </div>
+
+      <!-- Footer Logos -->
 
       <div class="logos">
         <div class="logos-techs">
@@ -186,39 +229,36 @@
 
     </div>
 
-    <!-- Photo overlay -->
-    <div id="overlay" class="overlay">
-
-      <!-- Overlay content -->
-      <div class="overlay-content">
-
-        <div class="overlay-grid-container">
-
-          <div class="arr_back">
-            <img id="arr_back" class="icon" onclick="previousPhoto()">
-          </div>
-          <div class="photo">
-            <img id="photo" class="photo">
-          </div>
-          <div class="arr_forward">
-            <img id="arr_forward" class="icon" onclick="nextPhoto()">
-          </div>
-          <div class="close">
-            <img class="icon" src="icons/close.svg" onclick="closePhoto()">
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
     <script>
+
+    //------- HEADER PHOTOS --------
 
     var current_photo;
     var number_of_photos = 5;
     var indexes = [1, 2, 3]; // fixed photos
     // indexes = getHeaderPhotosIndexes(number_of_photos); // random photos (comment to fix photos)
+
+    var header_photos = document.getElementById('header-photos');
+
+    for (var i = 0; i < 3 ; i++) {
+      var photo_number = indexes[i];
+      var photo = document.createElement('DIV');
+      var photo_img = document.createElement('IMG');
+      photo_img.setAttribute('class', 'photo_thumb');
+      photo_img.setAttribute('src', "img/IMG_".concat(photo_number).concat(".jpg"));
+      photo_img.setAttribute('alt', "Click to enlarge");
+      photo_img.setAttribute('onclick', "openPhoto(".concat(photo_number).concat(")"));
+      photo.appendChild(photo_img);
+      header_photos.appendChild(photo);
+    }
+
+    window.onkeyup = function (event) {
+      if (event.keyCode == 27) {
+        closePhoto();
+      }
+    }
+
+    //------- STREAMING SERVICES --------
 
     var max_initial_number_of_services = 6;
 
@@ -245,26 +285,7 @@
       title.setAttribute('style', 'width: 504px');
     }
 
-
-    var header_photos = document.getElementById('header-photos');
-
-    for (var i = 0; i < 3 ; i++) {
-      var photo_number = indexes[i];
-      var photo = document.createElement('DIV');
-      var photo_img = document.createElement('IMG');
-      photo_img.setAttribute('class', 'photo_thumb');
-      photo_img.setAttribute('src', "img/IMG_".concat(photo_number).concat(".jpg"));
-      photo_img.setAttribute('alt', "Click to enlarge");
-      photo_img.setAttribute('onclick', "openPhoto(".concat(photo_number).concat(")"));
-      photo.appendChild(photo_img);
-      header_photos.appendChild(photo);
-    }
-
-    window.onkeyup = function (event) {
-      if (event.keyCode == 27) {
-        closePhoto();
-      }
-    }
+    //------- SECTIONS --------
 
     var speakers_list = document.getElementById('speakers-list');
     addSpeakers(speakers, speakers_list);
@@ -283,6 +304,8 @@
 
     var stuff_furniture = document.getElementById("stuff-furniture");
     addItems(furniture, stuff_furniture);
+
+    //------- FILM POSTERS --------
 
     var film_posters = document.getElementById('film-posters');
     var film_ratings = document.getElementById('film-ratings');
