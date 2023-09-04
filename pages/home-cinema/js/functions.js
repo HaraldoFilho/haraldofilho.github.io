@@ -176,15 +176,19 @@ function addCurrentServices() {
     var url = current_services[i][1];
     var status = current_services[i][2];
 
-      if (i < max_initial_number_of_services) {
+    if (i < max_initial_number_of_services) {
+      var line = document.createElement('LI');
+      if (url.length > 0) {
         var link = document.createElement('A');
         link.setAttribute('href', url);
         var textNode = document.createTextNode(service);
         link.appendChild(textNode);
-        var line = document.createElement('LI');
         line.appendChild(link);
-        streaming_services.appendChild(line);
+      } else {
+        line.appendChild(textNode);
       }
+      streaming_services.appendChild(line);
+    }
 
   }
 
@@ -221,15 +225,17 @@ function addMoreCurrentServices() {
     var url = current_services[i][1];
     var status = current_services[i][2];
 
-    if (status == 'current') {
+    var line = document.createElement('LI');
+    if (url.length > 0) {
       var link = document.createElement('A');
       link.setAttribute('href', url);
       var textNode = document.createTextNode(service);
       link.appendChild(textNode);
-      var line = document.createElement('LI');
       line.appendChild(link);
-      streaming_services.appendChild(line);
+    } else {
+      line.appendChild(textNode);
     }
+    streaming_services.appendChild(line);
 
   }
 
@@ -259,16 +265,22 @@ function addPastServices() {
     var url = past_services[i][1];
     var status = past_services[i][2];
 
-        var link = document.createElement('A');
-        link.setAttribute('href', url);
-        var textNode = document.createTextNode(service);
-        link.appendChild(textNode);
-        var line = document.createElement('LI');
-        line.appendChild(link);
-        past_services_list.appendChild(line);
+    var line = document.createElement('LI');
+    var textNode = document.createTextNode(service);
+
+    if (url.length > 0) {
+      var link = document.createElement('A');
+      link.setAttribute('href', url);
+      link.appendChild(textNode);
+      line.appendChild(link);
+    } else {
+      line.appendChild(textNode);
+    }
+
+    past_services_list.appendChild(line);
 
   }
-
+  
   var more = document.getElementById('past-services');
   more.setAttribute('style', 'display: none');
 

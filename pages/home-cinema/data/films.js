@@ -1,4 +1,5 @@
 var films = [
+  ['https://letterboxd.com/hpfilho/film/eo/', 'https://a.ltrbxd.com/resized/film-poster/7/0/3/9/4/3/703943-eo-0-600-0-900-crop.jpg', '★★★½'],
   ['https://letterboxd.com/hpfilho/film/barbarian-2022/', 'https://a.ltrbxd.com/resized/film-poster/8/1/9/6/4/8/819648-barbarian-0-600-0-900-crop.jpg', '★★★½'],
   ['https://letterboxd.com/hpfilho/film/victoria-2015/', 'https://a.ltrbxd.com/resized/sm/upload/p7/5b/rd/8f/t66eAg7xBLGoSSoA8JtJtX3NKs1-0-600-0-900-crop.jpg', '★★★★'],
   ['https://letterboxd.com/hpfilho/film/nobody-2021/', 'https://a.ltrbxd.com/resized/film-poster/5/4/2/5/5/5/542555-nobody-0-600-0-900-crop.jpg', '★★★½'],
