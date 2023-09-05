@@ -13,5 +13,6 @@ var services = [
   ['Globoplay', 'https://letterboxd.com/hpfilho/tag/stream/films/on/globoplay-br/', ''],
   ['MGM', 'https://letterboxd.com/hpfilho/tag/stream/films/on/mgm-br/', ''],
   ['Belas Artes', 'https://letterboxd.com/hpfilho/tag/stream/films/on/belasartesalacarte-br/', ''],
+  ['Oldflix', 'https://letterboxd.com/hpfilho/tag/stream/films/on/oldflix-br/', ''],
   ['Filmicca', '', '']
 ]

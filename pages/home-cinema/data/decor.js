@@ -1,8 +1,3 @@
-var door = [
-  ['Home Theater Sign CineSigns "Home Cinema" Silver', 'https://www.etsy.com/listing/951606986/home-cinema-home-theater-sign', '_blank'],
-  ['Decal "Charlie Chaplin\'s The Kid"', '', '']
-]
-
 var wall = [
   ['Custom Home Theater Sign CineSigns "Dolby Atmos" Silver', 'https://www.etsy.com/listing/951581325/dolby-atmos-home-theater-sign', '_blank'],
   ['Custom Home Theater Sign CineSigns "DTS X" Silver', 'https://www.etsy.com/listing/937633862/dts-x-home-theater-sign', '_blank'],
@@ -11,6 +6,11 @@ var wall = [
   ['Poster PersonifiedInPrint "Famous Film Quotes"', 'https://www.etsy.com/listing/826247167/famous-iconic-film-quotes-a2-poster', '_blank'],
   ['Poster TheGeekMonkey "Blade Runner - Roy Batty\'s Monologue"', 'https://www.etsy.com/listing/526999053/roy-batty-blade-runner-custom-soundwave', '_blank'],
   ['Film Posters', 'https://boxd.it/imfd2$AMC0T1gelm4HfekC', '']
+]
+
+var door = [
+  ['Home Theater Sign CineSigns "Home Cinema" Silver', 'https://www.etsy.com/listing/951606986/home-cinema-home-theater-sign', '_blank'],
+  ['Decal "Charlie Chaplin\'s The Kid"', '', '']
 ]
 
 var miniatures = [

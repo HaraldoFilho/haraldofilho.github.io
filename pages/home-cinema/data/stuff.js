@@ -1,8 +1,3 @@
-var stands = [
-  ['TV Stand ELG A02V6N', '', ''],
-  ['Supports Avatron SCH-01T-B (4)', '', '']
-]
-
 var furniture = [
   ['Double Reclining Chair', '', ''],
   ['Wood Equipment Rack', '', ''],
@@ -11,6 +6,11 @@ var furniture = [
   ['Wood Wall Shelf for CD/Decor', '', ''],
   ['Plywood TV/Speakers Wall Panel', '', ''],
   ['Plywood Baseboard Wall Panels', '', '']
+]
+
+var stands = [
+  ['TV Stand ELG A02V6N', '', ''],
+  ['Supports Avatron SCH-01T-B (4)', '', '']
 ]
 
 var ambiance = [
