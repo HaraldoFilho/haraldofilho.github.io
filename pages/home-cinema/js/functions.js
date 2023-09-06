@@ -196,7 +196,7 @@ function addCurrentServices() {
     var textNode = document.createTextNode('...');
     var line = document.createElement('LI');
     line.setAttribute('id', 'more-services');
-    line.setAttribute('onclick', 'addMoreCurrentServices()');
+    line.setAttribute('onclick', 'moreCurrentServices()');
     line.setAttribute('style', 'cursor: pointer');
     line.appendChild(textNode);
     streaming_services.appendChild(line);
@@ -204,7 +204,7 @@ function addCurrentServices() {
 
 }
 
-function addMoreCurrentServices() {
+function moreCurrentServices() {
 
   var service = current_services[max_initial_number_of_services][0];
   var url = current_services[max_initial_number_of_services][1];
@@ -246,17 +246,19 @@ function addMoreCurrentServices() {
 function addPastServices() {
 
   if (!all_current_services_visible && max_initial_number_of_services < current_services.length) {
-    addMoreCurrentServices();
+    moreCurrentServices();
   }
 
   var streaming = document.getElementById('streaming');
 
   var past_services_header = document.createElement('H4');
+  past_services_header.setAttribute('id', 'past-services-header');
   var header_text = document.createTextNode("Past Services");
   past_services_header.appendChild(header_text);
   streaming.appendChild(past_services_header);
 
   var past_services_list = document.createElement('UL');
+  past_services_list.setAttribute('id', 'past-services-list');
   streaming.appendChild(past_services_list);
 
   for (var i = 0; i < past_services.length; i++) {
@@ -280,140 +282,229 @@ function addPastServices() {
     past_services_list.appendChild(line);
 
   }
-  
-  var more = document.getElementById('past-services');
-  more.setAttribute('style', 'display: none');
 
-  var title = document.getElementById('title-streaming');
-  title.setAttribute('style', 'width: 504px');
+  var more = document.getElementById('past-services');
+  more.innerText = "LESS";
+  more.setAttribute('onclick', 'removePastServices()');
 
 }
 
-function addMoreEquipment(click) {
+function removePastServices() {
+
+  document.getElementById('past-services-header').remove();
+  document.getElementById('past-services-list').remove();
+
+  var more = document.getElementById('past-services');
+  more.innerText = "MORE";
+  more.setAttribute('onclick', 'addPastServices()');
+
+}
+
+function moreEquipment(click) {
 
   var gear_list = document.getElementById('gear-list');
 
   var power_and_automation_header = document.createElement('H4');
+  power_and_automation_header.setAttribute('id', 'power-and-automation-header');
   var header_text = document.createTextNode("Power and Automation");
   power_and_automation_header.appendChild(header_text);
   gear_list.appendChild(power_and_automation_header);
   var power_and_automation_list = document.createElement('UL');
+  power_and_automation_list.setAttribute('id', 'power-and-automation-list')
   addEquipment(power_and_automation, power_and_automation_list);
   gear_list.appendChild(power_and_automation_list);
 
   var climatization_header = document.createElement('H4');
+  climatization_header.setAttribute('id', 'climatization-header');
   var header_text = document.createTextNode("Climatization");
   climatization_header.appendChild(header_text);
   gear_list.appendChild(climatization_header);
   var climatization_list = document.createElement('UL');
+  climatization_list.setAttribute('id', 'climatization-list')
   addEquipment(climatization, climatization_list);
   gear_list.appendChild(climatization_list);
 
   var more = document.getElementById('more-gear');
-  more.setAttribute('style', 'display: none');
-
-  var title = document.getElementById('title-gear');
-  title.setAttribute('style', 'width: 997px');
+  more.innerText = "LESS";
+  more.setAttribute('onclick', 'lessEquipment(true)');
 
   if(click) {
-    addMoreMedia(false);
+    moreMedia(false);
   }
 
 }
 
-function addMoreMedia(click) {
+function lessEquipment(click) {
+
+  document.getElementById('power-and-automation-header').remove();
+  document.getElementById('power-and-automation-list').remove();
+
+  document.getElementById('climatization-header').remove();
+  document.getElementById('climatization-list').remove();
+
+  var more = document.getElementById('more-gear');
+  more.innerText = "MORE";
+  more.setAttribute('onclick', 'moreEquipment(true)');
+
+  if(click) {
+    lessMedia(false);
+  }
+
+}
+
+function moreMedia(click) {
 
   var media = document.getElementById('media');
 
   var collection_header = document.createElement('H4');
+  collection_header.setAttribute('id', 'collection-header');
   var header_text = document.createTextNode("Film Collection");
   collection_header.appendChild(header_text);
   media.appendChild(collection_header);
 
   var film_collection = document.createElement('UL');
+  film_collection.setAttribute('id', 'film-collection');
   addMediaItems(collection, film_collection, 'collection');
   media.appendChild(film_collection);
 
   var more = document.getElementById('more-media');
-  more.setAttribute('style', 'display: none');
-
-  var title = document.getElementById('title-media');
-  title.setAttribute('style', 'width: 457px');
+  more.innerText = "LESS";
+  more.setAttribute('onclick', 'lessEquipment(true)');
 
   if(click) {
-    addMoreEquipment(false);
+    moreEquipment(false);
   }
 
 }
 
-function addMoreDecor(click) {
+function lessMedia(click) {
+
+  document.getElementById('collection-header').remove();
+  document.getElementById('film-collection').remove();
+
+  var more = document.getElementById('more-media');
+  more.innerText = "MORE";
+  more.setAttribute('onclick', 'moreEquipment(true)');
+
+  if(click) {
+    lessEquipment(false);
+  }
+
+}
+
+function moreDecor(click) {
 
   var decor_list = document.getElementById('decor');
 
   var door_header = document.createElement('H4');
+  door_header.setAttribute('id', 'door-header');
   var header_text = document.createTextNode("Door");
   door_header.appendChild(header_text);
   decor_list.appendChild(door_header);
   var door_list = document.createElement('UL');
+  door_list.setAttribute('id', 'door-list');
   addItems(door, door_list);
   decor_list.appendChild(door_list);
 
   var miniatures_header = document.createElement('H4');
+  miniatures_header.setAttribute('id', 'miniatures-header');
   var header_text = document.createTextNode("Miniatures");
   miniatures_header.appendChild(header_text);
   decor_list.appendChild(miniatures_header);
   var miniatures_list = document.createElement('UL');
+  miniatures_list.setAttribute('id', 'miniatures-list');
   addItems(miniatures, miniatures_list);
   decor_list.appendChild(miniatures_list);
 
   var tapes_header = document.createElement('H4');
+  tapes_header.setAttribute('id', 'tapes-header');
   var header_text = document.createTextNode("VHS Tapes");
   tapes_header.appendChild(header_text);
   decor_list.appendChild(tapes_header);
   var tapes_list = document.createElement('UL');
+  tapes_list.setAttribute('id', 'tapes-list');
   addItems(tapes, tapes_list);
   decor_list.appendChild(tapes_list);
 
   var more = document.getElementById('more-decor');
-  more.setAttribute('style', 'display: none');
-
-  var title = document.getElementById('title-decor');
-  title.setAttribute('style', 'width: 1044px');
+  more.innerText = "LESS";
+  more.setAttribute('onclick', 'lessDecor(true)');
 
   if(click) {
-    addMoreStuff(false);
+    moreStuff(false);
   }
 
 }
 
-function addMoreStuff(click) {
+function lessDecor(click) {
+
+  document.getElementById('door-header').remove();
+  document.getElementById('door-list').remove();
+
+  document.getElementById('miniatures-header').remove();
+  document.getElementById('miniatures-list').remove();
+
+  document.getElementById('tapes-header').remove();
+  document.getElementById('tapes-list').remove();
+
+  var more = document.getElementById('more-decor');
+  more.innerText = "MORE";
+  more.setAttribute('onclick', 'moreDecor(true)');
+
+  if(click) {
+    lessStuff(false);
+  }
+
+}
+
+function moreStuff(click) {
 
   var stuff_list = document.getElementById('stuff');
 
   var stands_header = document.createElement('H4');
+  stands_header.setAttribute('id', 'stands-header');
   var header_text = document.createTextNode("Wall Stands");
   stands_header.appendChild(header_text);
   stuff_list.appendChild(stands_header);
   var stands_list = document.createElement('UL');
+  stands_list.setAttribute('id', 'stands-list');
   addItems(stands, stands_list);
   stuff_list.appendChild(stands_list);
 
   var ambiance_header = document.createElement('H4');
+  ambiance_header.setAttribute('id', 'ambiance-header');
   var header_text = document.createTextNode("Ambiance");
   ambiance_header.appendChild(header_text);
   stuff_list.appendChild(ambiance_header);
   var ambiance_list = document.createElement('UL');
+  ambiance_list.setAttribute('id', 'ambiance-list');
   addItems(ambiance, ambiance_list);
   stuff_list.appendChild(ambiance_list);
 
   var more = document.getElementById('more-stuff');
-  more.setAttribute('style', 'display: none');
-
-  var title = document.getElementById('title-stuff');
-  title.setAttribute('style', 'width: 497px');
+  more.innerText = "LESS";
+  more.setAttribute('onclick', 'lessStuff(true)');
 
   if(click) {
-    addMoreDecor(false);
+    moreDecor(false);
+  }
+
+}
+
+function lessStuff(click) {
+
+  document.getElementById('stands-header').remove();
+  document.getElementById('stands-list').remove();
+
+  document.getElementById('ambiance-header').remove();
+  document.getElementById('ambiance-list').remove();
+
+  var more = document.getElementById('more-stuff');
+  more.innerText = "MORE";
+  more.setAttribute('onclick', 'moreStuff(true)');
+
+  if(click) {
+    lessDecor(false);
   }
 
 }
