@@ -156,12 +156,8 @@
       <div id="streaming" class="streaming">
         <div id="title-streaming" class="title-grid-right">
           <div class="title">Streaming</div>
-          <div id="past-services" class="more" onclick="addPastServices()">MORE</div>
+          <div id="past-services" class="more" onclick="addPastServices(true)">MORE</div>
         </div>
-
-        <h4>Current Services</h4>
-        <ul id="services-list">
-        </ul>
 
       </div>
 
@@ -261,10 +257,15 @@
     //------- STREAMING SERVICES --------
 
     var max_initial_number_of_services = 6;
+    var initial_number_of_services = max_initial_number_of_services;
 
     var current_services = [];
     var past_services = [];
     var all_current_services_visible = false;
+
+    var more_equipment_visible = false;
+    var more_media_visible = false;
+    var past_services_visible = false;
 
     for (var i = 0; i < services.length; i++) {
       switch (services[i][2]) {
@@ -276,13 +277,6 @@
         break;
         default:
       }
-    }
-
-    if (past_services.length == 0) {
-      var more = document.getElementById('past-services');
-      var title = document.getElementById('title-streaming');
-      more.setAttribute('style', 'display: none');
-      title.setAttribute('style', 'width: 504px');
     }
 
     //------- SECTIONS --------

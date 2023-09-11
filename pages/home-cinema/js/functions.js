@@ -166,8 +166,27 @@ function addMediaItems(media, items, initial_type) {
 
 function addCurrentServices() {
 
-  if (max_initial_number_of_services < current_services.length) {
-    max_initial_number_of_services -= 1;
+  if (document.getElementById('current-services-header') != null) {
+    document.getElementById('current-services-header').remove();
+    document.getElementById('current-services-list').remove();
+  }
+
+  initial_number_of_services = max_initial_number_of_services;
+
+  var streaming = document.getElementById('streaming');
+
+  var current_services_header = document.createElement('H4');
+  current_services_header.setAttribute('id', 'current-services-header');
+  var header_text = document.createTextNode("Current Services");
+  current_services_header.appendChild(header_text);
+  streaming.appendChild(current_services_header);
+
+  var current_services_list = document.createElement('UL');
+  current_services_list.setAttribute('id', 'current-services-list');
+  streaming.appendChild(current_services_list);
+
+  if (initial_number_of_services < current_services.length) {
+    initial_number_of_services -= 1;
   }
 
   for (var i = 0; i < current_services.length; i++) {
@@ -176,7 +195,7 @@ function addCurrentServices() {
     var url = current_services[i][1];
     var status = current_services[i][2];
 
-    if (i < max_initial_number_of_services) {
+    if (i < initial_number_of_services) {
       var line = document.createElement('LI');
       if (url.length > 0) {
         var link = document.createElement('A');
@@ -187,28 +206,43 @@ function addCurrentServices() {
       } else {
         line.appendChild(textNode);
       }
-      streaming_services.appendChild(line);
+      current_services_list.appendChild(line);
     }
 
   }
 
-  if (i > max_initial_number_of_services) {
+  if (i > initial_number_of_services) {
     var textNode = document.createTextNode('...');
     var line = document.createElement('LI');
     line.setAttribute('id', 'more-services');
     line.setAttribute('onclick', 'moreCurrentServices()');
     line.setAttribute('style', 'cursor: pointer');
     line.appendChild(textNode);
-    streaming_services.appendChild(line);
+    current_services_list.appendChild(line);
   }
+
+  var more = document.getElementById('past-services');
+  more.innerText = "MORE";
+  more.setAttribute('onclick', 'addPastServices(true)');
+
+  all_current_services_visible = false;
+
+  if (past_services.length == 0) {
+    var more = document.getElementById('past-services');
+    var title = document.getElementById('title-streaming');
+    more.setAttribute('style', 'display: none');
+    title.setAttribute('style', 'width: 504px');
+  }
+
+
 
 }
 
 function moreCurrentServices() {
 
-  var service = current_services[max_initial_number_of_services][0];
-  var url = current_services[max_initial_number_of_services][1];
-  var status = current_services[max_initial_number_of_services][2];
+  var service = current_services[initial_number_of_services][0];
+  var url = current_services[initial_number_of_services][1];
+  var status = current_services[initial_number_of_services][2];
 
   var link = document.createElement('A');
   link.setAttribute('href', url);
@@ -219,7 +253,9 @@ function moreCurrentServices() {
   line.setAttribute('onclick', '');
   line.appendChild(link);
 
-  for (var i = max_initial_number_of_services+1; i < current_services.length; i++) {
+  var current_services_list = document.getElementById("current-services-list");
+
+  for (var i = initial_number_of_services+1; i < current_services.length; i++) {
 
     var service = current_services[i][0];
     var url = current_services[i][1];
@@ -235,17 +271,25 @@ function moreCurrentServices() {
     } else {
       line.appendChild(textNode);
     }
-    streaming_services.appendChild(line);
+    current_services_list.appendChild(line);
 
   }
 
   all_current_services_visible = true;
 
+  var more = document.getElementById('past-services');
+  more.innerText = "LESS";
+  more.setAttribute('onclick', 'addCurrentServices()');
+  more.setAttribute('style', 'display: solid');
+  var title = document.getElementById('title-streaming');
+  title.setAttribute('style', 'width: 300px');
+
+
 }
 
-function addPastServices() {
+function addPastServices(click) {
 
-  if (!all_current_services_visible && max_initial_number_of_services < current_services.length) {
+  if (!all_current_services_visible && initial_number_of_services < current_services.length) {
     moreCurrentServices();
   }
 
@@ -285,18 +329,37 @@ function addPastServices() {
 
   var more = document.getElementById('past-services');
   more.innerText = "LESS";
-  more.setAttribute('onclick', 'removePastServices()');
+  more.setAttribute('onclick', 'removePastServices(true)');
+
+  past_services_visible = true;
+
+  if (click) {
+    if (!more_equipment_visible && !more_media_visible) {
+      moreEquipment(false);
+    }
+    if (more_media_visible) {
+      lessMedia(false);
+    }
+  }
 
 }
 
-function removePastServices() {
+function removePastServices(click) {
 
   document.getElementById('past-services-header').remove();
   document.getElementById('past-services-list').remove();
+  addCurrentServices();
 
   var more = document.getElementById('past-services');
   more.innerText = "MORE";
-  more.setAttribute('onclick', 'addPastServices()');
+  more.setAttribute('onclick', 'addPastServices(true)');
+
+  past_services_visible = false;
+  all_current_services_visible = false;
+
+  if (click && !more_media_visible) {
+    lessEquipment(false);
+  }
 
 }
 
@@ -328,8 +391,13 @@ function moreEquipment(click) {
   more.innerText = "LESS";
   more.setAttribute('onclick', 'lessEquipment(true)');
 
-  if(click) {
-    moreMedia(false);
+  more_equipment_visible = true;
+
+  if (click) {
+    addCurrentServices();
+    if (!past_services_visible && !more_media_visible) {
+      moreMedia(false);
+    }
   }
 
 }
@@ -346,8 +414,16 @@ function lessEquipment(click) {
   more.innerText = "MORE";
   more.setAttribute('onclick', 'moreEquipment(true)');
 
+  more_equipment_visible = false;
+
   if(click) {
-    lessMedia(false);
+    addCurrentServices();
+    if (more_media_visible) {
+      lessMedia(false);
+    }
+    if (past_services_visible) {
+      removePastServices(false);
+    }
   }
 
 }
@@ -369,10 +445,18 @@ function moreMedia(click) {
 
   var more = document.getElementById('more-media');
   more.innerText = "LESS";
-  more.setAttribute('onclick', 'lessEquipment(true)');
+  more.setAttribute('onclick', 'lessMedia(true)');
 
-  if(click) {
-    moreEquipment(false);
+  more_media_visible = true;
+
+  if (click) {
+      addCurrentServices();
+      if (past_services_visible) {
+        removePastServices(false);
+      }
+      if (!more_equipment_visible) {
+        moreEquipment(false);
+      }
   }
 
 }
@@ -384,9 +468,12 @@ function lessMedia(click) {
 
   var more = document.getElementById('more-media');
   more.innerText = "MORE";
-  more.setAttribute('onclick', 'moreEquipment(true)');
+  more.setAttribute('onclick', 'moreMedia(true)');
+
+  more_media_visible = false;
 
   if(click) {
+    addCurrentServices();
     lessEquipment(false);
   }
 
