@@ -7,7 +7,7 @@ var services = [
   ['Disney+', 'https://letterboxd.com/hpfilho/tag/stream/films/on/disney-plus-br/', 'current'],
   ['Lionsgate+', 'https://letterboxd.com/hpfilho/tag/stream/films/on/lionsgateplus-br/', 'current'],
   ['Paramount+', 'https://letterboxd.com/hpfilho/tag/stream/films/on/paramountplus-br/', 'current'],
-  ['MUBI', 'https://letterboxd.com/hpfilho/tag/stream/films/on/mubi-br/', 'current'],
+  ['MUBI', 'https://letterboxd.com/hpfilho/tag/stream/films/on/mubi-br/', 'past'],
   ['Looke', 'https://letterboxd.com/hpfilho/tag/stream/films/on/looke-br/', ''],
   ['Telecine Play', 'https://letterboxd.com/hpfilho/tag/stream/films/on/telecineplay-br/', ''],
   ['Globoplay', 'https://letterboxd.com/hpfilho/tag/stream/films/on/globoplay-br/', ''],
