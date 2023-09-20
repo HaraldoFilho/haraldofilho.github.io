@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="55.104034mm"
+   height="35.050201mm"
+   viewBox="0 0 55.104034 35.050202"
+   version="1.1"
+   id="svg974"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="LG.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview976"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.74564394"
+     inkscape:cx="65.715011"
+     inkscape:cy="344.66853"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs971" />
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-87.915394,-57.733908)">
+    <path
+       d="M 95.778887,58.234983 H 87.915394 V 92.278972 H 112.06992 V 85.651915 H 95.778887 Z M 129.36988,79.30519 h 6.40496 v 5.952637 c -1.18092,0.449613 -3.48383,0.897872 -5.67502,0.897872 -7.07802,0 -9.43646,-3.594875 -9.43646,-10.896352 0,-6.963589 2.24536,-11.068342 9.32406,-11.068342 3.93344,0 6.18015,1.236437 8.03142,3.596229 l 4.88954,-4.495456 c -2.97801,-4.265909 -8.20341,-5.55787 -13.08889,-5.55787 -11.01282,0 -16.79753,6.010192 -16.79753,17.46856 0,11.402844 5.22405,17.581642 16.74201,17.581642 5.27957,0 10.44809,-1.347486 13.25546,-3.31319 V 72.955756 h -13.64955 z"
+       fill="#6b6b6b"
+       id="path8"
+       sodipodi:nodetypes="ccccccccccsssccssscccc"
+       style="fill:#666666;stroke-width:0.677128" />
+  </g>
+</svg>

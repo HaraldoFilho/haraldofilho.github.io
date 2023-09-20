@@ -55,7 +55,7 @@
               <img id="arr_forward" class="icon" onclick="nextPhoto()">
             </div>
             <div class="close">
-              <img class="icon" src="icons/close.svg" onclick="closePhoto()">
+              <img class="icon" src="res/icons/close.svg" onclick="closePhoto()">
             </div>
           </div>
         </div>
@@ -210,16 +210,16 @@
 
       <div class="logos">
         <div class="logos-techs">
-          <div><a href="https://www.dolby.com/" target="_blank"><img class="logo-dolby" src="logos/Dolby_Atmos.svg"></a></div>
-          <div><a href="https://dts.com/" target="_blank"><img class="logo-dts" src="logos/DTS_X.svg"></a></div>
+          <div><a href="https://www.dolby.com/" target="_blank"><img class="logo-dolby" src="res/logos/Dolby_Atmos.svg"></a></div>
+          <div><a href="https://dts.com/" target="_blank"><img class="logo-dts" src="res/logos/DTS_X.svg"></a></div>
         </div>
         <div class="logos-brands">
-          <div><a href="https://www.yamaha.com/" target="_blank"><img class="logo-yamaha" src="logos/Yamaha.svg"></a></div>
-          <div><a href="https://www.daytonaudio.com/" target="_blank"><img class="logo-dayton" src="logos/Dayton_Audio.png"></a></div>
-          <div><a href="https://intl.onkyo-av.com/" target="_blank"><img class="logo-onkyo" src="logos/Onkyo.png"></a></div>
-          <div><a href="https://www.pioneerelectronics.com/" target="_blank"><img class="logo-pioneer" src="logos/Pioneer.png"></a></div>
-          <div><a href="https://www.sony.com/" target="_blank"><img class="logo-sony" src="logos/Sony.png"></a></div>
-          <div><a href="https://www.lg.com/" target="_blank"><img class="logo-lg" src="logos/LG.svg"></a></div>
+          <div><a href="https://www.yamaha.com/" target="_blank"><img class="logo-yamaha" src="res/logos/Yamaha.svg"></a></div>
+          <div><a href="https://www.daytonaudio.com/" target="_blank"><img class="logo-dayton" src="res/logos/Dayton_Audio.png"></a></div>
+          <div><a href="https://intl.onkyo-av.com/" target="_blank"><img class="logo-onkyo" src="res/logos/Onkyo.png"></a></div>
+          <div><a href="https://www.pioneerelectronics.com/" target="_blank"><img class="logo-pioneer" src="res/logos/Pioneer.png"></a></div>
+          <div><a href="https://www.sony.com/" target="_blank"><img class="logo-sony" src="res/logos/Sony.png"></a></div>
+          <div><a href="https://www.lg.com/" target="_blank"><img class="logo-lg" src="res/logos/LG.svg"></a></div>
         </div>
       </div>
 
@@ -241,7 +241,7 @@
       var photo = document.createElement('DIV');
       var photo_img = document.createElement('IMG');
       photo_img.setAttribute('class', 'photo_thumb');
-      photo_img.setAttribute('src', "img/IMG_".concat(photo_number).concat(".jpg"));
+      photo_img.setAttribute('src', "res/images/IMG_".concat(photo_number).concat(".jpg"));
       photo_img.setAttribute('alt', "Click to enlarge");
       photo_img.setAttribute('onclick', "openPhoto(".concat(photo_number).concat(")"));
       photo.appendChild(photo_img);

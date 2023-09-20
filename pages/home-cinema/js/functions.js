@@ -19,12 +19,12 @@ function getRandomIndex(max) {
 function openPhoto(number) {
   current_photo = number;
   var photo = document.getElementById('photo');
-  var url = 'img/IMG_'.concat(current_photo).concat('.jpg');
+  var url = 'res/images/IMG_'.concat(current_photo).concat('.jpg');
   photo.setAttribute('src', url);
   document.getElementById('overlay').style.height = "100%";
-  document.getElementById('arr_back').setAttribute('src', 'icons/arrow_back.svg');
+  document.getElementById('arr_back').setAttribute('src', 'res/icons/arrow_back.svg');
   document.getElementById('arr_back').style.cursor = "pointer";
-  document.getElementById('arr_forward').setAttribute('src', 'icons/arrow_forward.svg');
+  document.getElementById('arr_forward').setAttribute('src', 'res/icons/arrow_forward.svg');
   document.getElementById('arr_forward').style.cursor = "pointer";
 }
 
@@ -34,7 +34,7 @@ function nextPhoto() {
     current_photo = 1;
   }
   var photo = document.getElementById('photo');
-  var url = 'img/IMG_'.concat(current_photo).concat('.jpg');
+  var url = 'res/images/IMG_'.concat(current_photo).concat('.jpg');
   photo.setAttribute('src', url);
 }
 
@@ -44,7 +44,7 @@ function previousPhoto() {
     current_photo = number_of_photos;
   }
   var photo = document.getElementById('photo');
-  var url = 'img/IMG_'.concat(current_photo).concat('.jpg');
+  var url = 'res/images/IMG_'.concat(current_photo).concat('.jpg');
   photo.setAttribute('src', url);
 }
 
