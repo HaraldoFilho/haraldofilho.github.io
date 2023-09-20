@@ -56,12 +56,12 @@ git push origin main
 git diff HEAD^ HEAD ../data/media.js > media.diff
 git diff HEAD^ HEAD ../data/films.js > films.diff
 
-if [ ! -s media.diff ];
+if [ -s media.diff ];
   then
     echo "The 'Physical Media' section of Cineminha web page has been updated." | mail -s "Cineminha web page data update" "tinyhomecinema@gmail.com"
 fi
 
-if [ ! -s films.diff ];
+if [ -s films.diff ];
   then
     echo "One or more films were added to 'LATEST RELEASES' section of Cineminha web page." | mail -s "Cineminha web page data update" "tinyhomecinema@gmail.com"
 fi
