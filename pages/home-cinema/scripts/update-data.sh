@@ -48,10 +48,26 @@ cd /home/pi/github/tinyhomecinema.github.io/scripts
 
 rm /home/pi/github/tinyhomecinema.github.io/scripts/html/*
 
-git add ../data/collection.js
+git add ../data/media.js
 git add ../data/films.js
 git commit -m "[auto] Updated data"
 git push origin main
+
+git diff HEAD^ HEAD ../data/media.js > media.diff
+git diff HEAD^ HEAD ../data/films.js > films.diff
+
+if [ -s media.diff ];
+  then
+    echo "The Physical Media section of Cineminha web page has been updated." | mail -s "Cineminha web page data update" "tinyhomecinema@gmail.com"
+fi
+
+if [ -s films.diff ];
+  then
+    echo "One or more films were added to Cineminha web page." | mail -s "Cineminha web page data update" "tinyhomecinema@gmail.com"
+fi
+
+rm /home/pi/github/tinyhomecinema.github.io/scripts/media.diff
+rm /home/pi/github/tinyhomecinema.github.io/scripts/films.diff
 
 cd /home/pi/github/haraldofilho.github.io/pages/home-cinema
 
