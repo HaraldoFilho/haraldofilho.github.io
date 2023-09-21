@@ -1,0 +1,61 @@
+.demos-title {
+  grid-area: demos;
+  font-size: 36px;
+  font-weight: bold;
+  color: lightgrey;
+  border-style: solid none solid none;
+  border-color: lightgrey;
+  border-width: thin;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+.dolby {
+  grid-area: dolby;
+  width: 300px;
+  text-align: left;
+}
+
+.dts {
+  grid-area: dts;
+  width: 300px;
+  text-align: left;
+}
+
+.imax {
+  grid-area: imax;
+  width: 300px;
+  text-align: left;
+}
+
+.thx {
+  grid-area: thx;
+  width: 300px;
+  text-align: left;
+}
+
+.home-link {
+  grid-area: link;
+  text-align: center;
+  border-style: solid none solid none;
+  border-color: darkgrey;
+  border-width: thin;
+  padding: 5px 0px 5px 0px;
+  margin-bottom: -20px;
+}
+
+.demos-grid {
+  display: grid;
+  grid-template-areas:
+  'demos demos demos'
+  'dolby dts thx'
+  'dolby imax thx'
+  'dolby imax thx'
+  'link link link';
+  justify-content: center;
+  width: 100%;
+  grid-gap: 50px;
+}
