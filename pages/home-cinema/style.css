@@ -28,7 +28,6 @@ a:hover {
   font-weight: bold;
   color: lightgrey;
   border-style: solid none solid none;
-  border-color: lightgrey;
   border-width: thin;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -242,7 +241,6 @@ a:hover {
   font-weight: bold;
   color: lightgrey;
   border-style: none none solid none;
-  border-color: lightgrey;
   border-width: thin;
   margin-bottom: 23px;
   padding-bottom: 5px;
@@ -255,7 +253,6 @@ a:hover {
   font-weight: bold;
   color: lightgrey;
   border-style: none none solid none;
-  border-color: lightgrey;
   border-width: thin;
   margin-bottom: 23px;
   padding-top: 10px;
