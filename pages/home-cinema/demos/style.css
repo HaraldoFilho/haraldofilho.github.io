@@ -65,16 +65,16 @@ li {
   border-style: solid none solid none;
   border-width: thin;
   padding: 5px 0px 5px 0px;
-  margin-bottom: -20px;
+  margin-bottom: 60px;
 }
 
 .demos-grid {
   display: grid;
   grid-template-areas:
   'demos demos demos'
-  'dolby dts thx'
-  'dolby dts cuts'
-  'dolby imax cuts'
+  'dolby dts imax'
+  'dolby thx cuts'
+  'dolby thx cuts'
   'link link link';
   justify-content: center;
   width: 100%;
