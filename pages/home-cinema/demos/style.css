@@ -1,3 +1,13 @@
+ul {
+  padding-left: 18px;
+  margin-top: -10px;
+  line-height: 160%;
+}
+
+li {
+  font-size: 18px;
+}
+
 .demos-title {
   grid-area: demos;
   font-size: 36px;
@@ -10,6 +20,10 @@
   padding-bottom: 5px;
   text-align: center;
   margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+.title {
   margin-bottom: 30px;
 }
 
@@ -37,6 +51,12 @@
   text-align: left;
 }
 
+.movie-cuts {
+  grid-area: cuts;
+  width: 300px;
+  text-align: left;
+}
+
 .home-link {
   grid-area: link;
   font-size: 13px;
@@ -53,8 +73,8 @@
   grid-template-areas:
   'demos demos demos'
   'dolby dts thx'
-  'dolby imax thx'
-  'dolby imax thx'
+  'dolby dts cuts'
+  'dolby imax cuts'
   'link link link';
   justify-content: center;
   width: 100%;

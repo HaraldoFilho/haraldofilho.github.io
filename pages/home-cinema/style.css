@@ -21,6 +21,15 @@ a:hover {
   text-decoration: none;
 }
 
+ul {
+  padding-left: 35px;
+  line-height: 125%;
+}
+
+h4 {
+  margin-bottom: 10px;
+}
+
 .page-title {
   grid-area: title;
   font-family: serif;
@@ -214,12 +223,14 @@ a:hover {
   display: grid;
   grid-template-areas: 'auto auto';
   justify-content: 'left left';
+  line-height: 125%;
 }
 
 .screen-grid {
   display: grid;
   grid-template-areas: 'auto auto';
   justify-content: 'left left';
+  line-height: 125%;
 }
 
 .title-grid-left {
@@ -250,7 +261,6 @@ a:hover {
 .more {
   display: block;
   font-size: 10px;
-  font-weight: bold;
   color: lightgrey;
   border-style: none none solid none;
   border-width: thin;
