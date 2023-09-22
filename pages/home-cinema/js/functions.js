@@ -281,8 +281,6 @@ function moreCurrentServices() {
   more.innerText = "LESS";
   more.setAttribute('onclick', 'addCurrentServices()');
   more.setAttribute('style', 'display: solid');
-  var title = document.getElementById('title-streaming');
-  title.setAttribute('style', 'width: 300px');
 
 
 }

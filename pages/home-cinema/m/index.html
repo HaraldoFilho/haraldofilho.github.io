@@ -1,14 +1,280 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tiny Home Cinema | Mobile Website</title>
+  <title>Cineminha | Tiny Home Cinema</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
   <link rel="shortcut icon" type="image/x-icon" href="../favicon.png">
+  <link rel="stylesheet" type="text/css" href="../style.css" />
   <link rel="stylesheet" type="text/css" href="style.css" />
-</head>
 
-<body>
+  <script src="../js/functions.js"></script>
 
-  <h1>This web page is not compatible with mobile devices<h1>
+  <script src="../data/equipment.js"></script>
+  <script src="../data/media.js"></script>
+  <script src="../data/services.js"></script>
+  <script src="../data/decor.js"></script>
+  <script src="../data/stuff.js"></script>
+  <script src="../data/films.js"></script>
+
+  </head>
+
+  <body>
+
+    <div class="grid-container">
+
+      <!-- Header -->
+
+      <div class="page-title">
+        C I N E M I N H A
+      </div>
+
+      <div class="photos">
+        <div id="header-photos" class="photos-grid"></div>
+      </div>
+
+      <!-- Description -->
+
+      <div class="description">
+        The <b>Cineminha</b> (Portuguese diminutive for <i>cinema</i>) is a <i><b>tiny home cinema</b></i> room built in a space of just 6.72 sq. meters, a spare room in a three bedroom apartment located in <a href="https://www.google.com/maps/place/Campinas+-+SP/@-0.8339764,-72.4389721,3z/data=!4m6!3m5!1s0x94c8c8f6a2552649:0x7475001c58043536!8m2!3d-22.9050824!4d-47.0613327!16zL20vMGgxbGY?entry=ttu" target="_blank">Campinas, Brazil</a>.
+        It has two seats, with an approximate viewing distance of 2 meters from a 55" screen and features a spatial sound system with 5.1.2 channels.
+        Its illumination system has two sets of lights, one cold (primary ceiling spots) and one warm (secondary dimmable back wall sconces and front ceiling spots), providing two different ambiances according to how room is being used.
+        It has an automation system which makes possible to control all electronic devices and room illumination, including syncronization of film play/pause with lights off/on.
+        An air conditioner provides cool and heat climatization options. With walls painted in a dark tone to avoid reflections from screen light,
+        alongside with black furniture and a blackout curtain, provides a very immersive visual experience, even during daylight times.
+        It is fully decorated with film posters, theater signs, movie memorabilia, books and posters with famous film quotes.
+        A collection of a few hundred titles of Blu-ray discs and DVDs, a few dozen soundtrack CDs and some film books completes the <a href="https://letterboxd.com/hpfilho/stats/">film loving</a> experience.
+      </div>
+
+      <!-- Sections -->
+
+      <div class="room">
+        <div class="title">Room Dimensions</div>
+        <div class="room-grid">
+          <div>
+            <b>Width:</b> 2.54 m (8.3 ft)<br>
+            <b>Depth:</b> 2.60 m (8.5 ft)<br>
+            <b>Height:</b> 2.54 m (8.3 ft)<br>
+          </div>
+          <div>
+            <b>Useful Area:</b> <br>6.60 m<sup>2</sup> (70.55 sq ft)
+          </div>
+        </div>
+      </div>
+
+      <div class="screen">
+        <div class="title">Screen Specifications</div>
+        <div class="screen-grid">
+          <div>
+            <b>Display Type:</b> <a href="https://en.wikipedia.org/wiki/OLED" target="_blank">OLED</a> TV<br>
+            <b>Diagonal Size:</b> <a href="https://en.wikipedia.org/wiki/Display_size" target="_blank">55 in</a><br>
+          </div>
+          <div>
+            <b>Aspect Ratio:</b> <a href="https://en.wikipedia.org/wiki/Display_aspect_ratio" target="_blank">16:9</a><br>
+            <b>Resolution:</b> <a href="https://en.wikipedia.org/wiki/4K_resolution" target="_blank">4K UHD</a><br>
+          </div>
+        </div>
+      </div>
+
+      <div class="av_tech">
+        <div class="title">A/V Technologies</div>
+
+        <h4>Audio</h4>
+        <ul>
+          <li><a href="https://www.dolby.com/technologies/dolby-atmos/" target="_blank">Dolby Atmos</a></li>
+          <li><a href="https://dts.com/dtsx/" target="_blank">DTS:X</a></li>
+        </ul>
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Dolby_TrueHD" target="_blank">Dolby TrueHD</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/DTS-HD_Master_Audio" target="_blank">DTS-HD Master Audio</a></li>
+        </ul>
+
+        <h4>Video</h4>
+        <ul>
+          <li><a href="https://www.dolby.com/technologies/dolby-vision" target="_blank">Dolby Vision</a></li>
+          <li><a href="https://www.lg.com/ca_en/lgoled/4k_hdr.jsp" target="_blank">HDR10 Pro</a></li>
+          <li><a href="https://www.lg.com/ca_en/lgoled/4k_hdr.jsp" target="_blank">HLG Pro</a></li>
+        </ul>
+
+      </div>
+
+      <div class="gear">
+        <div id="title-gear" class="title-grid-left">
+          <div class="title">Equipment</div>
+          <div id="more-gear" class="more" onclick="moreEquipment(true)">MORE</div>
+        </div>
+
+        <div id="gear-list">
+
+          <h4>Speakers (5.1.2 ch)</h4>
+          <ul id="speakers-list">
+          </ul>
+
+          <h4>Electronics</h4>
+          <ul id="electronics-list">
+          </ul>
+
+        </div>
+
+        <br>
+        <p style="font-size:20px;color:darkgrey">
+          <i>* for BD/DVD playback</i>,
+          <i>** only for CD playback</i>,
+          <i>*** only clock and VU meter (on CD playback)</i>
+        </p>
+
+      </div>
+
+      <div id="streaming" class="streaming">
+        <div id="title-streaming" class="title-grid-right">
+          <div class="title">Streaming</div>
+          <div id="past-services" class="more" onclick="addPastServices(true)">MORE</div>
+        </div>
+
+      </div>
+
+      <div id="media" class="media">
+        <div id="title-media" class="title-grid-right">
+          <div class="title">Physical Media</div>
+          <div id="more-media" class="more" onclick="moreMedia(true)">MORE</div>
+        </div>
+
+        <h4>Shelves</h4>
+        <ul id="shelves">
+        </ul>
+
+      </div>
+
+      <div id="decor" class="decor">
+        <div id="title-decor" class="title-grid-left">
+          <div class="title">Decor</div>
+          <div id="more-decor" class="more" onclick="moreDecor(true)">MORE</div>
+        </div>
+
+        <h4>Wall</h4>
+        <ul id="decor-wall">
+        </ul>
+
+      </div>
+
+      <div id="stuff" class="stuff">
+        <div id="title-stuff" class="title-grid-right">
+          <div class="title">Other Stuff</div>
+          <div id="more-stuff" class="more" onclick="moreStuff(true)">MORE</div>
+        </div>
+
+        <h4>Furniture</h4>
+        <ul id="stuff-furniture">
+        </ul>
+
+      </div>
+
+    </div>
+
+    <script>
+
+    //------- HEADER PHOTOS --------
+
+    var current_photo;
+    var number_of_photos = 5;
+    var photo_number = 1;
+
+    var header_photos = document.getElementById('header-photos');
+
+      var photo = document.createElement('DIV');
+      var photo_img = document.createElement('IMG');
+      photo_img.setAttribute('class', 'photo_thumb');
+      photo_img.setAttribute('src', "../res/images/IMG_".concat(photo_number).concat(".jpg"));
+      photo.appendChild(photo_img);
+      header_photos.appendChild(photo);
+
+    window.onkeyup = function (event) {
+      if (event.keyCode == 27) {
+        closePhoto();
+      }
+    }
+
+    //------- STREAMING SERVICES --------
+
+    var max_initial_number_of_services = 6;
+    var initial_number_of_services = max_initial_number_of_services;
+
+    var current_services = [];
+    var past_services = [];
+    var all_current_services_visible = false;
+
+    var more_equipment_visible = false;
+    var more_media_visible = false;
+    var past_services_visible = false;
+
+    for (var i = 0; i < services.length; i++) {
+      switch (services[i][2]) {
+        case 'current':
+        current_services.push(services[i])
+        break;
+        case 'past':
+        past_services.push(services[i])
+        break;
+        default:
+      }
+    }
+
+    //------- SECTIONS --------
+
+    var speakers_list = document.getElementById('speakers-list');
+    addSpeakers(speakers, speakers_list);
+
+    var electronics_list = document.getElementById('electronics-list');
+    addEquipment(electronics, electronics_list);
+    moreEquipment(false);
+
+    var shelves_list = document.getElementById('shelves');
+    addMediaItems(shelves, shelves_list, 'shelf');
+    moreMedia(false);
+
+    var streaming_services = document.getElementById('services-list');
+    addCurrentServices();
+    addPastServices();
+
+    var decor_wall = document.getElementById("decor-wall");
+    addItems(wall, decor_wall);
+    moreDecor(false);
+
+    var stuff_furniture = document.getElementById("stuff-furniture");
+    addItems(furniture, stuff_furniture);
+    moreStuff(false);
+
+
+    //------- FILM POSTERS --------
+
+    var film_posters = document.getElementById('film-posters');
+    var film_ratings = document.getElementById('film-ratings');
+
+    for (var i = 0; i < 10; i++) {
+
+      var url = films[i][0];
+      var img = films[i][1];
+      var film = document.createElement('DIV');
+      var link = document.createElement('A');
+      link.setAttribute('href', url);
+      var poster = document.createElement('IMG');
+      poster.setAttribute('src', img);
+      poster.setAttribute('width', '85');
+      poster.setAttribute('style', 'border-radius: 3px');
+      link.appendChild(poster);
+      film.appendChild(link);
+      film_posters.append(film);
+
+      var txt = films[i][2];
+      var rate = document.createElement('DIV');
+      rate.setAttribute('class', 'rating');
+      rate.innerText = txt;
+      film_ratings.append(rate);
+
+    }
+
+    </script>
+
 
     <!-- Default Statcounter code for tiny home cinema page
     https://tinyhomecinema.page/ -->
@@ -21,12 +287,12 @@
     src="https://www.statcounter.com/counter/counter.js"
     async></script>
     <noscript><div class="statcounter"><a title="Web Analytics"
-    href="https://statcounter.com/" target="_blank"><img
-    class="statcounter"
-    src="https://c.statcounter.com/12825819/0/0ada8c3b/1/"
-    alt="Web Analytics"
-    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-    <!-- End of Statcounter Code -->
+      href="https://statcounter.com/" target="_blank"><img
+      class="statcounter"
+      src="https://c.statcounter.com/12825819/0/0ada8c3b/1/"
+      alt="Web Analytics"
+      referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+      <!-- End of Statcounter Code -->
 
-</body>
-</html>
+    </body>
+    </html>

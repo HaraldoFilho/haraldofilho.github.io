@@ -10,7 +10,7 @@ li {
 
 .demos-title {
   grid-area: demos;
-  font-size: 36px;
+  font-size: 50px;
   font-weight: bold;
   color: lightgrey;
   border-style: solid none solid none;
