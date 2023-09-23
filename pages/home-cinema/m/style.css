@@ -48,7 +48,7 @@ h4 {
 
 .photos {
   grid-area: photos;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .photos-grid {
@@ -61,6 +61,7 @@ h4 {
   margin-top: -30px;
   width: 100%;
   line-height: 150%;
+  font-size: 14px;
   text-align: justify;
 }
 
@@ -178,13 +179,12 @@ h4 {
   'gear'
   'media'
   'streaming'
-  'decor'
-  'stuff'
-  'films';
+  'films'
+  'logos';
   justify-content: center;
   width: 100%;
   grid-gap: 30px;
-  margin: 30px 0px 90px 0px;
+  margin: 0px 0px 40px 0px;
 }
 
 
@@ -205,29 +205,31 @@ h4 {
 
 .film-posters {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto auto;
   column-gap: 10px;
+  margin-top: -10px;
 }
 
 .film-ratings {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto auto;
   column-gap: 10px;
   margin-bottom: 62px;
 }
 
 .rating {
   width: 100%;
-  font-size: 20px;
+  font-size: 10px;
   color: darkgrey;
   text-align: center;
 }
 
 .bottom-links {
   font-weight: normal;
-  font-size: 20px;
+  font-size: 10px;
   color: darkgrey;
   margin-top: -40px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
@@ -236,19 +238,15 @@ h4 {
   display: grid;
   justify: center;
   height: 20px;
-  grid-template-columns: auto auto;
-  column-gap: 80px;
+  grid-template-columns: auto;
   border-style: solid none solid none;
   border-color: grey;
   border-width: thin;
-  padding: 10px 65px 10px 70px;
-
+  padding: 10px 50px 10px 40px;
 }
 
 .logos-techs {
   display: grid;
-  column-gap: 0px;
-  align-items: left;
   grid-template-columns: auto auto;
 }
 
@@ -261,14 +259,16 @@ h4 {
 
 .logo-dolby {
   justify-content: center;
-  padding-top: 5px;
-  height: 11px;
+  padding-top: 4px;
+  height: 12px;
+  width: 100%;
 }
 
 .logo-dts {
   justify-content: center;
-  padding-top: 4px;
-  height: 12px;
+  padding-top: 3px;
+  height: 14px;
+  width: 100%;
 }
 
 .logo-yamaha {

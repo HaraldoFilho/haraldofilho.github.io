@@ -149,13 +149,18 @@ function addMediaItems(media, items, initial_type) {
       items.appendChild(line_break);
     }
 
-    var link = document.createElement('A');
-    link.setAttribute('href', url);
+    var line = document.createElement('LI');
     var text = item.concat(': ').concat(quantity);
     var textNode = document.createTextNode(text);
-    link.appendChild(textNode);
-    var line = document.createElement('LI');
-    line.appendChild(link);
+
+    if (url.length > 0) {
+      var link = document.createElement('A');
+      link.setAttribute('href', url);
+      link.appendChild(textNode);
+      line.appendChild(link);
+    } else {
+      line.appendChild(textNode);
+    }
     items.appendChild(line);
 
     prev_type = type;
