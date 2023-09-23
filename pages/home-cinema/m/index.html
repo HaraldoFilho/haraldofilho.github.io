@@ -117,7 +117,7 @@
         </div>
 
         <br>
-        <p style="font-size:10px;color:darkgrey">
+        <p style="font-size:8px;color:darkgrey">
           <i>* for BD/DVD playback</i>,
           <i>** only for CD playback</i>,
           <i>*** only clock and VU meter (on CD playback)</i>
@@ -167,6 +167,32 @@
         <ul id="stuff-furniture">
         </ul>
 
+      </div>
+
+      <!-- Film Posters -->
+
+      <div class="films">
+        <div class="title" style=""><a href="https://boxd.it/nzQeM$cNzlkzSf6uB2nQEX">LATEST RELEASES</a></div>
+        <div class="film-posters" id="film-posters"></div>
+        <div class="film-ratings" id="film-ratings"></div>
+        <div class="bottom-links">| <a href="https://boxd.it/oR1Sm$2WMykxOCoj4FW3SC">RERUNS</a> | <a href="https://letterboxd.com/hpfilho/tag/cineminha/diary/">DIARY</a> | <a href="https://letterboxd.com/hpfilho/tag/tv-cineminha/diary/">TV</a> | <a href="https://letterboxd.com/hpfilho/tag/short-cineminha/diary/">SHORTS</a> | <a href="https://letterboxd.com/hpfilho/list/watched-in-my-home-cinema/">BLU-RAYS</a> |</div>
+      </div>
+
+      <!-- Footer Logos -->
+
+      <!-- <div class="logos">
+        <div class="logos-techs">
+          <div><a href="https://www.dolby.com/" target="_blank"><img class="logo-dolby" src="res/logos/Dolby_Atmos.svg"></a></div>
+          <div><a href="https://dts.com/" target="_blank"><img class="logo-dts" src="res/logos/DTS_X.svg"></a></div>
+        </div>
+        <div class="logos-brands">
+          <div><a href="https://www.yamaha.com/" target="_blank"><img class="logo-yamaha" src="res/logos/Yamaha.svg"></a></div>
+          <div><a href="https://www.daytonaudio.com/" target="_blank"><img class="logo-dayton" src="res/logos/Dayton_Audio.png"></a></div>
+          <div><a href="https://intl.onkyo-av.com/" target="_blank"><img class="logo-onkyo" src="res/logos/Onkyo.png"></a></div>
+          <div><a href="https://www.pioneerelectronics.com/" target="_blank"><img class="logo-pioneer" src="res/logos/Pioneer.png"></a></div>
+          <div><a href="https://www.sony.com/" target="_blank"><img class="logo-sony" src="res/logos/Sony.png"></a></div>
+          <div><a href="https://www.lg.com/" target="_blank"><img class="logo-lg" src="res/logos/LG.svg"></a></div>
+        </div> -->
       </div>
 
     </div>
@@ -250,7 +276,7 @@
     var film_posters = document.getElementById('film-posters');
     var film_ratings = document.getElementById('film-ratings');
 
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 3; i++) {
 
       var url = films[i][0];
       var img = films[i][1];
@@ -259,8 +285,8 @@
       link.setAttribute('href', url);
       var poster = document.createElement('IMG');
       poster.setAttribute('src', img);
-      poster.setAttribute('width', '85');
-      poster.setAttribute('style', 'border-radius: 3px');
+      poster.setAttribute('width', '100%');
+      poster.setAttribute('style', 'border-radius: 10px');
       link.appendChild(poster);
       film.appendChild(link);
       film_posters.append(film);
