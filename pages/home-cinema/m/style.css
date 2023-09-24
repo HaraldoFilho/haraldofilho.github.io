@@ -206,14 +206,14 @@ h4 {
 .film-posters {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
-  column-gap: 10px;
+  column-gap: 5px;
   margin-top: -10px;
 }
 
 .film-ratings {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
-  column-gap: 10px;
+  column-gap: 5px;
   margin-bottom: 62px;
 }
 
@@ -237,7 +237,7 @@ h4 {
   grid-area: logos;
   display: grid;
   justify: center;
-  height: 20px;
+  height: 18px;
   grid-template-columns: auto;
   border-style: solid none solid none;
   border-color: grey;
@@ -259,14 +259,14 @@ h4 {
 
 .logo-dolby {
   justify-content: center;
-  padding-top: 4px;
+  padding-top: 2px;
   height: 12px;
   width: 100%;
 }
 
 .logo-dts {
   justify-content: center;
-  padding-top: 3px;
+  padding-top: 1px;
   height: 14px;
   width: 100%;
 }
