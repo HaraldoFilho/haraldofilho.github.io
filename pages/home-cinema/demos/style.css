@@ -9,18 +9,15 @@ li {
 }
 
 .demos-title {
-  grid-area: demos;
   font-size: 50px;
   font-weight: bold;
-  color: lightgrey;
-  border-style: solid none solid none;
-  border-color: lightgrey;
-  border-width: thin;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  color: #0E0E0E;
+  background-color: grey;
+  padding-top: 20px;
+  padding-bottom: 20px;
   text-align: center;
-  margin-top: 70px;
-  margin-bottom: 30px;
+  margin-top: 0px;
+  margin-bottom: 80px;
 }
 
 .title {
@@ -58,24 +55,21 @@ li {
 }
 
 .home-link {
-  grid-area: link;
-  font-size: 13px;
+  font-size: 16px;
   text-align: center;
   color: grey;
-  border-style: solid none solid none;
+  border-style: solid none none none;
   border-width: thin;
-  padding: 5px 0px 5px 0px;
-  margin-bottom: 60px;
+  padding: 25px 0px 25px 0px;
+  margin-top: 70px;
 }
 
 .demos-grid {
   display: grid;
   grid-template-areas:
-  'demos demos demos'
   'dolby dts imax'
   'dolby thx cuts'
-  'dolby thx cuts'
-  'link link link';
+  'dolby thx cuts';
   justify-content: center;
   width: 100%;
   grid-gap: 50px;

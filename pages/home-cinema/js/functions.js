@@ -370,16 +370,6 @@ function moreEquipment(click) {
 
   var gear_list = document.getElementById('gear-list');
 
-  var wireless_audio_header = document.createElement('H4');
-  wireless_audio_header.setAttribute('id', 'wireless-audio-header');
-  var header_text = document.createTextNode("Wireless Audio (Zone B)");
-  wireless_audio_header.appendChild(header_text);
-  gear_list.appendChild(wireless_audio_header);
-  var wireless_audio_list = document.createElement('UL');
-  wireless_audio_list.setAttribute('id', 'wireless-audio-list')
-  addEquipment(wireless_audio, wireless_audio_list);
-  gear_list.appendChild(wireless_audio_list);
-
   var power_and_automation_header = document.createElement('H4');
   power_and_automation_header.setAttribute('id', 'power-and-automation-header');
   var header_text = document.createTextNode("Power and Automation");
@@ -416,9 +406,6 @@ function moreEquipment(click) {
 }
 
 function lessEquipment(click) {
-
-  document.getElementById('wireless-audio-header').remove();
-  document.getElementById('wireless-audio-list').remove();
 
   document.getElementById('power-and-automation-header').remove();
   document.getElementById('power-and-automation-list').remove();

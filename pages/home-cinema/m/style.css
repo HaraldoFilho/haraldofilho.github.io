@@ -206,14 +206,14 @@ h4 {
 .film-posters {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
-  column-gap: 7px;
+  column-gap: 6px;
   margin-top: -10px;
 }
 
 .film-ratings {
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  column-gap: 7px;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  column-gap: 0px;
   margin-bottom: 62px;
 }
 
