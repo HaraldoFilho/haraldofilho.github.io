@@ -205,19 +205,20 @@ my $id;
 my $img;
 
 while (my $line = <RSS>) {
-    if ($line =~ /.*<title>.*\s-\s(.*)<\/title>\s<link>(.*)<\/link> <guid\s.*letterboxd-.*-(.*)<\/guid>.*<img src=\"(.*)\?v.*/) {
-        $rating = $1;
-        $link = $2;
-        $id = $3;
-        $img = $4;
+    if ($line =~ /.*<title>(.*)\s-\s(.*)<\/title>\s<link>(.*)<\/link> <guid\s.*letterboxd-.*-(.*)<\/guid>.*<img src=\"(.*)\?v.*/) {
+        $title = $1;
+        $rating = $2;
+        $link = $3;
+        $id = $4;
+        $img = $5;
 
         if ($rating =~ /(.*)\s\(.*/) {
-            $rating = $1;
+            $rating = $2;
         }
 
         for (@film_ids) {
             if ($id == $_) {
-                print FILMS_DATA "  [\'$link\', \'$img\', \'$rating\'],\n";
+                print FILMS_DATA "  [\'$title\', \'$link\', \'$img\', \'$rating\'],\n";
             }
         }
     }
