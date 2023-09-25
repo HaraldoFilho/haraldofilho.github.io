@@ -199,6 +199,7 @@ while (my $line = <DIARY>) {
     }
 }
 
+my $title;
 my $rating;
 my $link;
 my $id;
