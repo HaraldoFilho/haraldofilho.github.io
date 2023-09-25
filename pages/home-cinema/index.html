@@ -256,7 +256,7 @@
 
     //------- STREAMING SERVICES --------
 
-    var max_initial_number_of_services = 6;
+    var max_initial_number_of_services = 7;
     var initial_number_of_services = max_initial_number_of_services;
 
     var current_services = [];
@@ -306,8 +306,9 @@
 
     for (var i = 0; i < 10; i++) {
 
-      var url = films[i][0];
-      var img = films[i][1];
+      var title = films[i][0];
+      var url = films[i][1];
+      var img = films[i][2];
       var film = document.createElement('DIV');
       var link = document.createElement('A');
       link.setAttribute('href', url);
@@ -315,11 +316,13 @@
       poster.setAttribute('src', img);
       poster.setAttribute('width', '85');
       poster.setAttribute('style', 'border-radius: 3px');
+      poster.setAttribute('alt', title);
+      poster.setAttribute('title', title);
       link.appendChild(poster);
       film.appendChild(link);
       film_posters.append(film);
 
-      var txt = films[i][2];
+      var txt = films[i][3];
       var rate = document.createElement('DIV');
       rate.setAttribute('class', 'rating');
       rate.innerText = txt;
