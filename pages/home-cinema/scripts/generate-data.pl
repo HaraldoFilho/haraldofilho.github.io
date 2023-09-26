@@ -57,8 +57,8 @@ while (my $line = <SHELF>) {
 
 print MEDIA_DATA "  [\'Movies\', $count, \'$url\', \'shelf\'],\n";
 print MEDIA_DATA "  [\'TV Shows\', 6, \'https://www.themoviedb.org/list/8256420\', \'shelf\'],\n";
-print MEDIA_DATA "  [\'Soundtrack CDs\', 35, \'https://tinyhomecinema.page/music/\', \'shelf\'],\n";
-print MEDIA_DATA "  [\'Film Books\', 26, \'https://www.librarything.com/catalog.php?view=hpfilho&collection=794026&shelf=shelf&sort=title&previousOffset=0&shelf_rows=3&collection=794026\', \'shelf\']\n";
+print MEDIA_DATA "  [\'Music\', 35, \'https://tinyhomecinema.page/music/\', \'shelf\'],\n";
+print MEDIA_DATA "  [\'Books\', 26, \'https://www.librarything.com/catalog.php?view=hpfilho&collection=794026&shelf=shelf&sort=title&previousOffset=0&shelf_rows=3&collection=794026\', \'shelf\']\n";
 print MEDIA_DATA "]\n";
 
 print MEDIA_DATA "\nvar collection = [\n";
