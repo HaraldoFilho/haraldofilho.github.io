@@ -187,6 +187,12 @@ my $diary = 'html/diary.html';
 open(DIARY, $diary) or die("File $diary not found");
 
 my $films_data_file = '../data/films.js';
+
+open(FILMS_DATA, $films_data_file) or die("File $films_data_file not found");
+my $last_film_line = <FILMS_DATA>;
+$last_film_line = <FILMS_DATA>;
+close(FILMS_DATA);
+
 open(FILMS_DATA, '>', $films_data_file) or die("File $films_data_file not found");
 
 print FILMS_DATA "var films = [\n";
@@ -205,6 +211,8 @@ my $link;
 my $id;
 my $img;
 
+my $new_film = 1;
+
 while (my $line = <RSS>) {
     if ($line =~ /.*<title>(.*)\s-\s(.*)<\/title>\s<link>(.*)<\/link> <guid\s.*letterboxd-.*-(.*)<\/guid>.*<img src=\"(.*)\?v.*/) {
         $title = $1;
@@ -219,7 +227,13 @@ while (my $line = <RSS>) {
 
         for (@film_ids) {
             if ($id == $_) {
-                print FILMS_DATA "  [\'$title\', \'$link\', \'$img\', \'$rating\'],\n";
+		my $line_to_print = "  [\'$title\', \'$link\', \'$img\', \'$rating\'],\n";
+                print FILMS_DATA $line_to_print;
+		if ($line_to_print ne $last_film_line && $new_film) {
+			system("echo \"The film \'$title\' has been added to \'LATEST RELEASES\'.\" | mail -s \"Cineminha web page update\" \"tinyhomecinema\@gmail.com\"");
+		} else {
+			$new_film = 0;
+		}
             }
         }
     }
