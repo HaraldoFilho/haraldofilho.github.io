@@ -145,30 +145,6 @@
 
       </div>
 
-      <!-- <div id="decor" class="decor">
-        <div id="title-decor" class="title-grid-left">
-          <div class="title">Decor</div>
-          <div id="more-decor" class="more" onclick="moreDecor(true)">MORE</div>
-        </div>
-
-        <h4>Wall</h4>
-        <ul id="decor-wall">
-        </ul>
-
-      </div>
-
-      <div id="stuff" class="stuff">
-        <div id="title-stuff" class="title-grid-right">
-          <div class="title">Other Stuff</div>
-          <div id="more-stuff" class="more" onclick="moreStuff(true)">MORE</div>
-        </div>
-
-        <h4>Furniture</h4>
-        <ul id="stuff-furniture">
-        </ul>
-
-      </div> -->
-
       <!-- Film Posters -->
 
       <div class="films">
@@ -182,17 +158,9 @@
 
       <div class="logos">
         <div class="logos-techs">
-          <div><a href="https://www.dolby.com/" target="_blank"><img class="logo-dolby" src="../res/logos/Dolby_Atmos.svg"></a></div>
-          <div><a href="https://dts.com/" target="_blank"><img class="logo-dts" src="../res/logos/DTS_X.svg"></a></div>
+          <div><a href="https://www.dolby.com/" target="_blank"><img class="logo-dolby" src="../res/logos/Dolby.svg"></a></div>
+          <div><a href="https://dts.com/" target="_blank"><img class="logo-dts" src="../res/logos/DTS.svg"></a></div>
         </div>
-        <!-- <div class="logos-brands">
-          <div><a href="https://www.yamaha.com/" target="_blank"><img class="logo-yamaha" src="res/logos/Yamaha.svg"></a></div>
-          <div><a href="https://www.daytonaudio.com/" target="_blank"><img class="logo-dayton" src="res/logos/Dayton_Audio.png"></a></div>
-          <div><a href="https://intl.onkyo-av.com/" target="_blank"><img class="logo-onkyo" src="res/logos/Onkyo.png"></a></div>
-          <div><a href="https://www.pioneerelectronics.com/" target="_blank"><img class="logo-pioneer" src="res/logos/Pioneer.png"></a></div>
-          <div><a href="https://www.sony.com/" target="_blank"><img class="logo-sony" src="res/logos/Sony.png"></a></div>
-          <div><a href="https://www.lg.com/" target="_blank"><img class="logo-lg" src="res/logos/LG.svg"></a></div>
-        </div> -->
       </div>
 
     </div>
@@ -252,7 +220,6 @@
 
     var electronics_list = document.getElementById('electronics-list');
     addEquipment(electronics, electronics_list);
-    // moreEquipment(false);
 
     var shelves_list = document.getElementById('shelves');
     addMediaItems(shelves, shelves_list, 'shelf');
@@ -261,15 +228,6 @@
     var streaming_services = document.getElementById('services-list');
     addCurrentServices();
     addPastServices();
-
-    // var decor_wall = document.getElementById("decor-wall");
-    // addItems(wall, decor_wall);
-    // moreDecor(false);
-    //
-    // var stuff_furniture = document.getElementById("stuff-furniture");
-    // addItems(furniture, stuff_furniture);
-    // moreStuff(false);
-
 
     //------- FILM POSTERS --------
 

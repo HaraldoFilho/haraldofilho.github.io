@@ -54,14 +54,27 @@ li {
   text-align: left;
 }
 
-.home-link {
-  font-size: 16px;
-  text-align: center;
+.footer-grid {
+  display: grid;
+  grid-template-areas:
+  'home-link subs-text';
+  font-size: 14px;
+  justify-content: 'left right';
+  width: auto;
+  grid-gap: 50px;
+  padding: 25px 75px 25px 75px;
+  margin-top: 70px;
   color: grey;
   border-style: solid none none none;
   border-width: thin;
-  padding: 25px 0px 25px 0px;
-  margin-top: 70px;
+}
+
+.home-link {
+  text-align: left;
+}
+
+.subs-text {
+  text-align: right;
 }
 
 .demos-grid {
