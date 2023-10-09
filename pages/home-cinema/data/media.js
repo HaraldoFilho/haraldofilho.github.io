@@ -6,11 +6,11 @@ var shelves = [
 ]
 
 var collection = [
-  ['Films', 334, 'https://letterboxd.com/hpfilho/list/my-film-collection/', 'collection'],
+  ['Films', 337, 'https://letterboxd.com/hpfilho/list/my-film-collection/', 'collection'],
   ['Shorts', 69, 'https://letterboxd.com/hpfilho/list/my-short-films-collection/', 'collection'],
   ['Documentaries', 19, 'https://letterboxd.com/hpfilho/list/my-special-feature-documentaries-collection/', 'collection'],
   ['Miniseries', 4, 'https://letterboxd.com/hpfilho/list/my-miniseries-collection/', 'collection'],
-  ['Blu-ray', 134, 'https://letterboxd.com/hpfilho/list/my-blu-ray-discs/', 'disc'],
+  ['Blu-ray', 139, 'https://letterboxd.com/hpfilho/list/my-blu-ray-discs/', 'disc'],
   ['DVD', 263, 'https://letterboxd.com/hpfilho/list/my-dvds/', 'disc'],
   ['BD/DVD', 59, 'https://letterboxd.com/hpfilho/list/blu-ray-dvd/', 'disc'],
   ['Dolby Atmos', 24, 'https://letterboxd.com/hpfilho/list/my-dolby-atmos-discs/', 'audio'],
