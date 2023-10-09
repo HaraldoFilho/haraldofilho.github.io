@@ -1,7 +1,7 @@
 var films = [
   ['Encanto, 2021', 'https://letterboxd.com/hpfilho/film/encanto/', 'https://a.ltrbxd.com/resized/film-poster/4/9/6/5/9/2/496592-encanto-0-600-0-900-crop.jpg', '★★★½'],
   ['Underwater, 2020', 'https://letterboxd.com/hpfilho/film/underwater-2020/', 'https://a.ltrbxd.com/resized/sm/upload/ns/i3/5q/m6/C67E536B-E8A3-4AD1-A9B8-4443EA9695D9-0-600-0-900-crop.jpg', '★★½'],
-  ['Don&#039;t Look Now, 1973', 'https://letterboxd.com/hpfilho/film/dont-look-now/', 'https://a.ltrbxd.com/resized/sm/upload/b1/xg/44/w1/mK1SxllUiyAjtugZg3M64e2CTu3-0-600-0-900-crop.jpg', '★★★'],
+  ['Don\'t Look Now, 1973', 'https://letterboxd.com/hpfilho/film/dont-look-now/', 'https://a.ltrbxd.com/resized/sm/upload/b1/xg/44/w1/mK1SxllUiyAjtugZg3M64e2CTu3-0-600-0-900-crop.jpg', '★★★'],
   ['No Hard Feelings, 2023', 'https://letterboxd.com/hpfilho/film/no-hard-feelings-2023/', 'https://a.ltrbxd.com/resized/film-poster/7/9/5/8/9/7/795897-no-hard-feelings-0-600-0-900-crop.jpg', '★★★'],
   ['No One Will Save You, 2023', 'https://letterboxd.com/hpfilho/film/no-one-will-save-you/', 'https://a.ltrbxd.com/resized/film-poster/7/3/6/8/2/1/736821-no-one-will-save-you-0-600-0-900-crop.jpg', '★'],
   ['John Wick: Chapter 3 – Parabellum, 2019', 'https://letterboxd.com/hpfilho/film/john-wick-chapter-3-parabellum/', 'https://a.ltrbxd.com/resized/film-poster/3/9/0/0/3/9/390039-john-wick-chapter-3-parabellum-0-600-0-900-crop.jpg', '★★★★'],
