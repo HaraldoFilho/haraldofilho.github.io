@@ -252,5 +252,5 @@ close(FILMS_DATA);
 
 while (@new_films) {
 	$title = pop @new_films;
-	system("echo \"The film \'$title\' has been added to \'LATEST RELEASES\'.\" | mail -s \"Cineminha web page update\" \"tinyhomecinema\@gmail.com\"");
+	system("echo \"\<p style=\"font-size:16px\"\>The film \<b\>$title\<\/b\> has been added to \'LATEST RELEASES\'.\<\/p\>\" | mail  -a \"Content-type: text\/html\" -s \"Cineminha web page update\" \"tinyhomecinema\@gmail.com\"");
 }
