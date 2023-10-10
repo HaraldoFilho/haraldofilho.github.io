@@ -14,6 +14,7 @@ var electronics = [
   ['VHS VCR Philips VR755', '***', ''],
   ['HDMI Dongle Google Chromecast 3', '', 'https://en.wikipedia.org/wiki/Chromecast'],
   ['Audio Transmitter Sennheiser BT T100', '', 'https://www.sennheiser-hearing.com/en-US/p/bt-t100/'],
+  ['Headphones Sennheiser HD 350BT', '(2)', 'https://www.sennheiser-hearing.com/en-US/p/hd-350bt/'],
   ['Tablet Samsung Galaxy Tab A7 Lite', '', 'https://www.samsung.com/us/tablets/tab-a7/tab-a7-lite/']
 ]
 
