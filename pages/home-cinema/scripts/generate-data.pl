@@ -56,9 +56,9 @@ while (my $line = <SHELF>) {
 }
 
 print MEDIA_DATA "  [\'Movies\', $count, \'$url\', \'shelf\'],\n";
-print MEDIA_DATA "  [\'TV Shows\', 6, \'https://www.themoviedb.org/list/8256420\', \'shelf\'],\n";
+print MEDIA_DATA "  [\'TV Shows\', 7, \'https://www.themoviedb.org/list/8256420\', \'shelf\'],\n";
 print MEDIA_DATA "  [\'Music\', 35, \'https://tinyhomecinema.page/music/\', \'shelf\'],\n";
-print MEDIA_DATA "  [\'Books\', 26, \'https://www.librarything.com/catalog.php?view=hpfilho&collection=794026&shelf=shelf&sort=title&previousOffset=0&shelf_rows=3&collection=794026\', \'shelf\']\n";
+print MEDIA_DATA "  [\'Books\', 23, \'https://www.librarything.com/catalog.php?view=hpfilho&collection=794026&shelf=shelf&sort=title&previousOffset=0&shelf_rows=3&collection=794026\', \'shelf\']\n";
 print MEDIA_DATA "]\n";
 
 print MEDIA_DATA "\nvar collection = [\n";
@@ -212,7 +212,9 @@ my $id;
 my $img;
 
 my $new_film = 1;
-my @new_films;
+my @new_films_titles;
+my @new_films_links;
+my @new_films_imgs;
 
 while (my $line = <RSS>) {
     if ($line =~ /.*<title>(.*)\s-\s(.*)<\/title>\s<link>(.*)<\/link> <guid\s.*letterboxd-.*-(.*)<\/guid>.*<img src=\"(.*)\?v.*/) {
@@ -234,7 +236,9 @@ while (my $line = <RSS>) {
                 	print FILMS_DATA $line_to_print;
 		if ($line_to_print ne $last_film_line && $new_film) {
 		        $title =~ s/\\//;
-			push @new_films, $title;
+			push @new_films_titles, $title;
+			push @new_films_links, $link;
+			push @new_films_imgs, $img;
 		} else {
 			$new_film = 0;
 		}
@@ -250,7 +254,10 @@ close(RSS);
 close(DIARY);
 close(FILMS_DATA);
 
-while (@new_films) {
-	$title = pop @new_films;
-	system("echo \"\<p style=\"font-size:16px\"\>The film \<b\>$title\<\/b\> has been added to \'LATEST RELEASES\'.\<\/p\>\" | mail  -a \"Content-type: text\/html\" -s \"Cineminha web page update\" \"tinyhomecinema\@gmail.com\"");
+
+while (@new_films_titles) {
+	$title = pop @new_films_titles;
+	$link = pop @new_films_links;
+	$img = pop @new_films_imgs;
+	system("echo \"\<p style=\"font-size:16px\"\>The film \<a href=\"$link\"\>$title\<\/a\> has been added to \'LATEST RELEASES\'.\<\/p\>\<br\><img src=\"$img\" width=\"200\" \/\>\" | mail  -a \"Content-type: text\/html\" -s \"Cineminha web page update\" \"tinyhomecinema\@gmail.com\"");
 }
