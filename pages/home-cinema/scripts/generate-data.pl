@@ -11,6 +11,12 @@ my $base_url = "https://letterboxd.com";
 my $shelf = 'html/shelf.html';
 open(SHELF, $shelf) or die("File $shelf not found");
 
+my $tv_shows = 'html/tv_shows.html';
+open(TV_SHOWS, $tv_shows) or die("File $tv_shows not found");
+
+my $books = 'html/books.html';
+open(BOOKS, $books) or die("File $books not found");
+
 my $films = 'html/films.html';
 open(FILMS, $films) or die("File $films not found");
 
@@ -43,6 +49,7 @@ open(MEDIA_DATA, '>', $media_data_file) or die("File $media_data_file not found"
 
 
 print MEDIA_DATA "var shelves = [\n";
+
 my $url;
 my $count;
 
@@ -56,9 +63,30 @@ while (my $line = <SHELF>) {
 }
 
 print MEDIA_DATA "  [\'Movies\', $count, \'$url\', \'shelf\'],\n";
-print MEDIA_DATA "  [\'TV Shows\', 7, \'https://www.themoviedb.org/list/8256420\', \'shelf\'],\n";
+
+while (my $line = <TV_SHOWS>) {
+    if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
+        $url = $1;
+    }
+    if ($line =~ /<li><span><em>([0-9]*)<\/em><\/span><br>items on this list<\/li>/) {
+        $count = $1;
+    }
+}
+
+print MEDIA_DATA "  [\'TV Shows\', $count, \'$url\', \'shelf\'],\n";
+
 print MEDIA_DATA "  [\'Music\', 35, \'https://tinyhomecinema.page/music/\', \'shelf\'],\n";
-print MEDIA_DATA "  [\'Books\', 23, \'https://www.librarything.com/catalog.php?view=hpfilho&collection=794026&shelf=shelf&sort=title&previousOffset=0&shelf_rows=3&collection=794026\', \'shelf\']\n";
+
+while (my $line = <BOOKS>) {
+    if ($line =~ /<td class=\"pbGroup\">.*of\s([0-9]*)<\/td>/) {
+        $count = $1;
+    }
+}
+
+$url = 'https://www.librarything.com/catalog.php?view=hpfilho&collection=794026&shelf=shelf&sort=title&previousOffset=0&shelf_rows=3&collection=794026';
+
+print MEDIA_DATA "  [\'Books\', $count, \'$url\', \'shelf\']\n";
+
 print MEDIA_DATA "]\n";
 
 print MEDIA_DATA "\nvar collection = [\n";
@@ -165,6 +193,8 @@ print MEDIA_DATA "  [\'DTS X\', $count, \'$url\', \'audio\'],\n";
 print MEDIA_DATA "]\n";
 
 close(SHELF);
+close(TV_SHOWS);
+close(BOOKS);
 close(FILMS);
 close(SHORTS);
 close(DOCS);

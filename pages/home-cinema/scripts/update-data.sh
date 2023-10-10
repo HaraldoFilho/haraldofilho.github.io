@@ -1,4 +1,4 @@
-#!/bin/bash
+https://www.librarything.com/catalog_bottom.php?view=hpfilho&collection=794026#!/bin/bash
 
 cd /home/pi/github/tinyhomecinema.github.io/
 
@@ -8,6 +8,12 @@ cd /home/pi/github/tinyhomecinema.github.io/scripts/html
 
 wget 'https://letterboxd.com/hpfilho/list/my-home-cinema-shelf/'
 mv index.html shelf.html
+
+wget 'https://www.themoviedb.org/list/8256420'
+mv 8256420 tv_shows.html
+
+wget 'https://www.librarything.com/catalog_bottom.php?view=hpfilho&collection=794026'
+mv catalog_bottom.php?view\=hpfilho\&collection\=794026 books.html
 
 wget 'https://letterboxd.com/hpfilho/list/my-film-collection/'
 mv index.html films.html
