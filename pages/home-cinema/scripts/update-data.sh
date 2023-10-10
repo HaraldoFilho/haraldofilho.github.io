@@ -1,4 +1,4 @@
-https://www.librarything.com/catalog_bottom.php?view=hpfilho&collection=794026#!/bin/bash
+!/bin/bash
 
 cd /home/pi/github/tinyhomecinema.github.io/
 
