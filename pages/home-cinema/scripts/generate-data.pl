@@ -217,10 +217,11 @@ my $diary = 'html/diary.html';
 open(DIARY, $diary) or die("File $diary not found");
 
 my $films_data_file = '../data/films.js';
-
 open(FILMS_DATA, $films_data_file) or die("File $films_data_file not found");
+
 my $last_film_line = <FILMS_DATA>;
 $last_film_line = <FILMS_DATA>;
+
 close(FILMS_DATA);
 
 open(FILMS_DATA, '>', $films_data_file) or die("File $films_data_file not found");
@@ -254,7 +255,7 @@ while (my $line = <RSS>) {
         $id = $4;
         $img = $5;
 
-	$title =~ s/&#039;/\\\'/;
+        $title =~ s/&#039;/\\\'/;
 
         if ($rating =~ /(.*)\s\(.*/) {
             $rating = $2;
@@ -262,16 +263,16 @@ while (my $line = <RSS>) {
 
         for (@film_ids) {
             if ($id == $_) {
-			my $line_to_print = "  [\'$title\', \'$link\', \'$img\', \'$rating\'],\n";
-                	print FILMS_DATA $line_to_print;
-		if ($line_to_print ne $last_film_line && $new_film) {
-		        $title =~ s/\\//;
-			push @new_films_titles, $title;
-			push @new_films_links, $link;
-			push @new_films_imgs, $img;
-		} else {
-			$new_film = 0;
-		}
+                my $line_to_print = "  [\'$title\', \'$link\', \'$img\', \'$rating\'],\n";
+                    print FILMS_DATA $line_to_print;
+                if ($line_to_print ne $last_film_line && $new_film) {
+                    $title =~ s/\\//;
+                    push @new_films_titles, $title;
+                    push @new_films_links, $link;
+                    push @new_films_imgs, $img;
+                } else {
+                    $new_film = 0;
+                }
             }
         }
 
@@ -286,8 +287,8 @@ close(FILMS_DATA);
 
 
 while (@new_films_titles) {
-	$title = pop @new_films_titles;
-	$link = pop @new_films_links;
-	$img = pop @new_films_imgs;
-	system("echo \"\<p style=\"font-size:16px\"\>The film \<a href=\"$link\"\>$title\<\/a\> has been added to \'LATEST RELEASES\'.\<\/p\>\<br\><img src=\"$img\" width=\"200\" \/\>\" | mail  -a \"Content-type: text\/html\" -s \"Cineminha web page update\" \"tinyhomecinema\@gmail.com\"");
+    $title = pop @new_films_titles;
+    $link = pop @new_films_links;
+    $img = pop @new_films_imgs;
+    system("echo \"\<p style=\"font-size:16px\"\>The film \<a href=\"$link\"\>$title\<\/a\> has been added to \'LATEST RELEASES\'.\<\/p\>\<br\><img src=\"$img\" width=\"200\" \/\>\" | mail  -a \"Content-type: text\/html\" -s \"Cineminha web page update\" \"tinyhomecinema\@gmail.com\"");
 }
