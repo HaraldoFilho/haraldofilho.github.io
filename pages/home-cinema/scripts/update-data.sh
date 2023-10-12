@@ -52,8 +52,6 @@ cd /home/pi/github/tinyhomecinema.github.io/scripts
 
 ./generate-data.pl
 
-rm /home/pi/github/tinyhomecinema.github.io/scripts/html/*
-
 git add ../data/media.js
 git add ../data/films.js
 git commit -m "[auto] Updated data"
