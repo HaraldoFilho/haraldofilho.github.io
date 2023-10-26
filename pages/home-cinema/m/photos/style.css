@@ -1,0 +1,43 @@
+body {
+  margin: 0px 0px 0px 0px;
+  background-color: #FAFAFA;
+  font-family: arial;
+
+}
+
+.page-title {
+  grid-area: title;
+  font-size: 22px;
+  font-weight: bold;
+  color: #FAFAFA;
+  background-color: #4F4F4F;
+  border-style: none none none none;
+  border-color: #4F4F4F;
+  border-width: thin;
+  padding: 25px 0px 25px 0px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.covers-grid {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  align-items: center;
+  width: 80%;
+  margin: 0 10% 50px 10%;
+}
+
+.cover_thumb {
+  width: 90%;
+  border-style: solid;
+  border-width: thin;
+  border-color: lightgrey;
+  margin: 5% 5% 1% 5%;
+}
+
+.cover_text {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px 5% 10% 5%;
+}

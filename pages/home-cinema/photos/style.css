@@ -1,0 +1,40 @@
+body {
+  margin: 0px 0px 100px 0px;
+  background-color: #FAFAFA;
+  font-family: arial;
+}
+
+.page-title {
+  grid-area: title;
+  font-size: 50px;
+  font-weight: bold;
+  color: #FAFAFA;
+  background-color: #4F4F4F;
+  border-style: none none none none;
+  border-color: #4F4F4F;
+  border-width: thin;
+  padding: 25px 0px 25px 0px;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.covers-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 50px;
+  justify-content: center;
+  width: 100%;
+}
+
+.cover_thumb {
+  width: 320px;
+  border-style: solid;
+  border-width: thin;
+  border-color: lightgrey;
+}
+
+.cover_text {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5px;
+}
