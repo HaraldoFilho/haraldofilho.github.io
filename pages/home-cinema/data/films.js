@@ -23,5 +23,4 @@ var films = [
   ['I, Tonya, 2017', 'https://letterboxd.com/hpfilho/film/i-tonya/', 'https://a.ltrbxd.com/resized/sm/upload/hv/nn/05/ss/d20vOJpywFDoz7Dd4ChomGdP0fr-0-600-0-900-crop.jpg', '★★★★'],
   ['The Suicide Squad, 2021', 'https://letterboxd.com/hpfilho/film/the-suicide-squad/', 'https://a.ltrbxd.com/resized/film-poster/3/6/9/8/3/5/369835-the-suicide-squad-0-600-0-900-crop.jpg', '★★★★'],
   ['Beyond the Infinite Two Minutes, 2020', 'https://letterboxd.com/hpfilho/film/beyond-the-infinite-two-minutes/', 'https://a.ltrbxd.com/resized/film-poster/7/2/2/6/4/3/722643-beyond-the-infinite-two-minutes-0-600-0-900-crop.jpg', '★★★★'],
-  ['Mission: Impossible – Fallout, 2018', 'https://letterboxd.com/hpfilho/film/mission-impossible-fallout/', 'https://a.ltrbxd.com/resized/film-poster/2/8/3/2/7/3/283273-mission-impossible-fallout-0-600-0-900-crop.jpg', '★★★★'],
 ]
