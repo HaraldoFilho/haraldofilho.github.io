@@ -112,7 +112,7 @@
 		
 		
 		
-supermodelCSRF = "3289c93a4a49fb801e01";
+supermodelCSRF = "78fd534c30bd1ee2ed0e";
 
 		
 
@@ -188,7 +188,12 @@ supermodelCSRF = "3289c93a4a49fb801e01";
 			}
 		);
 		
-		window.adsLocation = 'BR';
+		(function() {
+			const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+			window.isAndroid = new RegExp("android", "i").test(userAgent);
+			window.isIOS = new RegExp("iPad|iPhone|iPod", "i").test(userAgent) && !window.MSStream;
+			window.adsLocation = 'BR';
+		})();
 	</script>
 
 
@@ -217,7 +222,7 @@ supermodelCSRF = "3289c93a4a49fb801e01";
 	
 	<link href="https://s.ltrbxd.com/static/css/desktop.min.00f7a929.css" rel="stylesheet" media="screen, projection"/>
 
-	<script src="https://s.ltrbxd.com/static/js/main.min.b105cb4c.js"></script>
+	<script src="https://s.ltrbxd.com/static/js/main.min.e1d9ad80.js"></script>
 	
 
 
@@ -3093,7 +3098,7 @@ var mainMenu = [];
 
 <tr class="diary-entry-row viewing-poster-container" data-viewing-id="293799297" data-owner="hpfilho" data-object-id="viewing:293799297" data-object-name="entry">
 	<td class="td-calendar"> </td> <td class="td-day diary-day center"> <a href="/hpfilho/tag/first-showing/diary/for/2022/09/07/">07</a> </td> <td class="td-film-details"> <div class="really-lazy-load poster film-poster film-poster-679291 linked-film-poster" data-image-width="35" data-image-height="52" data-film-id="679291" data-film-slug="drive-my-car" data-poster-url="/film/drive-my-car/image-150/" data-linked="linked" data-target-link="/hpfilho/film/drive-my-car/" data-target-link-target="" data-cache-busting-key="0ed63dd7" data-hide-tooltip="true" > <img src="https://s.ltrbxd.com/static/img/empty-poster-35.9df54d4d.png" class="image" width="35" height="52" alt="Drive My Car"/> <span class="frame"><span class="frame-title"></span></span> </div> <h3 class="headline-3 prettify"><a href="/hpfilho/film/drive-my-car/">Drive My Car</a></h3> </td> <td class="td-released center"><span>2021</span></td> <td class="td-rating rating-green"> <div class="editable-rating show-for-owner" data-owner="hpfilho"> <a href="#" class="remove-rating tooltip" title="Remove rating">&times;</a> <input class="rateit-field diary-rating-293799297" type="range" min="0" max="10" step="1" value="8" /> <div class="rateit instant-rating" data-rate-action="/s/viewing:293799297/change-rating" data-rateit-backingfld=".diary-rating-293799297" data-rateit-starwidth="8" data-rateit-starheight="16" data-rateit-resetable="false"></div> </div> <div class="hide-for-owner" data-owner="hpfilho"> <span class="rating rated-8"> ★★★★ </span> </div> </td> <td class="td-like center diary-like"> <div class="show-for-owner" data-owner="hpfilho"><span class="like-link-target react-component" data-component-class="globals.comps.LikeLinkComponent" data-likeable-uid="film:679291" data-likeable-name="film" data-likeable="true" data-likes-page="/film/drive-my-car/likes/" data-format="minimal" > <span class="has-icon icon-16 icon-like"></span> </span></div> </td> <td class="td-rewatch center icon-status-off"><span class="has-icon icon-rewatch icon-16"></span></td> <td class="td-review center icon-status-off"> </td>
-	<td class="td-actions film-actions film-cell-679291 has-menu hide-when-logged-out" data-owner="hpfilho" data-film-id="679291" data-film-name="Drive My Car" data-film-slug="drive-my-car" data-poster-url="/film/drive-my-car/image-150/" data-film-release-year="2021" data-film-run-time="180" data-new-list-with-film-action="/list/new/with/drive-my-car/" data-remove-from-watchlist-action="/film/drive-my-car/remove-from-watchlist/" data-add-to-watchlist-action="/film/drive-my-car/add-to-watchlist/" data-rate-action="/film/drive-my-car/rate/" data-mark-as-watched-action="/film/drive-my-car/mark-as-watched/" data-mark-as-not-watched-action="/film/drive-my-car/mark-as-not-watched/" data-film-link="/film/drive-my-car/" data-target-link="/film/drive-my-car/">
+	<td class="td-actions film-actions film-cell-679291 has-menu hide-when-logged-out" data-owner="hpfilho" data-film-id="679291" data-film-name="Drive My Car" data-film-slug="drive-my-car" data-poster-url="/film/drive-my-car/image-150/" data-film-release-year="2021" data-film-run-time="179" data-new-list-with-film-action="/list/new/with/drive-my-car/" data-remove-from-watchlist-action="/film/drive-my-car/remove-from-watchlist/" data-add-to-watchlist-action="/film/drive-my-car/add-to-watchlist/" data-rate-action="/film/drive-my-car/rate/" data-mark-as-watched-action="/film/drive-my-car/mark-as-watched/" data-mark-as-not-watched-action="/film/drive-my-car/mark-as-not-watched/" data-film-link="/film/drive-my-car/" data-target-link="/film/drive-my-car/">
 		<span class="overlay-actions -w150 js-film-options">
 			<span class="diary-entry-edit show-for-owner" data-owner="hpfilho">
 				
@@ -3798,12 +3803,12 @@ var mainMenu = [];
                 <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div id="poster-picker-58477b62-b390-423a-875f-798993882555" data-poster-picker-options='{"id": "58477b62-b390-423a-875f-798993882555"}' data-js-target="poster-picker"></div>
+                <div id="poster-picker-397290a9-c559-46d1-b0d2-a6984f613301" data-poster-picker-options='{"id": "397290a9-c559-46d1-b0d2-a6984f613301"}' data-js-target="poster-picker"></div>
             </div>
             <div class="modal-footer">
                 <div class="poster-picker-note"></div>
 
-                <div class="poster-picker-controls" data-poster-picker-controls-for="58477b62-b390-423a-875f-798993882555"> <div class="modal-action-group -center"> <button class="button -destructive" type="button" data-js-trigger="reset" disabled> <span class="label" data-js-label-for="film" >Reset <span class="js-image-type">poster</span></span> <span class="label" data-js-label-for="object" hidden>Reset for <span class="js-object-name">item</span></span> </button> <button class="button -action" type="submit" data-js-trigger="submit" disabled> <span class="label" data-js-label-for="film" >Save<span class="mob-hide"> changes</span></span> <span class="label" data-js-label-for="object" hidden>Save<span class="mob-hide"> for <span class="js-object-name">item</span></span></span> </button> </div> <div class="objectonly js-objectonly" aria-hidden="true" hidden> <label for="frm-object-only" class="option-label -checkbox -medium -reversed"> <input type="checkbox" value="true" class="checkbox" id="frm-object-only" data-js-trigger="object-only" disabled /><i class="substitute"></i>This <span class="js-object-name">item</span> only </label> </div> </div>
+                <div class="poster-picker-controls" data-poster-picker-controls-for="397290a9-c559-46d1-b0d2-a6984f613301"> <div class="modal-action-group -center"> <button class="button -destructive" type="button" data-js-trigger="reset" disabled> <span class="label" data-js-label-for="film" >Reset <span class="js-image-type">poster</span></span> <span class="label" data-js-label-for="object" hidden>Reset for <span class="js-object-name">item</span></span> </button> <button class="button -action" type="submit" data-js-trigger="submit" disabled> <span class="label" data-js-label-for="film" >Save<span class="mob-hide"> changes</span></span> <span class="label" data-js-label-for="object" hidden>Save<span class="mob-hide"> for <span class="js-object-name">item</span></span></span> </button> </div> <div class="objectonly js-objectonly" aria-hidden="true" hidden> <label for="frm-object-only" class="option-label -checkbox -medium -reversed"> <input type="checkbox" value="true" class="checkbox" id="frm-object-only" data-js-trigger="object-only" disabled /><i class="substitute"></i>This <span class="js-object-name">item</span> only </label> </div> </div>
             </div>
         </div>
     </div>
