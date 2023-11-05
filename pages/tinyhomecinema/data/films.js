@@ -24,5 +24,4 @@ var films = [
   ['The Nice Guys, 2016', 'https://letterboxd.com/hpfilho/film/the-nice-guys/', 'https://a.ltrbxd.com/resized/film-poster/2/1/6/3/0/1/216301-the-nice-guys-0-600-0-900-crop.jpg', '★★★★'],
   ['Reset, 2017', 'https://letterboxd.com/hpfilho/film/reset-2017/', 'https://a.ltrbxd.com/resized/film-poster/3/8/9/7/5/1/389751-reset-0-600-0-900-crop.jpg', '★★★'],
   ['I, Tonya, 2017', 'https://letterboxd.com/hpfilho/film/i-tonya/', 'https://a.ltrbxd.com/resized/sm/upload/hv/nn/05/ss/d20vOJpywFDoz7Dd4ChomGdP0fr-0-600-0-900-crop.jpg', '★★★★'],
-  ['The Suicide Squad, 2021', 'https://letterboxd.com/hpfilho/film/the-suicide-squad/', 'https://a.ltrbxd.com/resized/film-poster/3/6/9/8/3/5/369835-the-suicide-squad-0-600-0-900-crop.jpg', '★★★★'],
 ]
