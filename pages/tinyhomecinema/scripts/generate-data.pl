@@ -14,6 +14,9 @@ open(SHELF, $shelf) or die("File $shelf not found");
 my $tv_shows = 'html/tv_shows.html';
 open(TV_SHOWS, $tv_shows) or die("File $tv_shows not found");
 
+my $music = 'html/music.html';
+open(MUSIC, $music) or die("File $music not found");
+
 my $books = 'html/books.html';
 open(BOOKS, $books) or die("File $books not found");
 
@@ -75,7 +78,15 @@ while (my $line = <TV_SHOWS>) {
 
 print MEDIA_DATA "  [\'TV Shows\', $count, \'$url\', \'shelf\'],\n";
 
-print MEDIA_DATA "  [\'Music\', 35, \'https://tinyhomecinema.page/music/\', \'shelf\'],\n";
+$count = 0;
+
+while (my $line = <MUSIC>) {
+    if ($line =~ /cover_([0-9]*)\.jpg/) {
+        $count += 1;
+    }
+}
+
+print MEDIA_DATA "  [\'Music\', $count, \'https://tinyhomecinema.page/music/\', \'shelf\'],\n";
 
 while (my $line = <BOOKS>) {
     if ($line =~ /<td class=\"pbGroup\">.*of\s([0-9]*)<\/td>/) {
@@ -194,6 +205,7 @@ print MEDIA_DATA "]\n";
 
 close(SHELF);
 close(TV_SHOWS);
+close(MUSIC);
 close(BOOKS);
 close(FILMS);
 close(SHORTS);

@@ -9,6 +9,9 @@ cd /home/pi/github/tinyhomecinema.github.io/scripts/html
 wget 'https://letterboxd.com/hpfilho/list/my-home-cinema-shelf/'
 mv index.html shelf.html
 
+wget 'https://tinyhomecinema.page/music/'
+mv index.html music.html
+
 wget 'https://www.themoviedb.org/list/8256420'
 mv 8256420 tv_shows.html
 
