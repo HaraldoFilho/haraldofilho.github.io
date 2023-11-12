@@ -1,4 +1,5 @@
 var films = [
+  ['The Killer, 2023', 'https://letterboxd.com/hpfilho/film/the-killer-2023/', 'https://a.ltrbxd.com/resized/film-poster/7/1/7/6/5/4/717654-the-killer-0-600-0-900-crop.jpg', '★★★½'],
   ['John Wick: Chapter 4, 2023', 'https://letterboxd.com/hpfilho/film/john-wick-chapter-4/', 'https://a.ltrbxd.com/resized/film-poster/5/3/0/8/8/2/530882-john-wick-chapter-4-0-600-0-900-crop.jpg', '★★★★'],
   ['A Haunting in Venice, 2023', 'https://letterboxd.com/hpfilho/film/a-haunting-in-venice/', 'https://a.ltrbxd.com/resized/film-poster/8/5/0/3/7/5/850375-a-haunting-in-venice-0-600-0-900-crop.jpg', '★★★½'],
   ['Fresh, 2022', 'https://letterboxd.com/hpfilho/film/fresh-2022/', 'https://a.ltrbxd.com/resized/film-poster/7/0/6/0/6/4/706064-fresh-0-600-0-900-crop.jpg', '★★★'],
