@@ -9,6 +9,4 @@ var films = [
   ['Holy Spider', '2022', 'https://letterboxd.com/hpfilho/film/holy-spider/', 'https://a.ltrbxd.com/resized/film-poster/8/0/0/8/4/8/800848-holy-spider-0-600-0-900-crop.jpg', '★★★½'],
   ['EO', '2022', 'https://letterboxd.com/hpfilho/film/eo/', 'https://a.ltrbxd.com/resized/film-poster/7/0/3/9/4/3/703943-eo-0-600-0-900-crop.jpg', '★★★½'],
   ['Barbarian', '2022', 'https://letterboxd.com/hpfilho/film/barbarian-2022/', 'https://a.ltrbxd.com/resized/film-poster/8/1/9/6/4/8/819648-barbarian-0-600-0-900-crop.jpg', '★★★½'],
-  ['They Cloned Tyrone', '2023', 'https://letterboxd.com/hpfilho/film/they-cloned-tyrone/', 'https://a.ltrbxd.com/resized/film-poster/6/5/8/9/0/6/658906-they-cloned-tyrone-0-600-0-900-crop.jpg', '★★★½'],
-  ['Paradise', '2023', 'https://letterboxd.com/hpfilho/film/paradise-2023-1/', 'https://a.ltrbxd.com/resized/film-poster/1/0/2/7/5/7/8/1027578-paradise-0-600-0-900-crop.jpg', '★★★'],
 ]

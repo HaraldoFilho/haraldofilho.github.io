@@ -4,6 +4,7 @@ body {
   font-family: arial;
   font-size: 17px;
   color: lightgrey;
+  cursor: default;
 }
 
 a:link {

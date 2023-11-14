@@ -243,9 +243,6 @@ while (my $line = <FILMS_DATA>) {
 
 my $last_film_line = $film_data_lines[0];
 
-print @film_data_lines;
-print $last_film_line;
-
 close(FILMS_DATA);
 
 open(FILMS_DATA, '>', $films_data_file) or die("File $films_data_file not found");
@@ -274,6 +271,8 @@ my @new_films_years;
 my @new_films_links;
 my @new_films_imgs;
 
+my $n = 0;
+
 while (my $line = <RSS>) {
     if ($line =~ /.*<title>(.*),\s([0-9]*)\s-\s(.*)<\/title>\s<link>(.*)<\/link> <guid\s.*letterboxd-.*-(.*)<\/guid>.*<letterboxd:watchedDate>([0-9]*)-.*<img src=\"(.*)\?v/) {
         $title = $1;
@@ -293,8 +292,9 @@ while (my $line = <RSS>) {
         for (@film_ids) {
             if ($id == $_ && ($watch_year == $release_year || $watch_year == $release_year + 1)) {
                 my $line_to_print = "  [\'$title\', \'$release_year\', \'$link\', \'$img\', \'$rating\'],\n";
-                    print FILMS_DATA $line_to_print;
                 if ($line_to_print ne $last_film_line && $new_film) {
+                    print FILMS_DATA $line_to_print;
+                    $n += 1;
                     $title =~ s/\\//;
                     push @new_films_titles, $title;
                     push @new_films_years, $release_year;
@@ -307,6 +307,12 @@ while (my $line = <RSS>) {
         }
 
     }
+}
+
+while (@film_data_lines && $n < 10) {
+    my $line_to_print = shift @film_data_lines;
+    print FILMS_DATA $line_to_print;
+    $n += 1;
 }
 
 print FILMS_DATA "]\n";
