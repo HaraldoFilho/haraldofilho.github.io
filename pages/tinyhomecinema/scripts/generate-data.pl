@@ -231,8 +231,20 @@ open(DIARY, $diary) or die("File $diary not found");
 my $films_data_file = '../data/films.js';
 open(FILMS_DATA, $films_data_file) or die("File $films_data_file not found");
 
-my $last_film_line = <FILMS_DATA>;
-$last_film_line = <FILMS_DATA>;
+my @film_data_lines;
+
+my $line = <FILMS_DATA>;
+
+while (my $line = <FILMS_DATA>) {
+    if ($line !~ /\]\n/) {
+      push @film_data_lines, $line;
+    }
+}
+
+my $last_film_line = $film_data_lines[0];
+
+print @film_data_lines;
+print $last_film_line;
 
 close(FILMS_DATA);
 
@@ -249,37 +261,43 @@ while (my $line = <DIARY>) {
 }
 
 my $title;
+my $release_year;
 my $rating;
 my $link;
 my $id;
 my $img;
+my $watch_year;
 
 my $new_film = 1;
 my @new_films_titles;
+my @new_films_years;
 my @new_films_links;
 my @new_films_imgs;
 
 while (my $line = <RSS>) {
-    if ($line =~ /.*<title>(.*)\s-\s(.*)<\/title>\s<link>(.*)<\/link> <guid\s.*letterboxd-.*-(.*)<\/guid>.*<img src=\"(.*)\?v.*/) {
+    if ($line =~ /.*<title>(.*),\s([0-9]*)\s-\s(.*)<\/title>\s<link>(.*)<\/link> <guid\s.*letterboxd-.*-(.*)<\/guid>.*<letterboxd:watchedDate>([0-9]*)-.*<img src=\"(.*)\?v/) {
         $title = $1;
-        $rating = $2;
-        $link = $3;
-        $id = $4;
-        $img = $5;
+        $release_year = $2;
+        $rating = $3;
+        $link = $4;
+        $id = $5;
+        $watch_year = $6;
+        $img = $7;
 
         $title =~ s/&#039;/\\\'/;
 
         if ($rating =~ /(.*)\s\(.*/) {
-            $rating = $2;
+            $rating = $3;
         }
 
         for (@film_ids) {
-            if ($id == $_) {
-                my $line_to_print = "  [\'$title\', \'$link\', \'$img\', \'$rating\'],\n";
+            if ($id == $_ && ($watch_year == $release_year || $watch_year == $release_year + 1)) {
+                my $line_to_print = "  [\'$title\', \'$release_year\', \'$link\', \'$img\', \'$rating\'],\n";
                     print FILMS_DATA $line_to_print;
                 if ($line_to_print ne $last_film_line && $new_film) {
                     $title =~ s/\\//;
                     push @new_films_titles, $title;
+                    push @new_films_years, $release_year;
                     push @new_films_links, $link;
                     push @new_films_imgs, $img;
                 } else {
@@ -300,6 +318,7 @@ close(FILMS_DATA);
 
 while (@new_films_titles) {
     $title = pop @new_films_titles;
+    $release_year = pop @new_films_years;
     $link = pop @new_films_links;
     $img = pop @new_films_imgs;
     system("echo \"\<p style=\"font-size:16px\"\>The film \<a href=\"$link\"\>$title\<\/a\> has been added to \'LATEST RELEASES\'.\<\/p\>\<br\><img src=\"$img\" width=\"200\" \/\>\<br\>\<br\>\<br\>tinyhomecinema.page\<br\>\<br\>\" | mail -s \"Cineminha webpage update\" -a \"Content-type: text\/html\" -aFrom:\"Webpage Updater\<wozniak.iot\@gmail.com\>\" \"tinyhomecinema\@gmail.com\"");
