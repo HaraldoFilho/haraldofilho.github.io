@@ -327,5 +327,5 @@ while (@new_films_titles) {
     $release_year = pop @new_films_years;
     $link = pop @new_films_links;
     $img = pop @new_films_imgs;
-    system("echo \"\<p style=\"font-size:16px\"\>The film \<a href=\"$link\"\>$title\<\/a\> has been added to \'LATEST RELEASES\'.\<\/p\>\<br\><img src=\"$img\" width=\"200\" \/\>\<br\>\<br\>\<br\>tinyhomecinema.page\<br\>\<br\>\" | mail -s \"Cineminha webpage update\" -a \"Content-type: text\/html\" -aFrom:\"Webpage Updater\<wozniak.iot\@gmail.com\>\" \"tinyhomecinema\@gmail.com\"");
+    system("echo \"\<p style=\"font-size:16px\"\>The film \<a href=\"$link\"\>$title\<\/a\> has been added to \'LATEST RELEASES\'.\<\/p\>\<br\><img src=\"$img\" width=\"200\" \/\>\<br\>\<br\>\<br\>tinyhomecinema.page\<br\>\<br\>\" | mail -s \"Cineminha webpage update\" -a \"Content-type: text\/html\" -aFrom:\"CineBot\<wozniak.iot\@gmail.com\>\" \"tinyhomecinema\@gmail.com\"");
 }
