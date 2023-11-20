@@ -12,7 +12,7 @@ var services = [
   ['Telecine Play', 'https://letterboxd.com/hpfilho/tag/cineminha/films/on/telecineplay-br/', ''],
   ['Globoplay', 'https://letterboxd.com/hpfilho/tag/cineminha/films/on/globoplay-br/', ''],
   ['MGM', 'https://letterboxd.com/hpfilho/tag/cineminha/films/on/mgm-br/', ''],
-  ['Belas Artes', 'https://letterboxd.com/hpfilho/tag/cineminha/films/on/belasartesalacarte-br/', ''],
+  ['Belas Artes', 'https://letterboxd.com/hpfilho/tag/cineminha/films/on/belasartesalacarte-br/', 'current'],
   ['Oldflix', 'https://letterboxd.com/hpfilho/tag/cineminha/films/on/oldflix-br/', ''],
   ['Filmicca', '', '']
 ]
