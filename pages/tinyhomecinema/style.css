@@ -337,14 +337,14 @@ sup {
 
 .icon {
   justify-content: center;
-  width: 40px;
+  width: 20px;
   cursor: pointer;
 }
 
 .photo {
   grid-area: photo;
   justify-content: center;
-  width: 960px;
+  width: 900px;
 }
 
 .arr_back {
