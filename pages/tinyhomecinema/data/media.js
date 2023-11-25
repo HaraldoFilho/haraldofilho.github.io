@@ -2,7 +2,7 @@ var shelves = [
   ['Movies', 403, 'https://letterboxd.com/hpfilho/list/my-home-cinema-shelf/', 'shelf'],
   ['TV Shows', 7, 'https://www.themoviedb.org/list/8256420-my-tv-shows-home-cinema-shelf', 'shelf'],
   ['Music', 35, 'https://tinyhomecinema.page/music/', 'shelf'],
-  ['Books', 27, 'https://www.librarything.com/catalog.php?view=hpfilho&collection=794026&shelf=shelf&sort=title&previousOffset=0&shelf_rows=3&collection=794026', 'shelf']
+  ['Books', 35, 'https://www.librarything.com/catalog.php?view=hpfilho&collection=794026&shelf=shelf&sort=title&previousOffset=0&shelf_rows=3&collection=794026', 'shelf']
 ]
 
 var collection = [
