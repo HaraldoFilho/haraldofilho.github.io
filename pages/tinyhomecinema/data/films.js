@@ -1,4 +1,5 @@
 var films = [
+  ['Aftersun', '2022', 'https://letterboxd.com/hpfilho/film/aftersun/', 'https://a.ltrbxd.com/resized/film-poster/8/6/8/5/5/8/868558-aftersun-0-600-0-900-crop.jpg', '★★★½'],
   ['The Killer', '2023', 'https://letterboxd.com/hpfilho/film/the-killer-2023/', 'https://a.ltrbxd.com/resized/film-poster/7/1/7/6/5/4/717654-the-killer-0-600-0-900-crop.jpg', '★★★½'],
   ['John Wick: Chapter 4', '2023', 'https://letterboxd.com/hpfilho/film/john-wick-chapter-4/', 'https://a.ltrbxd.com/resized/film-poster/5/3/0/8/8/2/530882-john-wick-chapter-4-0-600-0-900-crop.jpg', '★★★★'],
   ['A Haunting in Venice', '2023', 'https://letterboxd.com/hpfilho/film/a-haunting-in-venice/', 'https://a.ltrbxd.com/resized/film-poster/8/5/0/3/7/5/850375-a-haunting-in-venice-0-600-0-900-crop.jpg', '★★★½'],
@@ -8,5 +9,4 @@ var films = [
   ['Fall', '2022', 'https://letterboxd.com/hpfilho/film/fall-2022/', 'https://a.ltrbxd.com/resized/film-poster/8/8/7/6/2/1/887621-fall-0-600-0-900-crop.jpg', '★★½'],
   ['Holy Spider', '2022', 'https://letterboxd.com/hpfilho/film/holy-spider/', 'https://a.ltrbxd.com/resized/film-poster/8/0/0/8/4/8/800848-holy-spider-0-600-0-900-crop.jpg', '★★★½'],
   ['EO', '2022', 'https://letterboxd.com/hpfilho/film/eo/', 'https://a.ltrbxd.com/resized/film-poster/7/0/3/9/4/3/703943-eo-0-600-0-900-crop.jpg', '★★★½'],
-  ['Barbarian', '2022', 'https://letterboxd.com/hpfilho/film/barbarian-2022/', 'https://a.ltrbxd.com/resized/film-poster/8/1/9/6/4/8/819648-barbarian-0-600-0-900-crop.jpg', '★★★½'],
 ]
