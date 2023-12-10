@@ -1,4 +1,5 @@
 var films = [
+  ['Leave the World Behind', '2023', 'https://letterboxd.com/hpfilho/film/leave-the-world-behind-2023/', 'https://a.ltrbxd.com/resized/film-poster/6/4/8/8/6/9/648869-leave-the-world-behind-0-600-0-900-crop.jpg', '★★★★'],
   ['Aftersun', '2022', 'https://letterboxd.com/hpfilho/film/aftersun/', 'https://a.ltrbxd.com/resized/film-poster/8/6/8/5/5/8/868558-aftersun-0-600-0-900-crop.jpg', '★★★½'],
   ['The Killer', '2023', 'https://letterboxd.com/hpfilho/film/the-killer-2023/', 'https://a.ltrbxd.com/resized/film-poster/7/1/7/6/5/4/717654-the-killer-0-600-0-900-crop.jpg', '★★★½'],
   ['John Wick: Chapter 4', '2023', 'https://letterboxd.com/hpfilho/film/john-wick-chapter-4/', 'https://a.ltrbxd.com/resized/film-poster/5/3/0/8/8/2/530882-john-wick-chapter-4-0-600-0-900-crop.jpg', '★★★★'],
@@ -8,5 +9,4 @@ var films = [
   ['No One Will Save You', '2023', 'https://letterboxd.com/hpfilho/film/no-one-will-save-you/', 'https://a.ltrbxd.com/resized/film-poster/7/3/6/8/2/1/736821-no-one-will-save-you-0-600-0-900-crop.jpg', '★'],
   ['Fall', '2022', 'https://letterboxd.com/hpfilho/film/fall-2022/', 'https://a.ltrbxd.com/resized/film-poster/8/8/7/6/2/1/887621-fall-0-600-0-900-crop.jpg', '★★½'],
   ['Holy Spider', '2022', 'https://letterboxd.com/hpfilho/film/holy-spider/', 'https://a.ltrbxd.com/resized/film-poster/8/0/0/8/4/8/800848-holy-spider-0-600-0-900-crop.jpg', '★★★½'],
-  ['EO', '2022', 'https://letterboxd.com/hpfilho/film/eo/', 'https://a.ltrbxd.com/resized/film-poster/7/0/3/9/4/3/703943-eo-0-600-0-900-crop.jpg', '★★★½'],
 ]
