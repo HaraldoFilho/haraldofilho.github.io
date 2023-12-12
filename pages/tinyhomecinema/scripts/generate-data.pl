@@ -290,7 +290,7 @@ while (my $line = <RSS>) {
         }
 
         for (@film_ids) {
-            if ($id == $_ && $watch_year - $release_year < 3) {
+            if ($id == $_ && $watch_year - $release_year < 10) {
                 my $line_to_print = "  [\'$title\', \'$release_year\', \'$link\', \'$img\', \'$rating\'],\n";
                 if ($line_to_print ne $last_film_line && $new_film) {
                     print FILMS_DATA $line_to_print;
