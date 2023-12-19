@@ -12,8 +12,8 @@ mv index.html shelf.html
 wget 'https://tinyhomecinema.page/music/'
 mv index.html music.html
 
-wget 'https://www.themoviedb.org/list/8256420'
-mv 8256420 tv_shows.html
+wget 'https://www.themoviedb.org/list/8283859-tv-shows-shelf'
+mv 8283859-tv-shows-shelf tv_shows.html
 
 wget 'https://www.librarything.com/catalog_bottom.php?view=hpfilho&collection=794026'
 mv catalog_bottom.php?view\=hpfilho\&collection\=794026 books.html
