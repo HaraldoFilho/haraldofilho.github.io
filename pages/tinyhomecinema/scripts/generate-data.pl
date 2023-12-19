@@ -259,7 +259,6 @@ while (my $line = <DIARY>) {
 
 my $title;
 my $release_year;
-my $rating;
 my $link;
 my $id;
 my $img;
@@ -274,25 +273,19 @@ my @new_films_imgs;
 my $n = 0;
 
 while (my $line = <RSS>) {
-    if ($line =~ /.*<title>(.*),\s([0-9]*)\s-\s(.*)<\/title>\s<link>(.*)<\/link> <guid\s.*letterboxd-.*-(.*)<\/guid>.*<letterboxd:watchedDate>([0-9]*)-.*<img src=\"(.*)\?v/) {
+    if ($line =~ /.*<title>(.*),\s([0-9]*).*<\/title>\s<link>(.*)<\/link> <guid\s.*letterboxd-.*-(.*)<\/guid>.*<letterboxd:watchedDate>([0-9]*)-.*<img src=\"(.*)\?v/) {
         $title = $1;
         $release_year = $2;
-        $rating = $3;
-        $link = $4;
-        $id = $5;
-        $watch_year = $6;
-        $img = $7;
+        $link = $3;
+        $id = $4;
+        $watch_year = $5;
+        $img = $6;
 
         $title =~ s/&#039;/\\\'/;
 
-        if ($rating =~ /(.*)\s\(.*/) {
-            $rating = $3;
-        }
-
         for (@film_ids) {
-            #if ($id == $_ && $watch_year - $release_year < 10) {
-            if ($id == $_ && $release_year >= 2012) {
-                my $line_to_print = "  [\'$title\', \'$release_year\', \'$link\', \'$img\', \'$rating\'],\n";
+            if ($id == $_ && $watch_year - $release_year < 2) {
+                my $line_to_print = "  [\'$title\', \'$release_year\', \'$link\', \'$img\'],\n";
                 if ($line_to_print ne $last_film_line && $new_film) {
                     print FILMS_DATA $line_to_print;
                     $n += 1;
