@@ -7,12 +7,12 @@ var shelves = [
 
 var collection = [
   ['Films', 337, 'https://letterboxd.com/tinyhomecinema/list/film-collection/', 'collection'],
-  ['Shorts', 69, 'https://letterboxd.com/tinyhomecinema/list/my-short-films-collection/', 'collection'],
-  ['Documentaries', 19, 'https://letterboxd.com/tinyhomecinema/list/special-feature-documentaries-collection/', 'collection'],
-  ['Miniseries', 19, 'https://letterboxd.com/tinyhomecinema/list/miniseries-collection/', 'collection'],
-  ['Blu-ray', 140, 'https://letterboxd.com/hpfilho/list/my-blu-ray-discs/', 'disc'],
-  ['DVD', 263, 'https://letterboxd.com/hpfilho/list/my-dvds/', 'disc'],
-  ['BD/DVD', 62, 'https://letterboxd.com/hpfilho/list/blu-ray-dvd/', 'disc'],
-  ['Dolby Atmos', 25, 'https://letterboxd.com/tinyhomecinema/list/dolby-atmos-discs/', 'audio'],
-  ['DTS X', 8, 'https://letterboxd.com/tinyhomecinema/list/dts-x-discs/', 'audio'],
+  ['Shorts', 69, 'https://letterboxd.com/tinyhomecinema/list/short-films/', 'collection'],
+  ['Documentaries', 19, 'https://letterboxd.com/tinyhomecinema/list/special-feature-documentaries/', 'collection'],
+  ['Miniseries', 19, 'https://letterboxd.com/tinyhomecinema/list/miniseries/', 'collection'],
+  ['Blu-ray', 140, 'https://letterboxd.com/tinyhomecinema/list/blu-ray/', 'disc'],
+  ['DVD', 263, 'https://letterboxd.com/tinyhomecinema/list/dvd/', 'disc'],
+  ['BD/DVD', 62, 'https://letterboxd.com/tinyhomecinema/list/blu-ray-dvd/', 'disc'],
+  ['Dolby Atmos', 25, 'https://letterboxd.com/tinyhomecinema/list/dolby-atmos/', 'audio'],
+  ['DTS X', 8, 'https://letterboxd.com/tinyhomecinema/list/dts-x/', 'audio'],
 ]
