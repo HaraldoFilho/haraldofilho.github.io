@@ -9,7 +9,7 @@ var collection = [
   ['Films', 337, 'https://letterboxd.com/tinyhomecinema/list/film-collection/', 'collection'],
   ['Shorts', 69, 'https://letterboxd.com/tinyhomecinema/list/short-films/', 'collection'],
   ['Documentaries', 19, 'https://letterboxd.com/tinyhomecinema/list/special-feature-documentaries/', 'collection'],
-  ['Miniseries', 19, 'https://letterboxd.com/tinyhomecinema/list/miniseries/', 'collection'],
+  ['Miniseries', 1, 'https://letterboxd.com/tinyhomecinema/list/miniseries/', 'collection'],
   ['Blu-ray', 140, 'https://letterboxd.com/tinyhomecinema/list/blu-ray/', 'disc'],
   ['DVD', 263, 'https://letterboxd.com/tinyhomecinema/list/dvd/', 'disc'],
   ['BD/DVD', 62, 'https://letterboxd.com/tinyhomecinema/list/blu-ray-dvd/', 'disc'],

@@ -106,7 +106,7 @@ while (my $line = <FILMS>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
         $url = $1;
     }
-    if ($line =~ /A list of ([0-9]*) films/) {
+    if ($line =~ /A list of ([0-9]*) film/) {
         $count = $1;
     }
 }
@@ -117,7 +117,7 @@ while (my $line = <SHORTS>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
         $url = $1;
     }
-    if ($line =~ /A list of ([0-9]*) films/) {
+    if ($line =~ /A list of ([0-9]*) film/) {
         $count = $1;
     }
 }
@@ -128,7 +128,7 @@ while (my $line = <DOCS>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
         $url = $1;
     }
-    if ($line =~ /A list of ([0-9]*) films/) {
+    if ($line =~ /A list of ([0-9]*) film/) {
         $count = $1;
     }
 }
@@ -139,7 +139,7 @@ while (my $line = <MINISERIES>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
         $url = $1;
     }
-    if ($line =~ /A list of ([0-9]*) films/) {
+    if ($line =~ /A list of ([0-9]*) film/) {
        $count = $1;
     }
 }
@@ -150,7 +150,7 @@ while (my $line = <BLURAY>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
         $url = $1;
     }
-    if ($line =~ /A list of ([0-9]*) films/) {
+    if ($line =~ /A list of ([0-9]*) film/) {
         $count = $1;
     }
 }
@@ -161,7 +161,7 @@ while (my $line = <DVD>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
         $url = $1;
     }
-    if ($line =~ /A list of ([0-9]*) films/) {
+    if ($line =~ /A list of ([0-9]*) film/) {
         $count = $1;
     }
 }
@@ -172,7 +172,7 @@ while (my $line = <BD_DVD>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
         $url = $1;
     }
-    if ($line =~ /A list of ([0-9]*) films/) {
+    if ($line =~ /A list of ([0-9]*) film/) {
         $count = $1;
     }
 }
@@ -183,7 +183,7 @@ while (my $line = <ATMOS>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
         $url = $1;
     }
-    if ($line =~ /A list of ([0-9]*) films/) {
+    if ($line =~ /A list of ([0-9]*) film/) {
         $count = $1;
     }
 }
@@ -194,7 +194,7 @@ while (my $line = <DTSX>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
         $url = $1;
     }
-    if ($line =~ /A list of ([0-9]*) films/) {
+    if ($line =~ /A list of ([0-9]*) film/) {
         $count = $1;
     }
 }
