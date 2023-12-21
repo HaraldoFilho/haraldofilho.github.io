@@ -437,7 +437,7 @@ function moreMedia(click) {
 
   var collection_header = document.createElement('H4');
   collection_header.setAttribute('id', 'collection-header');
-  var header_text = document.createTextNode("Film Collection");
+  var header_text = document.createTextNode("Movie Collection");
   collection_header.appendChild(header_text);
   media.appendChild(collection_header);
 
