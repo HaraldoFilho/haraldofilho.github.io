@@ -263,6 +263,7 @@ my $link;
 my $id;
 my $img;
 my $watch_year;
+my $watch_month;
 
 my $new_film = 1;
 my @new_films_titles;
@@ -272,19 +273,27 @@ my @new_films_imgs;
 
 my $n = 0;
 
+my $treshold_month = 3;
+my $years_back = 1;
+
 while (my $line = <RSS>) {
-    if ($line =~ /.*<title>(.*),\s([0-9]*).*<\/title>\s<link>(.*)<\/link> <guid\s.*letterboxd-.*-(.*)<\/guid>.*<letterboxd:watchedDate>([0-9]*)-.*<img src=\"(.*)\?v/) {
+    if ($line =~ /.*<title>(.*),\s([0-9]*).*<\/title>\s<link>(.*)<\/link> <guid\s.*letterboxd-.*-(.*)<\/guid>.*<letterboxd:watchedDate>([0-9]*)-([0-9]*)-.*<img src=\"(.*)\?v/) {
         $title = $1;
         $release_year = $2;
         $link = $3;
         $id = $4;
         $watch_year = $5;
-        $img = $6;
+        $watch_month = $6;
+        $img = $7;
 
         $title =~ s/&#039;/\\\'/;
 
+        if ($watch_month <= $treshold_month) {
+            $years_back = 2;
+        }
+        
         for (@film_ids) {
-            if ($id == $_ && $watch_year - $release_year < 3) {
+            if ($id == $_ && $watch_year - $release_year <= $years_back) {
                 my $line_to_print = "  [\'$title\', \'$release_year\', \'$link\', \'$img\'],\n";
                 if ($line_to_print ne $last_film_line && $new_film) {
                     print FILMS_DATA $line_to_print;
