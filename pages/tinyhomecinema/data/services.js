@@ -7,7 +7,7 @@ var services = [
   ['Disney+', 'https://letterboxd.com/tinyhomecinema/tag/disney-/films/', 'current'],
   ['Paramount+', 'https://letterboxd.com/tinyhomecinema/tag/paramount-/films/', 'past'],
   ['Lionsgate+', 'https://letterboxd.com/tinyhomecinema/tag/lionsgate-/films/', 'past'],
-  ['MUBI', 'https://letterboxd.com/tinyhomecinema/tag/mubi/films/', 'past'],
+  ['MUBI', 'https://letterboxd.com/tinyhomecinema/tag/mubi/films/', 'current'],
   ['Looke', 'https://letterboxd.com/tinyhomecinema/tag/looke/films/', ''],
   ['Telecine Play', 'https://letterboxd.com/tinyhomecinema/tag/telecine-play/films/', ''],
   ['Globoplay', 'https://letterboxd.com/tinyhomecinema/tag/globoplay/films/', ''],
