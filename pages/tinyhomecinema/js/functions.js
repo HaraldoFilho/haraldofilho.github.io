@@ -330,6 +330,30 @@ function addPastServices(click) {
 
   }
 
+  for (var i = 0; i < closed_services.length; i++) {
+
+    var service = closed_services[i][0];
+    var url = closed_services[i][1];
+    var status = closed_services[i][2];
+
+    var line = document.createElement('LI');
+    var textNode = document.createTextNode(service);
+
+    if (url.length > 0) {
+      var link = document.createElement('A');
+      link.setAttribute('href', url);
+      link.appendChild(textNode);
+      line.appendChild(link);
+    } else {
+      line.appendChild(textNode);
+    }
+
+    var deleted_line = document.createElement('DEL');
+    deleted_line.appendChild(line);
+    past_services_list.appendChild(deleted_line);
+
+  }
+
   var more = document.getElementById('past-services');
   more.innerText = "LESS";
   more.setAttribute('onclick', 'removePastServices(true)');
