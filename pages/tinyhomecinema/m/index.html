@@ -195,6 +195,7 @@
 
     var current_services = [];
     var past_services = [];
+    var closed_services = [];
     var all_current_services_visible = false;
 
     var more_equipment_visible = false;
@@ -204,11 +205,14 @@
     for (var i = 0; i < services.length; i++) {
       switch (services[i][2]) {
         case 'current':
-        current_services.push(services[i])
-        break;
+          current_services.push(services[i])
+          break;
         case 'past':
-        past_services.push(services[i])
-        break;
+          past_services.push(services[i])
+          break;
+        case 'closed':
+          closed_services.push(services[i])
+          break;
         default:
       }
     }
