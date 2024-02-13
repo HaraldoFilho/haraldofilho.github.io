@@ -1,4 +1,5 @@
 var films = [
+  ['Empire of Light', '2022', 'https://letterboxd.com/tinyhomecinema/film/empire-of-light/', 'https://a.ltrbxd.com/resized/film-poster/7/3/1/2/8/6/731286-empire-of-light-0-600-0-900-crop.jpg'],
   ['The Hijacking of Flight 375', '2023', 'https://letterboxd.com/tinyhomecinema/film/the-hijacking-of-flight-375/', 'https://a.ltrbxd.com/resized/film-poster/9/3/1/1/4/2/931142-the-hijacking-of-flight-375-0-600-0-900-crop.jpg'],
   ['Society of the Snow', '2023', 'https://letterboxd.com/tinyhomecinema/film/society-of-the-snow/', 'https://a.ltrbxd.com/resized/film-poster/8/1/3/8/4/0/813840-society-of-the-snow-0-600-0-900-crop.jpg'],
   ['The Abandoned', '2022', 'https://letterboxd.com/tinyhomecinema/film/the-abandoned-2022/', 'https://a.ltrbxd.com/resized/film-poster/9/0/7/0/2/6/907026-the-abandoned-0-600-0-900-crop.jpg'],
@@ -8,5 +9,4 @@ var films = [
   ['Are You There God? It\'s Me, Margaret.', '2023', 'https://letterboxd.com/tinyhomecinema/film/are-you-there-god-its-me-margaret/', 'https://a.ltrbxd.com/resized/film-poster/4/8/3/9/5/1/483951-are-you-there-god-it-s-me-margaret--0-600-0-900-crop.jpg'],
   ['Leave the World Behind', '2023', 'https://letterboxd.com/tinyhomecinema/film/leave-the-world-behind-2023/', 'https://a.ltrbxd.com/resized/film-poster/6/4/8/8/6/9/648869-leave-the-world-behind-0-600-0-900-crop.jpg'],
   ['Aftersun', '2022', 'https://letterboxd.com/tinyhomecinema/film/aftersun/', 'https://a.ltrbxd.com/resized/film-poster/8/6/8/5/5/8/868558-aftersun-0-600-0-900-crop.jpg'],
-  ['The Killer', '2023', 'https://letterboxd.com/tinyhomecinema/film/the-killer-2023/', 'https://a.ltrbxd.com/resized/film-poster/7/1/7/6/5/4/717654-the-killer-0-600-0-900-crop.jpg'],
 ]
