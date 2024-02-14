@@ -250,13 +250,6 @@ h4 {
   grid-template-columns: auto auto;
 }
 
-.logos-brands {
-  display: grid;
-  column-gap: 15px;
-  align-items: right;
-  grid-template-columns: auto auto auto auto auto auto;
-}
-
 .logo-dolby {
   justify-content: center;
   padding-top: 2px;
@@ -271,34 +264,13 @@ h4 {
   width: 100%;
 }
 
-.logo-yamaha {
+.logos-social-mobile {
+  display: grid;
   justify-content: center;
-  padding-top: 4px;
-  height: 13px;
+  grid-template-columns: auto auto;
+  column-gap: 40%;
 }
 
-.logo-dayton {
-  justify-content: center;
-  height: 9px;
-}
-
-.logo-onkyo {
-  justify-content: center;
-  height: 9px;
-}
-
-.logo-pioneer {
-  justify-content: center;
-  height: 10px;
-}
-
-.logo-sony {
-  justify-content: center;
-  height: 9px;
-}
-
-.logo-lg {
-  justify-content: center;
-  padding-top: 5px;
-  height: 10px;
+.logo-social-mobile {
+  height: 20px;
 }

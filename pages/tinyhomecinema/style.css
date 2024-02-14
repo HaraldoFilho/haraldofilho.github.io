@@ -157,27 +157,41 @@ sup {
   display: grid;
   justify: center;
   height: 20px;
-  grid-template-columns: auto auto;
-  column-gap: 50px;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 40px;
   border-style: solid none solid none;
   border-color: grey;
   border-width: thin;
   padding: 10px 70px 10px 70px;
-
 }
 
 .logos-techs {
   display: grid;
   column-gap: 0px;
   align-items: left;
-  grid-template-columns: 90px 80px;
+  grid-template-columns: 70px 30px;
 }
 
 .logos-brands {
   display: grid;
-  column-gap: 30px;
-  align-items: right;
+  column-gap: 20px;
+  align-items: left;
   grid-template-columns: auto auto auto auto auto auto;
+}
+
+.separator {
+  display: block;
+  padding-left: 20px;
+  margin-top: -1px;
+  color: grey;
+}
+
+.logos-social {
+  display: grid;
+  padding-left: 20px;
+  column-gap: 7px;
+  align-items: right;
+  grid-template-columns: auto auto auto;
 }
 
 .logo-dolby {
@@ -222,6 +236,24 @@ sup {
   justify-content: center;
   padding-top: 5px;
   height: 10px;
+}
+
+.logo-letterboxd {
+  justify-content: center;
+  padding-top: 1px;
+  height: 17px;
+}
+
+.logo-spotify {
+  justify-content: center;
+  padding-top: 1px;
+  height: 17px;
+}
+
+.logo-email {
+  justify-content: center;
+  padding-top: 1px;
+  height: 17px;
 }
 
 .room-grid {
