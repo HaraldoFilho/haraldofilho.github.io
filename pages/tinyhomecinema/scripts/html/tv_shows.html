@@ -25,7 +25,7 @@
     <link rel="preload" href="/assets/2/source-sans-pro-v14-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600-6a087a74d78fc7d7b97fa1b0911c4ff3be4ff0bd5144618fd7ddc63ef1777f3a.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/2/source-sans-pro-v14-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-700-d67f7dff97d105f4ac5616b00fc7822ce2c33f653ece2f547995e6a71bb7b993.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/2/v4/fonts-b603098c04ec971699962bc88ab333f4df4df8f98479bf1d0e826744167c6b41.css" media="screen">
-    <link rel="stylesheet" href="/assets/2/application-4d1a86bac309736e9d1f2cf5cfbdcbc398bef8ebf96493822b861c03d8e85bd3.css" media="screen">
+    <link rel="stylesheet" href="/assets/2/application-fe5e20de766d0e70fcc87fd36dd497cda6024f8f7e3959551b0f6644086668b4.css" media="screen">
     
       <link rel="stylesheet" href="/assets/2/v4/media-ca37a789e45c1f0501ae4e046f437f5443d2e496e551111e61f3bd1e5d2701b3.css" media="screen">
       
@@ -208,7 +208,7 @@
       <script src="/assets/2/kendo-2021.1.204/cultures/kendo.culture.en-US.min-61ce5636474a35333ecff74fe30c528d459bcee29b3b32fc0c58ac77de788b34.js"></script>
       <script>kendo.culture("en-US");</script>
       <script src="/assets/2/kendo-2021.1.204/messages/kendo.messages.en-US.min-79da68ae0221b4fd7978805d0c79cc7f682fddace5f2137aa0dae8fe1c5ddacd.js"></script>
-    <script src="/assets/2/application-a005f527fa2f63db2e7eb7124265a53965cb0ab5268caebc32c41305b4da51b1.js"></script>
+    <script src="/assets/2/application-461f5231038608c9ab349b25c935fb45e24513fd54eb2fc2a0a858837ff3b46a.js"></script>
     <script src="/assets/2/pusher.min-ee61b1e19799dd5aae92a3d91bc970e6147c6fe4395eacf3e499ed1451650f22.js"></script>
       <script src="/assets/2/application.desktop-ea69249141a43ef7c6a59a19ee40eface5e171cf03eefffddb488574a66dea02.js" defer></script>
       <script src="/assets/2/jquery.waypoints.inview.min-020c5d0ff05f6c391ec83334e99df1904b2971479d4334ac94fe7bca52bf287a.js" defer></script>
@@ -444,7 +444,7 @@
         </div>
       </div>
 
-        <div class="comment_wrapper right_side">
+        <div class="comment_wrapper left_side">
           <div class="comment_triangle"></div>
           <div class="comment">
             <p>Season One (BD)</p>
@@ -480,7 +480,7 @@
         </div>
       </div>
 
-        <div class="comment_wrapper left_side">
+        <div class="comment_wrapper right_side">
           <div class="comment_triangle"></div>
           <div class="comment">
             <p>Season One (BD)</p>
@@ -552,7 +552,7 @@
         </div>
       </div>
 
-        <div class="comment_wrapper left_side">
+        <div class="comment_wrapper right_side">
           <div class="comment_triangle"></div>
           <div class="comment">
             <p>Complete Series (BD)</p>
@@ -660,7 +660,7 @@
         </div>
       </div>
 
-        <div class="comment_wrapper left_side">
+        <div class="comment_wrapper right_side">
           <div class="comment_triangle"></div>
           <div class="comment">
             <p>Complete Series (DVD)</p>
@@ -798,10 +798,10 @@
           }
         },
         open: function() {
-          $('body').addClass('blur');
+          $('body').addClass('monochrome');
         },
         close: function() {
-          $('body').removeClass('blur');
+          $('body').removeClass('monochrome');
         }
       }).data("kendoWindow").center().open();
     });
@@ -884,7 +884,7 @@
         </div>
       </nav>
 
-      <section>Build abd9533 (6636)</section>
+      <section>Build 920347b (6643)</section>
     </footer>
 
       <div id="new_media_template" class="hide">
@@ -1197,10 +1197,10 @@
             }
           },
           open: function() {
-            $('body').addClass('blur');
+            $('body').addClass('monochrome');
           },
           close: function() {
-            $('body').removeClass('blur');
+            $('body').removeClass('monochrome');
           }
         }).data("kendoWindow").center();
 
