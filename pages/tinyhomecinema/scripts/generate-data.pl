@@ -38,8 +38,11 @@ open(BLURAY, $bluray) or die("File $bluray not found");
 my $dvd = 'html/dvd.html';
 open(DVD, $dvd) or die("File $dvd not found");
 
-my $bd_dvd = 'html/bd+dvd.html';
-open(BD_DVD, $bd_dvd) or die("File $bd_dvd not found");
+my $vhs = 'html/vhs.html';
+open(VHS, $vhs) or die("File $vhs not found");
+
+my $dig = 'html/digital.html';
+open(DIG, $dig) or die("File $dig not found");
 
 my $atmos = 'html/atmos.html';
 open(ATMOS, $atmos) or die("File $atmos not found");
@@ -155,7 +158,7 @@ while (my $line = <BLURAY>) {
     }
 }
 
-print MEDIA_DATA "  [\'Blu-ray\', $count, \'$url\', \'disc\'],\n";
+print MEDIA_DATA "  [\'Blu-ray\', $count, \'$url\', \'media\'],\n";
 
 while (my $line = <DVD>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
@@ -166,9 +169,9 @@ while (my $line = <DVD>) {
     }
 }
 
-print MEDIA_DATA "  [\'DVD\', $count, \'$url\', \'disc\'],\n";
+print MEDIA_DATA "  [\'DVD\', $count, \'$url\', \'media\'],\n";
 
-while (my $line = <BD_DVD>) {
+while (my $line = <VHS>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
         $url = $1;
     }
@@ -177,7 +180,18 @@ while (my $line = <BD_DVD>) {
     }
 }
 
-print MEDIA_DATA "  [\'BD\/DVD\', $count, \'$url\', \'disc\'],\n";
+print MEDIA_DATA "  [\'VHS\', $count, \'$url\', \'media\'],\n";
+
+while (my $line = <DIG>) {
+    if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
+        $url = $1;
+    }
+    if ($line =~ /A list of ([0-9]*) film/) {
+        $count = $1;
+    }
+}
+
+print MEDIA_DATA "  [\'Digital\', $count, \'$url\', \'media\'],\n";
 
 while (my $line = <ATMOS>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
@@ -213,7 +227,8 @@ close(DOCS);
 close(MINISERIES);
 close(BLURAY);
 close(DVD);
-close(BD_DVD);
+close(VHS);
+close(DIG);
 close(ATMOS);
 close(DTSX);
 
