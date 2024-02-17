@@ -91,6 +91,8 @@ while (my $line = <MUSIC>) {
 
 print MEDIA_DATA "  [\'Music\', $count, \'https://tinyhomecinema.page/music/\', \'shelf\'],\n";
 
+$count = 27;
+
 while (my $line = <BOOKS>) {
     if ($line =~ /<td class=\"pbGroup\">.*of\s([0-9]*)<\/td>/) {
         $count = $1;
