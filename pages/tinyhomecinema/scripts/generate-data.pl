@@ -47,11 +47,11 @@ open(DIG, $dig) or die("File $dig not found");
 my $atmos = 'html/atmos.html';
 open(ATMOS, $atmos) or die("File $atmos not found");
 
-my $dtsx = 'html/dtsx.html';
-open(DTSX, $dtsx) or die("File $dtsx not found");
-
 my $dbthd = 'html/dolby-thd.html';
 open(DBTHD, $dbthd) or die("File $dbthd not found");
+
+my $dtsx = 'html/dtsx.html';
+open(DTSX, $dtsx) or die("File $dtsx not found");
 
 my $dtsma = 'html/dts-hdma.html';
 open(DTSMA, $dtsma) or die("File $dtsma not found");
@@ -212,17 +212,6 @@ while (my $line = <ATMOS>) {
 
 print MEDIA_DATA "  [\'Dolby Atmos\', $count, \'$url\', \'audio\'],\n";
 
-while (my $line = <DTSX>) {
-    if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
-        $url = $1;
-    }
-    if ($line =~ /A list of ([0-9]*) film/) {
-        $count = $1;
-    }
-}
-
-print MEDIA_DATA "  [\'DTS X\', $count, \'$url\', \'audio\'],\n";
-
 while (my $line = <DBTHD>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
         $url = $1;
@@ -233,6 +222,17 @@ while (my $line = <DBTHD>) {
 }
 
 print MEDIA_DATA "  [\'Dolby TrueHD\', $count, \'$url\', \'audio\'],\n";
+
+while (my $line = <DTSX>) {
+    if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
+        $url = $1;
+    }
+    if ($line =~ /A list of ([0-9]*) film/) {
+        $count = $1;
+    }
+}
+
+print MEDIA_DATA "  [\'DTS X\', $count, \'$url\', \'audio\'],\n";
 
 while (my $line = <DTSMA>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
@@ -260,8 +260,8 @@ close(DVD);
 close(VHS);
 close(DIG);
 close(ATMOS);
-close(DTSX);
 close(DBTHD);
+close(DTSX);
 close(DTSMA);
 
 close(MEDIA_DATA);

@@ -45,11 +45,11 @@ mv index.html digital.html
 wget 'https://letterboxd.com/tinyhomecinema/list/dolby-atmos/'
 mv index.html atmos.html
 
-wget 'https://letterboxd.com/tinyhomecinema/list/dts-x/'
-mv index.html dtsx.html
-
 wget 'https://letterboxd.com/tinyhomecinema/list/dolby-truehd/'
 mv index.html dolby-thd.html
+
+wget 'https://letterboxd.com/tinyhomecinema/list/dts-x/'
+mv index.html dtsx.html
 
 wget 'https://letterboxd.com/tinyhomecinema/list/dts-hd-master-audio/'
 mv index.html dts-hdma.html
