@@ -23,14 +23,14 @@ open(BOOKS, $books) or die("File $books not found");
 my $films = 'html/films.html';
 open(FILMS, $films) or die("File $films not found");
 
+my $miniseries = 'html/miniseries.html';
+open(MINISERIES, $miniseries) or die("File $miniseries not found");
+
 my $shorts = 'html/shorts.html';
 open(SHORTS, $shorts) or die("File $shorts not found");
 
 my $documentaries = 'html/documentaries.html';
 open(DOCS, $documentaries) or die("File $documentaries not found");
-
-my $miniseries = 'html/miniseries.html';
-open(MINISERIES, $miniseries) or die("File $miniseries not found");
 
 my $bluray = 'html/blu-ray.html';
 open(BLURAY, $bluray) or die("File $bluray not found");
@@ -49,6 +49,12 @@ open(ATMOS, $atmos) or die("File $atmos not found");
 
 my $dtsx = 'html/dtsx.html';
 open(DTSX, $dtsx) or die("File $dtsx not found");
+
+my $dbthd = 'html/dolby-thd.html';
+open(DBTHD, $dbthd) or die("File $dbthd not found");
+
+my $dtsma = 'html/dts-hdma.html';
+open(DTSMA, $dtsma) or die("File $dtsma not found");
 
 my $media_data_file = '../data/media.js';
 open(MEDIA_DATA, '>', $media_data_file) or die("File $media_data_file not found");
@@ -91,10 +97,10 @@ while (my $line = <MUSIC>) {
 
 print MEDIA_DATA "  [\'Music\', $count, \'https://tinyhomecinema.page/music/\', \'shelf\'],\n";
 
-$count = 27;
+$count = 0;
 
 while (my $line = <BOOKS>) {
-    if ($line =~ /<td class=\"pbGroup\">.*of\s([0-9]*)<\/td>/) {
+    if ($line =~ /\"totalBooks\"\:([0-9]*)/) {
         $count = $1;
     }
 }
@@ -118,6 +124,17 @@ while (my $line = <FILMS>) {
 
 print MEDIA_DATA "  [\'Films\', $count, \'$url\', \'collection\'],\n";
 
+while (my $line = <MINISERIES>) {
+    if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
+        $url = $1;
+    }
+    if ($line =~ /A list of ([0-9]*) film/) {
+       $count = $1;
+    }
+}
+
+print MEDIA_DATA "  [\'Miniseries\', $count, \'$url\', \'collection\'],\n";
+
 while (my $line = <SHORTS>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
         $url = $1;
@@ -139,17 +156,6 @@ while (my $line = <DOCS>) {
 }
 
 print MEDIA_DATA "  [\'Documentaries\', $count, \'$url\', \'collection\'],\n";
-
-while (my $line = <MINISERIES>) {
-    if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
-        $url = $1;
-    }
-    if ($line =~ /A list of ([0-9]*) film/) {
-       $count = $1;
-    }
-}
-
-print MEDIA_DATA "  [\'Miniseries\', $count, \'$url\', \'collection\'],\n";
 
 while (my $line = <BLURAY>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
@@ -217,6 +223,28 @@ while (my $line = <DTSX>) {
 
 print MEDIA_DATA "  [\'DTS X\', $count, \'$url\', \'audio\'],\n";
 
+while (my $line = <DBTHD>) {
+    if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
+        $url = $1;
+    }
+    if ($line =~ /A list of ([0-9]*) film/) {
+        $count = $1;
+    }
+}
+
+print MEDIA_DATA "  [\'Dolby TrueHD\', $count, \'$url\', \'audio\'],\n";
+
+while (my $line = <DTSMA>) {
+    if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
+        $url = $1;
+    }
+    if ($line =~ /A list of ([0-9]*) film/) {
+        $count = $1;
+    }
+}
+
+print MEDIA_DATA "  [\'DTS-HD MA\', $count, \'$url\', \'audio\'],\n";
+
 print MEDIA_DATA "]\n";
 
 close(SHELF);
@@ -233,6 +261,8 @@ close(VHS);
 close(DIG);
 close(ATMOS);
 close(DTSX);
+close(DBTHD);
+close(DTSMA);
 
 close(MEDIA_DATA);
 

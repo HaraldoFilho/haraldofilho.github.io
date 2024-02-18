@@ -15,20 +15,20 @@ mv index.html music.html
 wget 'https://www.themoviedb.org/list/8283859-tv-shows-shelf'
 mv 8283859-tv-shows-shelf tv_shows.html
 
-wget 'https://www.librarything.com/catalog_bottom.php?view=hpfilho&collection=794026'
-mv catalog_bottom.php?view\=hpfilho\&collection\=794026 books.html
+wget 'https://www.librarything.com/catalog_bottom.php?view=hpfilho&collection=794026&shelf=shelf&sort=title&previousOffset=0&shelf_rows=3'
+mv catalog_bottom\.php\?view\=hpfilho\&collection\=794026\&shelf\=shelf\&sort\=title\&previousOffset\=0\&shelf_rows\=3 books.html
 
 wget 'https://letterboxd.com/tinyhomecinema/list/film-collection/'
 mv index.html films.html
+
+wget 'https://letterboxd.com/tinyhomecinema/list/miniseries/'
+mv index.html miniseries.html
 
 wget 'https://letterboxd.com/tinyhomecinema/list/short-films/'
 mv index.html shorts.html
 
 wget 'https://letterboxd.com/tinyhomecinema/list/special-feature-documentaries/'
 mv index.html documentaries.html
-
-wget 'https://letterboxd.com/tinyhomecinema/list/miniseries/'
-mv index.html miniseries.html
 
 wget 'https://letterboxd.com/tinyhomecinema/list/blu-ray/'
 mv index.html blu-ray.html
@@ -47,6 +47,12 @@ mv index.html atmos.html
 
 wget 'https://letterboxd.com/tinyhomecinema/list/dts-x/'
 mv index.html dtsx.html
+
+wget 'https://letterboxd.com/tinyhomecinema/list/dolby-truehd/'
+mv index.html dolby-thd.html
+
+wget 'https://letterboxd.com/tinyhomecinema/list/dts-hd-master-audio/'
+mv index.html dts-hdma.html
 
 wget 'https://letterboxd.com/tinyhomecinema/rss/'
 mv index.html rss.html
