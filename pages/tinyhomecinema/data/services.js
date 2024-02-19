@@ -12,7 +12,7 @@ var services = [
   ['Telecine Play', 'https://letterboxd.com/tinyhomecinema/tag/telecine-play/films/', ''],
   ['Globoplay', 'https://letterboxd.com/tinyhomecinema/tag/globoplay/films/', ''],
   ['MGM', 'https://letterboxd.com/tinyhomecinema/tag/mgm/films/', ''],
-  ['Belas Artes', 'https://letterboxd.com/tinyhomecinema/tag/belas-artes/films/', 'current'],
+  ['Belas Artes', 'https://letterboxd.com/tinyhomecinema/tag/belas-artes/films/', 'past'],
   ['Oldflix', 'https://letterboxd.com/tinyhomecinema/tag/oldflix/films/', ''],
   ['Filmicca', 'https://letterboxd.com/tinyhomecinema/tag/filmicca/films/', 'current']
 ]
