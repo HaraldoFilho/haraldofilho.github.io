@@ -12,10 +12,10 @@ var electronics = [
   ['Blu-ray Player Sony BDP-S1700', '*', 'https://electronics.sony.com/tv-video/blu-ray-dvd-players/blu-ray/p/bdps1700/'],
   ['DVD Player Pioneer DV-414', '**', 'https://www.pioneerelectronics.com/PUSA/Home/Blu-ray-Disc/Pioneer-DVD-Players/DV-414/'],
   ['VHS VCR Philips VR755', '***', ''],
-  ['HDMI Dongle Google Chromecast 3', '', 'https://en.wikipedia.org/wiki/Chromecast'],
+  ['HDMI Dongle Google Chromecast 3', '', ''],
   ['Audio Transmitter Sennheiser BT T100', '', 'https://www.sennheiser-hearing.com/en-US/p/bt-t100/'],
   ['Headphones Sennheiser HD 350BT', '(2)', 'https://www.sennheiser-hearing.com/en-US/p/hd-350bt/'],
-  ['Tablet Samsung Galaxy Tab A7 Lite', '', 'https://www.samsung.com/us/tablets/tab-a7/tab-a7-lite/']
+  ['Tablet Samsung Galaxy Tab A7 Lite', '', '']
 ]
 
 var power_and_automation = [
