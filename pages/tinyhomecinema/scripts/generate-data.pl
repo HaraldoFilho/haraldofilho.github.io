@@ -91,7 +91,7 @@ while (my $line = <MUSIC>) {
 
 print MEDIA_DATA "  [\'Music\', $count, \'https://tinyhomecinema.page/music/\', \'shelf\'],\n";
 
-$count = 0;
+$count = 27;
 
 while (my $line = <BOOKS>) {
     if ($line =~ /\"totalBooks\"\:([0-9]*)/) {
