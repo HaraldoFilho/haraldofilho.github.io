@@ -79,7 +79,7 @@ while (my $line = <TV_SHOWS>) {
     }
 }
 
-print MEDIA_DATA "  [\'TV Shows\', $count, \'$url\', \'shelf\'],\n";
+print MEDIA_DATA "  [\'TV Shows\', $count, \'$url?view=grid\', \'shelf\'],\n";
 
 $count = 0;
 
