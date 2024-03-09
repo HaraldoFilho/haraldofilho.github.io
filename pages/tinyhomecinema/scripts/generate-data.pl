@@ -74,7 +74,7 @@ while (my $line = <TV_SHOWS>) {
     if ($line =~ /meta property=\"og\:url\" content=\"(.*)\"/) {
         $url = $1;
     }
-    if ($line =~ /<li><span><em>([0-9]*)<\/em><\/span><br>items on this list<\/li>/) {
+    if ($line =~ /\<h3 class\=\"text\-2xl md\:text\-4xl\/8 p\-0\"\>([0-9]+)\<\/h3\>/) {
         $count = $1;
     }
 }
