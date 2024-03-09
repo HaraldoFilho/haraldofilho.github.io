@@ -25,11 +25,9 @@
     <link rel="preload" href="/assets/2/source-sans-pro-v14-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-600-6a087a74d78fc7d7b97fa1b0911c4ff3be4ff0bd5144618fd7ddc63ef1777f3a.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/2/source-sans-pro-v14-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-700-d67f7dff97d105f4ac5616b00fc7822ce2c33f653ece2f547995e6a71bb7b993.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/2/v4/fonts-b603098c04ec971699962bc88ab333f4df4df8f98479bf1d0e826744167c6b41.css" media="screen">
-    <link rel="stylesheet" href="/assets/2/application-e8519bd8bc3934c69b23abbe4ca22335946b0d1c5db6d958f583232e75efbb5c.css" media="screen">
+    <link rel="stylesheet" href="/assets/2/application-d26ad6137d0201f74045ac7c19b31ba6d3c886c942999757ae1179ae29a00cd0.css" media="screen">
     
-      <link rel="stylesheet" href="/assets/2/v4/media-e5c44213d4aeb4caebd1b61d2a29f9d7df3f1f6dcb012b15e9cdd62f7cd6aa10.css" media="screen">
-      
-      <link rel="stylesheet" href="/assets/2/v4/media_list-7cd0f1e01aeea5e3778b8244f9f01d9c1bb774c687ff9725c699d4b5d18e1e66.css" media="screen">
+      <link rel="stylesheet" href="/assets/2/tailwind-d4153ccfbdc2c1ddd07fd6f861253552ad0e974006855ae8a5fb458aee68b2e3.css" media="screen">
       
         <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
@@ -308,398 +306,752 @@
 
 
 <main id="main" class="smaller  subtle show_search_false">
+  <div class="pb-2 w-full grid grid-row-2">
   <style>
-      section.inner_content.header {
-        background-image: linear-gradient(to right, rgba(var(--tmdbDarkBlue), 0.85) 0%, rgba(var(--tmdbDarkBlue), 0.70) 70%), url('https://media.themoviedb.org/t/p/w1920_and_h318_multi_faces_filter(moderate,nudity,92)/627K48naKH2Y3Rz47Ydra4qktdI.jpg');
+    .duotone {
+      background-color: #00baff;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+    }
+
+      .duotone img {
+        filter: brightness(1.1) grayscale(100%) blur(0);
+        flex: 1 0 100%;
+        height: 100%;
+        max-width: 100%;
+        mix-blend-mode: multiply;
+        object-fit: cover;
+        opacity: 1;
+        position: relative;
+        width: 100%;
       }
-</style>
 
-<script>
-  $(function() {
-    var pageLoader = $('div.page_loading');
+      .duotone::before {
+        background-color: #0d253f;
+        bottom: 0;
+        content: '';
+        height: 100%;
+        left: 0;
+        mix-blend-mode: lighten;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+      }
+  </style>
 
-    $("ul.list_results").on('click', 'a.load_more', function(e) {
-      e.preventDefault();
-      var currentPage = $(this).attr('data-current-page');
-      var nextPage = $(this).attr('data-next-page');
-      var href = $(this).attr('data-partial');
+  <div class="relative overflow-hidden bg-no-repeat bg-top bg-[rgba(0,0,0,.2)]">
+    <div class="backdrop duotone">
+              <img class="backdrop" src="https://media.themoviedb.org/t/p/w1920_and_h318_multi_faces_filter(moderate,nudity,92)/627K48naKH2Y3Rz47Ydra4qktdI.jpg" srcset="https://media.themoviedb.org/t/p/w1920_and_h318_multi_faces_filter(moderate,nudity,92)/627K48naKH2Y3Rz47Ydra4qktdI.jpg 1x, https://media.themoviedb.org/t/p/w3840_and_h1200_multi_faces_filter(moderate,nudity,92)/627K48naKH2Y3Rz47Ydra4qktdI.jpg 2x" alt="TV Shows Shelf">
 
-      loadPage(href, currentPage, nextPage);
-    });
-
-    function loadPage(href, currentPage, nextPage) {
-      $.ajax({
-        url: href,
-        beforeSend: function() {
-          activatePageLoader();
-          $('p.load_more').addClass('hide');
-          $('#pagination_page_' + currentPage + ' div.loading_wrapper').removeClass('hide');
-        }
-      }).fail(function() {
-        showError('Ocorreu um problema.');
-        deactivatePageLoader();
-      }).done(function(response) {
-        $('#pagination_page_' + currentPage).addClass('hide');
-        $("ul.list_results li.filler").remove();
-        $('.items_wrapper').append(response);
-        observer.observe();
-
-        deactivatePageLoader();
-        createInview($('#pagination_page_' + nextPage));
-      });
-    }
-
-    function createInview(element) {
-      new Waypoint.Inview({
-        element: element,
-        enter: function(direction) {
-          var loadMore = $(this.element).find('a.load_more');
-          loadMore.click();
-
-          this.disable();
-        },
-        offset: {
-          bottom: -800
-        }
-      });
-    }
-  });
-</script>
-
-<div class="page_loading light_blue"></div>
-
-<section class="inner_content header">
-  <div class="bg_filter">
-    <div class="single_column">
-      <h2><a href="/list/8283859-tv-shows-shelf">TV Shows Shelf</a></h2>
-
-      <ul class="list_menu_bar">
-        <li class="account">
-          <span class="avatar">
-            <a href="/u/tinyhomecinema">
-                <img class="avatar" src="https://media.themoviedb.org/t/p/w45_and_h45_face/21EpgnpRC5I4mD6pix1VZiyyeYA.jpg" srcset="https://media.themoviedb.org/t/p/w45_and_h45_face/21EpgnpRC5I4mD6pix1VZiyyeYA.jpg 1x, https://media.themoviedb.org/t/p/w100_and_h100_face/21EpgnpRC5I4mD6pix1VZiyyeYA.jpg 2x" alt="Cineminha" width="50" height="50">
-            </a>
-          </span>
-
-          <p>A list by<br><a href="/u/tinyhomecinema">Cineminha</a></p>
-        </li>
-        <li class="menu">
-          <a class="rounded white button no_click" href="#">Ordenar por</a>
-          <ul class="sub_menu">
-            <li><a class="white button" href="/list/8283859-tv-shows-shelf">Ordem original</a></li>
-            <li><a class="white button" href="/list/8283859-tv-shows-shelf?sort_by=vote_average.desc">Avaliação</a></li>
-            <li><a class="white button" href="/list/8283859-tv-shows-shelf?sort_by=primary_release_date.desc">Lançamento</a></li>
-            <li><a class="white button" href="/list/8283859-tv-shows-shelf?sort_by=title.asc">Título</a></li>
-          </ul>
-        </li>
-        <li><a id="share" class="rounded white button" href="#">Compartilhar</a></li>
-      </ul>
-
-      <h3>Sobre esta lista</h3>
-      <div class="description">
-          <p>TV Shows which are on our shelves.</p>
-
+    </div>
+    <div class="relative z-20 h-full flex flex-wrap content-between justify-center">
+      <div class="w-full md:max-w-[1400px] flex flex-col justify-center p-5 md:px-10">
+        <div class="flex flex-col justify-start lg:flex-row lg:items-end gap-x-5">
+          <a href="/list/8283859-tv-shows-shelf"><h2 class="text-3xl font-bold text-white p-0">TV Shows Shelf</h2></a>
+        </div>
+        <span class="my-4 [&>p]:p-0 text-md md:text-xl text-white"><p>TV Shows which are on our shelves.</p>
+</span>
+        <div class="flex items-center">
+            <img class="block h-10 rounded-full" src="https://media.themoviedb.org/t/p/w45_and_h45_face/21EpgnpRC5I4mD6pix1VZiyyeYA.jpg" srcset="https://media.themoviedb.org/t/p/w45_and_h45_face/21EpgnpRC5I4mD6pix1VZiyyeYA.jpg 1x, https://media.themoviedb.org/t/p/w100_and_h100_face/21EpgnpRC5I4mD6pix1VZiyyeYA.jpg 2x" alt="Cineminha">
+          <div class="flex items-center ml-2">
+            <span class="text-md md:text-2xl text-white">A list by&nbsp;<a class="text-white opacity-75 font-semibold" href="/u/tinyhomecinema">Cineminha</a></span>
+          </div>
+        </div>
+      </div>
+      <div class="w-full flex justify-center bg-black/50 py-2">
+        <div class="w-full md:max-w-[1400px] flex px-5 md:px-10 gap-3">
+          <button id="share" class="flex items-center text-md text-white/50 font-semibold">Compartilhar</button>
+          <button class="hidden items-center text-md text-white/50 font-semibold">Collaborate</button>
+        </div>
+      </div>
+      <div class="w-full flex justify-center bg-black/70">
+        <div class="w-full md:max-w-[1400px] flex px-5 md:px-10 gap-3">
+          <div class="flex flex-wrap items-center justify-start md:gap-6 text-white font-bold md:w-full md:max-w-[1400px] py-4">
+            <div class="w-1/2 md:w-fit flex flex-col">
+              <h3 class="text-2xl md:text-4xl/8 p-0">7</h3>
+              <span class="text-base md:text-lg font-semibold">Itens nesta lista</span>
+            </div>
+            <div class="w-1/2 md:w-fit flex flex-col">
+              <h3 class="text-2xl md:text-4xl/8 p-0">82%</h3>
+              <span class="text-base md:text-lg font-semibold">Avaliação média</span>
+            </div>
+            <div class="w-1/2 md:w-fit flex flex-col">
+              <h3 class="text-2xl md:text-4xl/8 p-0">0h 0m</h3>
+              <span class="text-base md:text-lg font-semibold">Duração total</span>
+            </div>
+            <div class="w-1/2 md:w-fit flex flex-col">
+              <h3 class="text-2xl md:text-4xl/8 p-0">$0­</h3>
+              <span class="text-base md:text-lg font-semibold">Receita total</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</section>
 
-<section class="inner_content info">
-  <div class="single_column">
-    <ul class="list_info">
-      <li><span><em>7</em></span><br>itens nesta lista</li>
-      <li><span><em>82%</em></span><span class="glyphicons glyphicons-star"></span><br>Avaliação média</li>
-      <li><span><em>0h 0m</em></span><br>Duração total</li>
-      <li><span><em>$0­</em></span><br>Receita total</li>
-    </ul>
+    <div class="z-20 bg-white grid justify-center">
+      <div class="w-screen p-4 md:px-10 grid grid-cols-1 justify-center md:max-w-[1400px]">
+        <div class="w-full grid grid-flow-row gap-4 md:gap-6 mb-5 justify-stretch md:justify-center xl:grid-flow-col">
+  <div class="grid grid-cols-2 justify-start gap-4 text-sm md:text-base text-slate-900 md:grid-cols-1 md:grid-flow-col">
+    <button id="view" class="px-2 py-1 rounded-full border border-solid border-slate-500 md:w-full md:px-4">
+        <a class="flex items-center justify-center gap-2 text-black-600 font-semibold" href="/list/8283859-tv-shows-shelf?view=grid"><span>Use Grid View</span><span class="glyphicons_v2 pause"></span></a>
+    </button>
+
+    <button id="toggle_comment" class="px-4 py-1 md:flex text-black-600 font-semibold rounded-full border border-solid border-slate-500" data-comment-status=true>Hide Comments</button>
+
+    <div class="group relative inline-block text-left">
+  <button id="sort_by" class="w-full h-full flex items-center justify-center px-2 py-1 gap-2 text-black-600 font-semibold rounded-full border border-solid border-slate-500 md:px-4">
+    <span>Ordenar por</span><span class="glyphicons_v2 glyph-chevron-down"></span>
+  </button>
+
+  <div id="dropdown_list_sort_by" class="hidden group-hover:block absolute top-8 right-0 z-10 #w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+    <div class="" role="none">
+        <a href="/list/8283859-tv-shows-shelf?view=list&sort_by=original_order" class="hover:bg-gray-200 rounded-md text-black-600 block text-nowrap whitespace-nowrap px-4 py-2 text-sm lg:text-md" role="menuitem" tabindex="-1" id="menu-item-0">Ordem original</a>
+        <a href="/list/8283859-tv-shows-shelf?view=list&sort_by=vote_average.desc" class="hover:bg-gray-200 rounded-md text-black-600 block text-nowrap whitespace-nowrap px-4 py-2 text-sm lg:text-md" role="menuitem" tabindex="-1" id="menu-item-0">Avaliação</a>
+        <a href="/list/8283859-tv-shows-shelf?view=list&sort_by=primary_release_date.desc" class="hover:bg-gray-200 rounded-md text-black-600 block text-nowrap whitespace-nowrap px-4 py-2 text-sm lg:text-md" role="menuitem" tabindex="-1" id="menu-item-0">Lançamento</a>
+        <a href="/list/8283859-tv-shows-shelf?view=list&sort_by=title.asc" class="hover:bg-gray-200 rounded-md text-black-600 block text-nowrap whitespace-nowrap px-4 py-2 text-sm lg:text-md" role="menuitem" tabindex="-1" id="menu-item-0">Título</a>
+    </div>
   </div>
-</section>
-
-<div class="single_column results tight">
-    <ul class="items_wrapper list_results">
-        <li id="5db8d664a1d3320014e82a77" class="item with_comment_below adult_false">
-    <div class="item_wrapper">
-      <div class="info_wrapper">
-        <div class="image glyphicons_v2 picture grey poster no_image_holder">
-          <a href="/tv/94997" title="A Casa do Dragão">
-                  <img loading="lazy" class="poster" src="https://media.themoviedb.org/t/p/w185_and_h278_multi_faces/ruHPkmmAwBTCzNXtHot18rs6ctN.jpg" srcset="https://media.themoviedb.org/t/p/w185_and_h278_multi_faces/ruHPkmmAwBTCzNXtHot18rs6ctN.jpg 1x, https://media.themoviedb.org/t/p/w370_and_h556_multi_faces/ruHPkmmAwBTCzNXtHot18rs6ctN.jpg 2x" alt="A Casa do Dragão">
-
-          </a>
-        </div>
-        <div class="info_strip">
-          <div class="number">
-            <span>1</span>
-          </div>
-          <div class="meta buttons">
-            <a href="#" class="favourite no_click" title="Entre com uma conta para adicionar esta Série aos seus favoritos">
-              <span id="favourite_5db8d664a1d3320014e82a77" class="glyphicons_v2 heart white favourite list_action" data-media-type="tv"></span>
-            </a>
-            <a href="#" class="watchlist no_click" title="Entre com uma conta para adicionar esta Série à sua lista de interesses">
-              <span id="watchlist_5db8d664a1d3320014e82a77" class="glyphicons_v2 bookmark white watchlist list_action" data-media-type="tv"></span>
-            </a>
-              <a href="#" class="no_click">
-                <span id="rating_5db8d664a1d3320014e82a77" class="glyphicons_v2 star white rating"></span> <span class="rating">84%</span>
-              </a>
-          </div>
-        </div>
-      </div>
-
-        <div class="comment_wrapper right_side">
-          <div class="comment_triangle"></div>
-          <div class="comment">
-            <p>Season One (BD)</p>
-          </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-  </li>
-  <li id="5ebeb8358e2e000020145f0c" class="item with_comment_below adult_false">
-    <div class="item_wrapper">
-      <div class="info_wrapper">
-        <div class="image glyphicons_v2 picture grey poster no_image_holder">
-          <a href="/tv/103516" title="Star Trek: Strange New Worlds">
-                  <img loading="lazy" class="poster" src="https://media.themoviedb.org/t/p/w185_and_h278_multi_faces/bxuUbcM9GqvmQY1EDm5sMtLdcTv.jpg" srcset="https://media.themoviedb.org/t/p/w185_and_h278_multi_faces/bxuUbcM9GqvmQY1EDm5sMtLdcTv.jpg 1x, https://media.themoviedb.org/t/p/w370_and_h556_multi_faces/bxuUbcM9GqvmQY1EDm5sMtLdcTv.jpg 2x" alt="Star Trek: Strange New Worlds">
-
-          </a>
-        </div>
-        <div class="info_strip">
-          <div class="number">
-            <span>2</span>
-          </div>
-          <div class="meta buttons">
-            <a href="#" class="favourite no_click" title="Entre com uma conta para adicionar esta Série aos seus favoritos">
-              <span id="favourite_5ebeb8358e2e000020145f0c" class="glyphicons_v2 heart white favourite list_action" data-media-type="tv"></span>
-            </a>
-            <a href="#" class="watchlist no_click" title="Entre com uma conta para adicionar esta Série à sua lista de interesses">
-              <span id="watchlist_5ebeb8358e2e000020145f0c" class="glyphicons_v2 bookmark white watchlist list_action" data-media-type="tv"></span>
-            </a>
-              <a href="#" class="no_click">
-                <span id="rating_5ebeb8358e2e000020145f0c" class="glyphicons_v2 star white rating"></span> <span class="rating">82%</span>
-              </a>
-          </div>
-        </div>
-      </div>
-
-        <div class="comment_wrapper left_side">
-          <div class="comment_triangle"></div>
-          <div class="comment">
-            <p>Season One (BD)</p>
-          </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-  </li>
-  <li id="55a60f2292514109ab000cc0" class="item with_comment_below adult_false">
-    <div class="item_wrapper">
-      <div class="info_wrapper">
-        <div class="image glyphicons_v2 picture grey poster no_image_holder">
-          <a href="/tv/63247" title="Westworld">
-                  <img loading="lazy" class="poster" src="https://media.themoviedb.org/t/p/w185_and_h278_multi_faces/qzri6QJvL7lG5Rir98cXwkjWK1y.jpg" srcset="https://media.themoviedb.org/t/p/w185_and_h278_multi_faces/qzri6QJvL7lG5Rir98cXwkjWK1y.jpg 1x, https://media.themoviedb.org/t/p/w370_and_h556_multi_faces/qzri6QJvL7lG5Rir98cXwkjWK1y.jpg 2x" alt="Westworld">
-
-          </a>
-        </div>
-        <div class="info_strip">
-          <div class="number">
-            <span>3</span>
-          </div>
-          <div class="meta buttons">
-            <a href="#" class="favourite no_click" title="Entre com uma conta para adicionar esta Série aos seus favoritos">
-              <span id="favourite_55a60f2292514109ab000cc0" class="glyphicons_v2 heart white favourite list_action" data-media-type="tv"></span>
-            </a>
-            <a href="#" class="watchlist no_click" title="Entre com uma conta para adicionar esta Série à sua lista de interesses">
-              <span id="watchlist_55a60f2292514109ab000cc0" class="glyphicons_v2 bookmark white watchlist list_action" data-media-type="tv"></span>
-            </a>
-              <a href="#" class="no_click">
-                <span id="rating_55a60f2292514109ab000cc0" class="glyphicons_v2 star white rating"></span> <span class="rating">81%</span>
-              </a>
-          </div>
-        </div>
-      </div>
-
-        <div class="comment_wrapper left_side">
-          <div class="comment_triangle"></div>
-          <div class="comment">
-            <p>Seasons One &amp; Two (BD)</p>
-          </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-  </li>
-  <li id="5256c89e19c2956ff6046bb6" class="item with_comment_below adult_false">
-    <div class="item_wrapper">
-      <div class="info_wrapper">
-        <div class="image glyphicons_v2 picture grey poster no_image_holder">
-          <a href="/tv/1399" title="Game of Thrones">
-                  <img loading="lazy" class="poster" src="https://media.themoviedb.org/t/p/w185_and_h278_multi_faces/l2ezB41chGDjXcKo24lseuXYtKP.jpg" srcset="https://media.themoviedb.org/t/p/w185_and_h278_multi_faces/l2ezB41chGDjXcKo24lseuXYtKP.jpg 1x, https://media.themoviedb.org/t/p/w370_and_h556_multi_faces/l2ezB41chGDjXcKo24lseuXYtKP.jpg 2x" alt="Game of Thrones">
-
-          </a>
-        </div>
-        <div class="info_strip">
-          <div class="number">
-            <span>4</span>
-          </div>
-          <div class="meta buttons">
-            <a href="#" class="favourite no_click" title="Entre com uma conta para adicionar esta Série aos seus favoritos">
-              <span id="favourite_5256c89e19c2956ff6046bb6" class="glyphicons_v2 heart white favourite list_action" data-media-type="tv"></span>
-            </a>
-            <a href="#" class="watchlist no_click" title="Entre com uma conta para adicionar esta Série à sua lista de interesses">
-              <span id="watchlist_5256c89e19c2956ff6046bb6" class="glyphicons_v2 bookmark white watchlist list_action" data-media-type="tv"></span>
-            </a>
-              <a href="#" class="no_click">
-                <span id="rating_5256c89e19c2956ff6046bb6" class="glyphicons_v2 star white rating"></span> <span class="rating">84%</span>
-              </a>
-          </div>
-        </div>
-      </div>
-
-        <div class="comment_wrapper right_side">
-          <div class="comment_triangle"></div>
-          <div class="comment">
-            <p>Complete Series (BD)</p>
-          </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-  </li>
-  <li id="57599ae2c3a3684ea900242b" class="item with_comment_below adult_false">
-    <div class="item_wrapper">
-      <div class="info_wrapper">
-        <div class="image glyphicons_v2 picture grey poster no_image_holder">
-          <a href="/tv/66732" title="Stranger Things">
-                  <img loading="lazy" class="poster" src="https://media.themoviedb.org/t/p/w185_and_h278_multi_faces/oqkld2D0qcnSNRm15rYV2883JE3.jpg" srcset="https://media.themoviedb.org/t/p/w185_and_h278_multi_faces/oqkld2D0qcnSNRm15rYV2883JE3.jpg 1x, https://media.themoviedb.org/t/p/w370_and_h556_multi_faces/oqkld2D0qcnSNRm15rYV2883JE3.jpg 2x" alt="Stranger Things">
-
-          </a>
-        </div>
-        <div class="info_strip">
-          <div class="number">
-            <span>5</span>
-          </div>
-          <div class="meta buttons">
-            <a href="#" class="favourite no_click" title="Entre com uma conta para adicionar esta Série aos seus favoritos">
-              <span id="favourite_57599ae2c3a3684ea900242b" class="glyphicons_v2 heart white favourite list_action" data-media-type="tv"></span>
-            </a>
-            <a href="#" class="watchlist no_click" title="Entre com uma conta para adicionar esta Série à sua lista de interesses">
-              <span id="watchlist_57599ae2c3a3684ea900242b" class="glyphicons_v2 bookmark white watchlist list_action" data-media-type="tv"></span>
-            </a>
-              <a href="#" class="no_click">
-                <span id="rating_57599ae2c3a3684ea900242b" class="glyphicons_v2 star white rating"></span> <span class="rating">86%</span>
-              </a>
-          </div>
-        </div>
-      </div>
-
-        <div class="comment_wrapper left_side">
-          <div class="comment_triangle"></div>
-          <div class="comment">
-            <p>Season 1 (BD+DVD)</p>
-          </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-  </li>
-  <li id="525348dd19c29579400e4b8d" class="item with_comment_below adult_false">
-    <div class="item_wrapper">
-      <div class="info_wrapper">
-        <div class="image glyphicons_v2 picture grey poster no_image_holder">
-          <a href="/tv/253" title="Jornada nas Estrelas">
-                  <img loading="lazy" class="poster" src="https://media.themoviedb.org/t/p/w185_and_h278_multi_faces/xH37StqHBet4ehmqUTWXULKi3ZK.jpg" srcset="https://media.themoviedb.org/t/p/w185_and_h278_multi_faces/xH37StqHBet4ehmqUTWXULKi3ZK.jpg 1x, https://media.themoviedb.org/t/p/w370_and_h556_multi_faces/xH37StqHBet4ehmqUTWXULKi3ZK.jpg 2x" alt="Jornada nas Estrelas">
-
-          </a>
-        </div>
-        <div class="info_strip">
-          <div class="number">
-            <span>6</span>
-          </div>
-          <div class="meta buttons">
-            <a href="#" class="favourite no_click" title="Entre com uma conta para adicionar esta Série aos seus favoritos">
-              <span id="favourite_525348dd19c29579400e4b8d" class="glyphicons_v2 heart white favourite list_action" data-media-type="tv"></span>
-            </a>
-            <a href="#" class="watchlist no_click" title="Entre com uma conta para adicionar esta Série à sua lista de interesses">
-              <span id="watchlist_525348dd19c29579400e4b8d" class="glyphicons_v2 bookmark white watchlist list_action" data-media-type="tv"></span>
-            </a>
-              <a href="#" class="no_click">
-                <span id="rating_525348dd19c29579400e4b8d" class="glyphicons_v2 star white rating"></span> <span class="rating">81%</span>
-              </a>
-          </div>
-        </div>
-      </div>
-
-        <div class="comment_wrapper left_side">
-          <div class="comment_triangle"></div>
-          <div class="comment">
-            <p>Complete Series (DVD)</p>
-          </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-  </li>
-  <li id="525716cf19c2957114092d46" class="item with_comment_below adult_false">
-    <div class="item_wrapper">
-      <div class="info_wrapper">
-        <div class="image glyphicons_v2 picture grey poster no_image_holder">
-          <a href="/tv/1839" title="O Crítico">
-                  <img loading="lazy" class="poster" src="https://media.themoviedb.org/t/p/w185_and_h278_multi_faces/fB9OXRhDtAGVm8OgaIy2btuFelf.jpg" srcset="https://media.themoviedb.org/t/p/w185_and_h278_multi_faces/fB9OXRhDtAGVm8OgaIy2btuFelf.jpg 1x, https://media.themoviedb.org/t/p/w370_and_h556_multi_faces/fB9OXRhDtAGVm8OgaIy2btuFelf.jpg 2x" alt="O Crítico">
-
-          </a>
-        </div>
-        <div class="info_strip">
-          <div class="number">
-            <span>7</span>
-          </div>
-          <div class="meta buttons">
-            <a href="#" class="favourite no_click" title="Entre com uma conta para adicionar esta Série aos seus favoritos">
-              <span id="favourite_525716cf19c2957114092d46" class="glyphicons_v2 heart white favourite list_action" data-media-type="tv"></span>
-            </a>
-            <a href="#" class="watchlist no_click" title="Entre com uma conta para adicionar esta Série à sua lista de interesses">
-              <span id="watchlist_525716cf19c2957114092d46" class="glyphicons_v2 bookmark white watchlist list_action" data-media-type="tv"></span>
-            </a>
-              <a href="#" class="no_click">
-                <span id="rating_525716cf19c2957114092d46" class="glyphicons_v2 star white rating"></span> <span class="rating">74%</span>
-              </a>
-          </div>
-        </div>
-      </div>
-
-        <div class="comment_wrapper right_side">
-          <div class="comment_triangle"></div>
-          <div class="comment">
-            <p>Complete Series (DVD)</p>
-          </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-  </li>
-
-  <li class="filler"></li>
-  <li class="filler"></li>
-  <li class="filler"></li>
-  <li class="filler"></li>
-  <li class="filler"></li>
-
-
-<script>
-  $(function() {
-  });
-</script>
-
-    </ul>
-
-  <div class="end_of_the_line">
-      <div class="button">
-          <p><a class="button rounded" href="/login">Login to create your own list!</a></p>
-      </div>
-    </div>
 </div>
 
 
+    <div class="group relative inline-block text-left">
+  <button id="show_me" class="w-full h-full flex items-center justify-center px-2 py-1 gap-2 text-black-600 font-semibold rounded-full border border-solid border-slate-500 md:px-4">
+    <span>Mostre-me</span><span class="glyphicons_v2 glyph-chevron-down"></span>
+  </button>
+
+  <div id="dropdown_list_show_me" class="hidden group-hover:block absolute top-8 right-0 z-10 #w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+    <div class="" role="none">
+        <a href="/list/8283859-tv-shows-shelf?view=list&show_me=everything" class="hover:bg-gray-200 rounded-md text-black-600 block text-nowrap whitespace-nowrap px-4 py-2 text-sm lg:text-md" role="menuitem" tabindex="-1" id="menu-item-0">Todos</a>
+        <a href="/list/8283859-tv-shows-shelf?view=list&show_me=watched" class="hover:bg-gray-200 rounded-md text-black-600 block text-nowrap whitespace-nowrap px-4 py-2 text-sm lg:text-md" role="menuitem" tabindex="-1" id="menu-item-0">Items I Have Seen</a>
+        <a href="/list/8283859-tv-shows-shelf?view=list&show_me=unwatched" class="hover:bg-gray-200 rounded-md text-black-600 block text-nowrap whitespace-nowrap px-4 py-2 text-sm lg:text-md" role="menuitem" tabindex="-1" id="menu-item-0">Items I Haven't Seen</a>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
 
 
+          <section>
+    <div class="list_items">
+      <div id="page_1" class="flex md:table border-separate border-spacing-0">
+  <div class="table-header-group hide">
+    <div class="table-row">
+      <div class="table-cell text-left">Order</div>
+      <div class="table-cell text-left">Title</div>
+      <div class="table-cell text-left">Rating</div>
+      <div class="table-cell text-left">Type</div>
+      <div class="table-cell text-left">Release Date</div>
+      <div class="table-cell text-left">Runtime</div>
+      <div class="table-cell text-left">Revenue</div>
+      <div class="table-cell text-right">Options</div>
+    </div>
+  </div>
+  <div class="flex flex-wrap md:table-row-group">
+      <div class="flex w-full md:table-row">
+        <div class="table-cell text-sm/[6px]">&nbsp;</div>
+      </div>
+      <div id="5db8d664a1d3320014e82a77" class="flex flex-wrap md:table-row w-full max-w-[calc(100vw-2rem)] border-[1px] rounded-md">
+        <div class="hidden md:table-cell align-middle font-mono text-md text-gray-400 bold pr-4">1</div>
+        <div class="flex flex-wrap w-full md:table-cell align-middle text-left md:border-y-[1px] md:border-l-[1px] md:rounded-s-md py-2 px-4">
+          <span class="w-full whitespace-nowrap">
+            <a class="text-md font-bold text-black cursor-pointer lg:max-w-max" href="/tv/94997" target="_blank">A Casa do Dragão</a>
+          </span>
+            <span class="comment">
+              <span class="hidden md:inline-block md:ml-2 absolute w-[1px] h-[22px] bg-gray-400"></span>
+              <span class="w-full max-w-xs md:pl-4 font-light text-slate-600 text-sm border-gray-400">Season One (BD)</span>
+            </span>
+        </div>
+        <span class="flex items-center justify-between relative columns-6 md:contents w-full" style="">
+          <span class="flex flex-wrap items-center md:contents">
+            <span class="flex flex-wrap items-center md:contents">
+              <div class="inline-flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="text-xs">
+                  <div class="outer_ring w-10 h-10 p-1 bg-black rounded-full">
+                    <div class="w-full h-full relative user_score_chart [&>canvas]:absolute [&>canvas]:top-[-2px] [&>canvas]:left-[-2px] 94997" data-percent="84.21" data-track-color="#204529" data-bar-color="#21d07a">
+                      <div class="percent flex justify-center p-2.5 text-white">
+                          <span class="icon icon-r84"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="inline-flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="flex">
+                  <div class="flex py-1 px-3 justify-center items-center rounded-full text-xs md:text-sm text-white bg-tv-tile">
+                    <span class="whitespace-nowrap">Série</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="flex">
+                  <div class="flex py-1 px-3 justify-center items-center rounded-full text-xs md:text-sm text-white bg-date-tile">
+                    <span class="whitespace-nowrap">21 de agosto de 2022</span>
+                  </div>
+                </div>
+              </div>
+            </span>
+            <span class="hidden md:contents">
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <span class="text-sm text-gray-400 whitespace-nowrap"></span>
+              </div>
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left whitespace-nowrap py-2 pl-4">
+                <span class="text-sm text-gray-400"></span>
+              </div>
+            </span>
+          </span>
+          <div class="flex items-center md:table-cell align-middle relative md:border-y-[1px] md:border-r-[1px] md:rounded-r-md text-right py-8 pr-[4rem]">
+            <div class="options flex justify-end enter w-8 absolute top-5 right-4" data-id="94997" data-object-id="5db8d664a1d3320014e82a77" data-media-type="tv">
+              <a class="inline-flex no_click" href="#">
+                <div class="w-6 h-6 glyphicons_v2 circle-more grey"></div>
+              </a>
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="flex w-full md:table-row">
+        <div class="table-cell text-sm/[6px]">&nbsp;</div>
+      </div>
+      <div id="5ebeb8358e2e000020145f0c" class="flex flex-wrap md:table-row w-full max-w-[calc(100vw-2rem)] border-[1px] rounded-md">
+        <div class="hidden md:table-cell align-middle font-mono text-md text-gray-400 bold pr-4">2</div>
+        <div class="flex flex-wrap w-full md:table-cell align-middle text-left md:border-y-[1px] md:border-l-[1px] md:rounded-s-md py-2 px-4">
+          <span class="w-full whitespace-nowrap">
+            <a class="text-md font-bold text-black cursor-pointer lg:max-w-max" href="/tv/103516" target="_blank">Star Trek: Strange New Worlds</a>
+          </span>
+            <span class="comment">
+              <span class="hidden md:inline-block md:ml-2 absolute w-[1px] h-[22px] bg-gray-400"></span>
+              <span class="w-full max-w-xs md:pl-4 font-light text-slate-600 text-sm border-gray-400">Season One (BD)</span>
+            </span>
+        </div>
+        <span class="flex items-center justify-between relative columns-6 md:contents w-full" style="">
+          <span class="flex flex-wrap items-center md:contents">
+            <span class="flex flex-wrap items-center md:contents">
+              <div class="inline-flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="text-xs">
+                  <div class="outer_ring w-10 h-10 p-1 bg-black rounded-full">
+                    <div class="w-full h-full relative user_score_chart [&>canvas]:absolute [&>canvas]:top-[-2px] [&>canvas]:left-[-2px] 103516" data-percent="81.69" data-track-color="#204529" data-bar-color="#21d07a">
+                      <div class="percent flex justify-center p-2.5 text-white">
+                          <span class="icon icon-r82"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="inline-flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="flex">
+                  <div class="flex py-1 px-3 justify-center items-center rounded-full text-xs md:text-sm text-white bg-tv-tile">
+                    <span class="whitespace-nowrap">Série</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="flex">
+                  <div class="flex py-1 px-3 justify-center items-center rounded-full text-xs md:text-sm text-white bg-date-tile">
+                    <span class="whitespace-nowrap"> 5 de maio de 2022</span>
+                  </div>
+                </div>
+              </div>
+            </span>
+            <span class="hidden md:contents">
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <span class="text-sm text-gray-400 whitespace-nowrap"></span>
+              </div>
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left whitespace-nowrap py-2 pl-4">
+                <span class="text-sm text-gray-400"></span>
+              </div>
+            </span>
+          </span>
+          <div class="flex items-center md:table-cell align-middle relative md:border-y-[1px] md:border-r-[1px] md:rounded-r-md text-right py-8 pr-[4rem]">
+            <div class="options flex justify-end enter w-8 absolute top-5 right-4" data-id="103516" data-object-id="5ebeb8358e2e000020145f0c" data-media-type="tv">
+              <a class="inline-flex no_click" href="#">
+                <div class="w-6 h-6 glyphicons_v2 circle-more grey"></div>
+              </a>
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="flex w-full md:table-row">
+        <div class="table-cell text-sm/[6px]">&nbsp;</div>
+      </div>
+      <div id="55a60f2292514109ab000cc0" class="flex flex-wrap md:table-row w-full max-w-[calc(100vw-2rem)] border-[1px] rounded-md">
+        <div class="hidden md:table-cell align-middle font-mono text-md text-gray-400 bold pr-4">3</div>
+        <div class="flex flex-wrap w-full md:table-cell align-middle text-left md:border-y-[1px] md:border-l-[1px] md:rounded-s-md py-2 px-4">
+          <span class="w-full whitespace-nowrap">
+            <a class="text-md font-bold text-black cursor-pointer lg:max-w-max" href="/tv/63247" target="_blank">Westworld</a>
+          </span>
+            <span class="comment">
+              <span class="hidden md:inline-block md:ml-2 absolute w-[1px] h-[22px] bg-gray-400"></span>
+              <span class="w-full max-w-xs md:pl-4 font-light text-slate-600 text-sm border-gray-400">Seasons One &amp; Two (BD)</span>
+            </span>
+        </div>
+        <span class="flex items-center justify-between relative columns-6 md:contents w-full" style="">
+          <span class="flex flex-wrap items-center md:contents">
+            <span class="flex flex-wrap items-center md:contents">
+              <div class="inline-flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="text-xs">
+                  <div class="outer_ring w-10 h-10 p-1 bg-black rounded-full">
+                    <div class="w-full h-full relative user_score_chart [&>canvas]:absolute [&>canvas]:top-[-2px] [&>canvas]:left-[-2px] 63247" data-percent="80.60000000000001" data-track-color="#204529" data-bar-color="#21d07a">
+                      <div class="percent flex justify-center p-2.5 text-white">
+                          <span class="icon icon-r81"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="inline-flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="flex">
+                  <div class="flex py-1 px-3 justify-center items-center rounded-full text-xs md:text-sm text-white bg-tv-tile">
+                    <span class="whitespace-nowrap">Série</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="flex">
+                  <div class="flex py-1 px-3 justify-center items-center rounded-full text-xs md:text-sm text-white bg-date-tile">
+                    <span class="whitespace-nowrap"> 2 de outubro de 2016</span>
+                  </div>
+                </div>
+              </div>
+            </span>
+            <span class="hidden md:contents">
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <span class="text-sm text-gray-400 whitespace-nowrap"></span>
+              </div>
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left whitespace-nowrap py-2 pl-4">
+                <span class="text-sm text-gray-400"></span>
+              </div>
+            </span>
+          </span>
+          <div class="flex items-center md:table-cell align-middle relative md:border-y-[1px] md:border-r-[1px] md:rounded-r-md text-right py-8 pr-[4rem]">
+            <div class="options flex justify-end enter w-8 absolute top-5 right-4" data-id="63247" data-object-id="55a60f2292514109ab000cc0" data-media-type="tv">
+              <a class="inline-flex no_click" href="#">
+                <div class="w-6 h-6 glyphicons_v2 circle-more grey"></div>
+              </a>
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="flex w-full md:table-row">
+        <div class="table-cell text-sm/[6px]">&nbsp;</div>
+      </div>
+      <div id="5256c89e19c2956ff6046bb6" class="flex flex-wrap md:table-row w-full max-w-[calc(100vw-2rem)] border-[1px] rounded-md">
+        <div class="hidden md:table-cell align-middle font-mono text-md text-gray-400 bold pr-4">4</div>
+        <div class="flex flex-wrap w-full md:table-cell align-middle text-left md:border-y-[1px] md:border-l-[1px] md:rounded-s-md py-2 px-4">
+          <span class="w-full whitespace-nowrap">
+            <a class="text-md font-bold text-black cursor-pointer lg:max-w-max" href="/tv/1399" target="_blank">Game of Thrones</a>
+          </span>
+            <span class="comment">
+              <span class="hidden md:inline-block md:ml-2 absolute w-[1px] h-[22px] bg-gray-400"></span>
+              <span class="w-full max-w-xs md:pl-4 font-light text-slate-600 text-sm border-gray-400">Complete Series (BD)</span>
+            </span>
+        </div>
+        <span class="flex items-center justify-between relative columns-6 md:contents w-full" style="">
+          <span class="flex flex-wrap items-center md:contents">
+            <span class="flex flex-wrap items-center md:contents">
+              <div class="inline-flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="text-xs">
+                  <div class="outer_ring w-10 h-10 p-1 bg-black rounded-full">
+                    <div class="w-full h-full relative user_score_chart [&>canvas]:absolute [&>canvas]:top-[-2px] [&>canvas]:left-[-2px] 1399" data-percent="84.46" data-track-color="#204529" data-bar-color="#21d07a">
+                      <div class="percent flex justify-center p-2.5 text-white">
+                          <span class="icon icon-r84"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="inline-flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="flex">
+                  <div class="flex py-1 px-3 justify-center items-center rounded-full text-xs md:text-sm text-white bg-tv-tile">
+                    <span class="whitespace-nowrap">Série</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="flex">
+                  <div class="flex py-1 px-3 justify-center items-center rounded-full text-xs md:text-sm text-white bg-date-tile">
+                    <span class="whitespace-nowrap">17 de abril de 2011</span>
+                  </div>
+                </div>
+              </div>
+            </span>
+            <span class="hidden md:contents">
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <span class="text-sm text-gray-400 whitespace-nowrap"></span>
+              </div>
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left whitespace-nowrap py-2 pl-4">
+                <span class="text-sm text-gray-400"></span>
+              </div>
+            </span>
+          </span>
+          <div class="flex items-center md:table-cell align-middle relative md:border-y-[1px] md:border-r-[1px] md:rounded-r-md text-right py-8 pr-[4rem]">
+            <div class="options flex justify-end enter w-8 absolute top-5 right-4" data-id="1399" data-object-id="5256c89e19c2956ff6046bb6" data-media-type="tv">
+              <a class="inline-flex no_click" href="#">
+                <div class="w-6 h-6 glyphicons_v2 circle-more grey"></div>
+              </a>
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="flex w-full md:table-row">
+        <div class="table-cell text-sm/[6px]">&nbsp;</div>
+      </div>
+      <div id="57599ae2c3a3684ea900242b" class="flex flex-wrap md:table-row w-full max-w-[calc(100vw-2rem)] border-[1px] rounded-md">
+        <div class="hidden md:table-cell align-middle font-mono text-md text-gray-400 bold pr-4">5</div>
+        <div class="flex flex-wrap w-full md:table-cell align-middle text-left md:border-y-[1px] md:border-l-[1px] md:rounded-s-md py-2 px-4">
+          <span class="w-full whitespace-nowrap">
+            <a class="text-md font-bold text-black cursor-pointer lg:max-w-max" href="/tv/66732" target="_blank">Stranger Things</a>
+          </span>
+            <span class="comment">
+              <span class="hidden md:inline-block md:ml-2 absolute w-[1px] h-[22px] bg-gray-400"></span>
+              <span class="w-full max-w-xs md:pl-4 font-light text-slate-600 text-sm border-gray-400">Season 1 (BD+DVD)</span>
+            </span>
+        </div>
+        <span class="flex items-center justify-between relative columns-6 md:contents w-full" style="">
+          <span class="flex flex-wrap items-center md:contents">
+            <span class="flex flex-wrap items-center md:contents">
+              <div class="inline-flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="text-xs">
+                  <div class="outer_ring w-10 h-10 p-1 bg-black rounded-full">
+                    <div class="w-full h-full relative user_score_chart [&>canvas]:absolute [&>canvas]:top-[-2px] [&>canvas]:left-[-2px] 66732" data-percent="86.0" data-track-color="#204529" data-bar-color="#21d07a">
+                      <div class="percent flex justify-center p-2.5 text-white">
+                          <span class="icon icon-r86"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="inline-flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="flex">
+                  <div class="flex py-1 px-3 justify-center items-center rounded-full text-xs md:text-sm text-white bg-tv-tile">
+                    <span class="whitespace-nowrap">Série</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="flex">
+                  <div class="flex py-1 px-3 justify-center items-center rounded-full text-xs md:text-sm text-white bg-date-tile">
+                    <span class="whitespace-nowrap">15 de julho de 2016</span>
+                  </div>
+                </div>
+              </div>
+            </span>
+            <span class="hidden md:contents">
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <span class="text-sm text-gray-400 whitespace-nowrap"></span>
+              </div>
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left whitespace-nowrap py-2 pl-4">
+                <span class="text-sm text-gray-400"></span>
+              </div>
+            </span>
+          </span>
+          <div class="flex items-center md:table-cell align-middle relative md:border-y-[1px] md:border-r-[1px] md:rounded-r-md text-right py-8 pr-[4rem]">
+            <div class="options flex justify-end enter w-8 absolute top-5 right-4" data-id="66732" data-object-id="57599ae2c3a3684ea900242b" data-media-type="tv">
+              <a class="inline-flex no_click" href="#">
+                <div class="w-6 h-6 glyphicons_v2 circle-more grey"></div>
+              </a>
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="flex w-full md:table-row">
+        <div class="table-cell text-sm/[6px]">&nbsp;</div>
+      </div>
+      <div id="525348dd19c29579400e4b8d" class="flex flex-wrap md:table-row w-full max-w-[calc(100vw-2rem)] border-[1px] rounded-md">
+        <div class="hidden md:table-cell align-middle font-mono text-md text-gray-400 bold pr-4">6</div>
+        <div class="flex flex-wrap w-full md:table-cell align-middle text-left md:border-y-[1px] md:border-l-[1px] md:rounded-s-md py-2 px-4">
+          <span class="w-full whitespace-nowrap">
+            <a class="text-md font-bold text-black cursor-pointer lg:max-w-max" href="/tv/253" target="_blank">Jornada nas Estrelas</a>
+          </span>
+            <span class="comment">
+              <span class="hidden md:inline-block md:ml-2 absolute w-[1px] h-[22px] bg-gray-400"></span>
+              <span class="w-full max-w-xs md:pl-4 font-light text-slate-600 text-sm border-gray-400">Complete Series (DVD)</span>
+            </span>
+        </div>
+        <span class="flex items-center justify-between relative columns-6 md:contents w-full" style="">
+          <span class="flex flex-wrap items-center md:contents">
+            <span class="flex flex-wrap items-center md:contents">
+              <div class="inline-flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="text-xs">
+                  <div class="outer_ring w-10 h-10 p-1 bg-black rounded-full">
+                    <div class="w-full h-full relative user_score_chart [&>canvas]:absolute [&>canvas]:top-[-2px] [&>canvas]:left-[-2px] 253" data-percent="80.63000000000001" data-track-color="#204529" data-bar-color="#21d07a">
+                      <div class="percent flex justify-center p-2.5 text-white">
+                          <span class="icon icon-r81"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="inline-flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="flex">
+                  <div class="flex py-1 px-3 justify-center items-center rounded-full text-xs md:text-sm text-white bg-tv-tile">
+                    <span class="whitespace-nowrap">Série</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="flex">
+                  <div class="flex py-1 px-3 justify-center items-center rounded-full text-xs md:text-sm text-white bg-date-tile">
+                    <span class="whitespace-nowrap"> 8 de setembro de 1966</span>
+                  </div>
+                </div>
+              </div>
+            </span>
+            <span class="hidden md:contents">
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <span class="text-sm text-gray-400 whitespace-nowrap"></span>
+              </div>
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left whitespace-nowrap py-2 pl-4">
+                <span class="text-sm text-gray-400"></span>
+              </div>
+            </span>
+          </span>
+          <div class="flex items-center md:table-cell align-middle relative md:border-y-[1px] md:border-r-[1px] md:rounded-r-md text-right py-8 pr-[4rem]">
+            <div class="options flex justify-end enter w-8 absolute top-5 right-4" data-id="253" data-object-id="525348dd19c29579400e4b8d" data-media-type="tv">
+              <a class="inline-flex no_click" href="#">
+                <div class="w-6 h-6 glyphicons_v2 circle-more grey"></div>
+              </a>
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="flex w-full md:table-row">
+        <div class="table-cell text-sm/[6px]">&nbsp;</div>
+      </div>
+      <div id="525716cf19c2957114092d46" class="flex flex-wrap md:table-row w-full max-w-[calc(100vw-2rem)] border-[1px] rounded-md">
+        <div class="hidden md:table-cell align-middle font-mono text-md text-gray-400 bold pr-4">7</div>
+        <div class="flex flex-wrap w-full md:table-cell align-middle text-left md:border-y-[1px] md:border-l-[1px] md:rounded-s-md py-2 px-4">
+          <span class="w-full whitespace-nowrap">
+            <a class="text-md font-bold text-black cursor-pointer lg:max-w-max" href="/tv/1839" target="_blank">O Crítico</a>
+          </span>
+            <span class="comment">
+              <span class="hidden md:inline-block md:ml-2 absolute w-[1px] h-[22px] bg-gray-400"></span>
+              <span class="w-full max-w-xs md:pl-4 font-light text-slate-600 text-sm border-gray-400">Complete Series (DVD)</span>
+            </span>
+        </div>
+        <span class="flex items-center justify-between relative columns-6 md:contents w-full" style="">
+          <span class="flex flex-wrap items-center md:contents">
+            <span class="flex flex-wrap items-center md:contents">
+              <div class="inline-flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="text-xs">
+                  <div class="outer_ring w-10 h-10 p-1 bg-black rounded-full">
+                    <div class="w-full h-full relative user_score_chart [&>canvas]:absolute [&>canvas]:top-[-2px] [&>canvas]:left-[-2px] 1839" data-percent="74.0" data-track-color="#204529" data-bar-color="#21d07a">
+                      <div class="percent flex justify-center p-2.5 text-white">
+                          <span class="icon icon-r74"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="inline-flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="flex">
+                  <div class="flex py-1 px-3 justify-center items-center rounded-full text-xs md:text-sm text-white bg-tv-tile">
+                    <span class="whitespace-nowrap">Série</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <div class="flex">
+                  <div class="flex py-1 px-3 justify-center items-center rounded-full text-xs md:text-sm text-white bg-date-tile">
+                    <span class="whitespace-nowrap">26 de janeiro de 1994</span>
+                  </div>
+                </div>
+              </div>
+            </span>
+            <span class="hidden md:contents">
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left py-2 pl-4">
+                <span class="text-sm text-gray-400 whitespace-nowrap"></span>
+              </div>
+              <div class="flex md:table-cell align-middle md:border-y-[1px] text-left whitespace-nowrap py-2 pl-4">
+                <span class="text-sm text-gray-400"></span>
+              </div>
+            </span>
+          </span>
+          <div class="flex items-center md:table-cell align-middle relative md:border-y-[1px] md:border-r-[1px] md:rounded-r-md text-right py-8 pr-[4rem]">
+            <div class="options flex justify-end enter w-8 absolute top-5 right-4" data-id="1839" data-object-id="525716cf19c2957114092d46" data-media-type="tv">
+              <a class="inline-flex no_click" href="#">
+                <div class="w-6 h-6 glyphicons_v2 circle-more grey"></div>
+              </a>
+            </div>
+          </div>
+        </span>
+      </div>
+  </div>
+</div>
 
 
+<script>
+  /**
+   * Calculates average rating
+   */
+    $(function () {
+      $('.user_score_chart.94997').easyPieChart({
+        lineCap: 'round',
+        lineWidth: 2,
+        scaleColor: false,
+        size: 36,
+        animate: {
+          enabled: false
+        }
+      });
+    });
+    $(function () {
+      $('.user_score_chart.103516').easyPieChart({
+        lineCap: 'round',
+        lineWidth: 2,
+        scaleColor: false,
+        size: 36,
+        animate: {
+          enabled: false
+        }
+      });
+    });
+    $(function () {
+      $('.user_score_chart.63247').easyPieChart({
+        lineCap: 'round',
+        lineWidth: 2,
+        scaleColor: false,
+        size: 36,
+        animate: {
+          enabled: false
+        }
+      });
+    });
+    $(function () {
+      $('.user_score_chart.1399').easyPieChart({
+        lineCap: 'round',
+        lineWidth: 2,
+        scaleColor: false,
+        size: 36,
+        animate: {
+          enabled: false
+        }
+      });
+    });
+    $(function () {
+      $('.user_score_chart.66732').easyPieChart({
+        lineCap: 'round',
+        lineWidth: 2,
+        scaleColor: false,
+        size: 36,
+        animate: {
+          enabled: false
+        }
+      });
+    });
+    $(function () {
+      $('.user_score_chart.253').easyPieChart({
+        lineCap: 'round',
+        lineWidth: 2,
+        scaleColor: false,
+        size: 36,
+        animate: {
+          enabled: false
+        }
+      });
+    });
+    $(function () {
+      $('.user_score_chart.1839').easyPieChart({
+        lineCap: 'round',
+        lineWidth: 2,
+        scaleColor: false,
+        size: 36,
+        animate: {
+          enabled: false
+        }
+      });
+    });
+
+  /**
+   * Update comment status(show/hide) when paginating
+   */
+  $("#toggle_comment").attr("data-comment-status", true);
+
+  attachOptionsTooltips(false, "#page_1");
+</script>
+
+    </div>
+</section>
+
+<script>
+  var show_comments = true;
+
+  $("#toggle_comment").on('click', function () {
+    show_comments = !show_comments;
+    if (show_comments) {
+      $(this).text("Hide Comments");
+      $("span.comment").removeClass('hide');
+    } else {
+      $(this).text("Show Comments");
+      $("span.comment").addClass('hide');
+    }
+  });
+
+  $("p.load_more a").on('click', function () {
+    var currentPage = $(this).attr('data-current-page');
+    var nextPage = $(this).attr('data-next-page');
+
+    loadPage(currentPage, nextPage);
+  });
+
+  var intersectionObserver = new IntersectionObserver(entries => {
+    if (entries[0].intersectionRatio <= 0) return;
+
+    var ele = $("p.load_more a").last();
+    var currentPage = $(ele).attr('data-current-page');
+    var nextPage = $(ele).attr('data-next-page');
+
+    loadPage(currentPage, nextPage);
+  });
+
+  function loadPage(currentPage, nextPage) {
+    var edit_url_template = '/list/8283859-tv-shows-shelf/items?view={0}&page={1}&sort_by={2}&show_comments={3}&show_me={4}';
+
+    $.ajax({
+      dataType: 'html',
+      url: kendo.format(edit_url_template, 'list', nextPage, '', show_comments, ''),
+      method: 'GET',
+      beforeSend: function () {
+        activatePageLoader();
+      }
+    }).fail(function () {
+      deactivatePageLoader();
+      showError('Ocorreu um problema.');
+    }).done(function (response) {
+      deactivatePageLoader();
+
+      $(".temp_row").addClass("hide");
+      $(".list_items").append(response);
+
+      if ($(`#pagination_page_${nextPage}`).length) {
+        intersectionObserver.observe(document.querySelector(`#pagination_page_${nextPage}`));
+      }
+    });
+  }
+
+</script>
+
+<style>
+    ol:after {
+      height: auto;
+      background: white;
+    }
+</style>
 
 
-
-
+          <div class="flex items-end justify-center">
+            <button class="p-2 rounded-full border border-solid border-slate-500">
+              <a class="text-sm text-black-600 font-semibold md:px-4 md:py-2 md:text-lg" href="/login">Login to create your own list!</a>
+            </button>
+          </div>
+      </div>
+    </div>
+</div>
 
 </main>
 
@@ -884,7 +1236,7 @@
         </div>
       </nav>
 
-      <section>Build 2100a06 (6825)</section>
+      <section>Build 0610d48 (6830)</section>
     </footer>
 
       <div id="new_media_template" class="hide">
