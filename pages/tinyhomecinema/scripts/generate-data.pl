@@ -290,11 +290,11 @@ my @new_films_imgs;
 
 my $n = 0;
 
-my $treshold_month = 3;
-my $years_back = 1;
+my $treshold_month = 2;
+my $years_back;
 
 while (my $line = <RSS>) {
-    if ($line =~ /.*<title>(.*),\s([0-9]*).*<\/title>\s<link>(.*)<\/link> <guid\s.*letterboxd-.*-(.*)<\/guid>.*<letterboxd:watchedDate>([0-9]*)-([0-9]*)-.*<img src=\"(.*)\?v/) {
+    if ($line =~ /.*<title>(.+),\s([0-9]+).*<\/title>\s<link>(.+)<\/link> <guid\s.*letterboxd-.+-(.+)<\/guid>.*<letterboxd:watchedDate>([0-9]+)-([0-9]+)-.*<img src=\"(.+)\?v/) {
         $title = $1;
         $release_year = $2;
         $link = $3;
@@ -307,7 +307,9 @@ while (my $line = <RSS>) {
 
         if ($watch_month <= $treshold_month) {
             $years_back = 2;
-        }
+        } else { 
+            $years_back = 1;
+        }        
         
         for (@film_ids) {
             if ($id == $_ && $watch_year - $release_year <= $years_back) {
