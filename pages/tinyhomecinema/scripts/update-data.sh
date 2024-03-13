@@ -21,7 +21,7 @@ mv catalog_bottom\.php\?view\=hpfilho\&collection\=794026\&shelf\=shelf\&sort\=t
 wget 'https://letterboxd.com/tinyhomecinema/list/film-collection/'
 mv index.html films.html
 
-wget 'https://letterboxd.com/tinyhomecinema/list/miniseries/'
+wget 'https://letterboxd.com/tinyhomecinema/list/miniseries-collection/'
 mv index.html miniseries.html
 
 wget 'https://letterboxd.com/tinyhomecinema/list/short-films/'
