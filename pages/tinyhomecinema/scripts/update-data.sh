@@ -13,7 +13,7 @@ wget 'https://tinyhomecinema.page/music/'
 mv index.html music.html
 
 wget 'https://www.themoviedb.org/list/8283859-tv-shows-collection?view=grid&sort_by=primary_release_date.desc'
-mv 8283859-tv-shows-collection?view=grid&sort_by=primary_release_date.desc tv_shows.html
+mv 8283859-tv-shows-collection\?view\=grid\&sort\_by\=primary_release_date\.desc tv_shows.html
 
 wget 'https://www.librarything.com/catalog_bottom.php?view=hpfilho&collection=794026&shelf=shelf&sort=title&previousOffset=0&shelf_rows=3'
 mv catalog_bottom\.php\?view\=hpfilho\&collection\=794026\&shelf\=shelf\&sort\=title\&previousOffset\=0\&shelf_rows\=3 books.html
